@@ -1,0 +1,216 @@
+<div style="margin-top: .44rem;">
+	<div class="headline headline-title headline-fixed">
+		<a class="pta l10 cff fs16" href="javascript:;" id="J_back" back>
+			<img style="height: .2rem;" src="img/left-arrow.png" />
+		</a>
+		<p class="i-text" id="J_til" ng-bind="sc.title"></p>
+		<a href="#/search" class="pta r10 t0 lh0 dsb hp100 cff ">
+		<span class="mui-icon">
+		<img src="img/search.png" style="height: .22rem;"/>
+		</span>
+		</a>
+	</div>
+	<!--<div class="second scrolly tab-box" id="J_second">-->
+		<!--<table>-->
+			<!--<tr id="J_second_tr"  repeat-id="r1">-->
+				<!--<td ng-repeat="v in sectype" on-finish-render-filters>-->
+					<!--<a class="tab-text tvls ellipsis {{$index==lindex?'active':''}}" eq="{{$index}}" href="javascript:;" ng-click="change($index,v.channel_type,v.channel_en)">{{v.channel_ch}}</a>-->
+				<!--</td>-->
+			<!--</tr>-->
+		<!--</table>-->
+	<!--</div>-->
+	<div class="list" id="J_list" >
+		<div>
+			<ul class="list ovh tyitem pt10" id="J_hot" ng-show="tindex==1" style="background-color: #f0f0f0;" repeat-id="r2">
+				<li class="li" ng-repeat="v in zblist" on-finish-render-filters>
+					<a ng-href="#/detail?zb=zb&serviceid={{v.epgs[0].channel_id}}&tsid={{(v.epgs[0].channel_sid).split('_')[1]}}&frequence={{v.epgs[0].channel_tid}}&startTime={{v.epgs[0].startTime}}&kankeId={{v.kankeid}}&vodId={{v.vodId}}&columnType={{v.classId}}&videoId={{v.videoId}}&englishName={{v.epgs[0].kankeChannel}}&channelID={{v.epgs[0].channel_id}}&chaneseName={{v.epgs[0].chaneseName}}" class="J_a cff">
+						<p class="size-cover ptr ovh" style="margin-bottom: 0;">
+							<img class="J_img loading pta wp100 hp100 lazy" original="{{v.lpic}}" >
+							<span class="zb_channel ellipsis"><img src="{{v.epgs[0].icon2}}" err-src="img/ico_df.png"/>{{v.epgs[0].chaneseName}}</span>
+						</p>
+						<div class="tv_info" style="background: #fff;">
+							<p class="J_til til sec-text ellipsis cff">{{v.videoTitle}}</p>
+							<p class="pre ptr"><span class="J_pre pta hp100" style="width:{{v.epgs[0].percentage}}%;"></span></p>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<!--电视剧-纪录片、(电影、新闻、体育)暂时无数据-->
+		<div ng-show="tindex==2">
+			<div class="tyitem"  ng-show="zbtypelistNow.length>0" >
+				<div class="topline tla ptr" style="text-align: center;">
+					<div class="dot-split-left  dot-split-red"></div>
+					<div class="dot-split-right  dot-split-red"></div>
+					正在播
+					<a href="#/TVlive_list?t=0&classId={{classId}}" class="fr pta r0"><img class="wp03" src="img/ico_index01fr.png" /></a>
+				</div>
+				<ul class="list mt10 ovh" id="J_hot" repeat-id="r2">
+					<li class="li" ng-repeat="v in zbtypelistNow.slice(0,6)" on-finish-render-filters>
+						<a ng-href="#/detail?zb=zb&serviceid={{v.epgs[0].channel_id}}&tsid={{(v.epgs[0].channel_sid).split('_')[1]}}&frequence={{v.epgs[0].channel_tid}}&startTime={{v.epgs[0].startTime}}&kankeId={{v.kankeid}}&vodId={{v.vodId}}&columnType={{v.classId}}&videoId={{v.videoId}}&englishName={{v.epgs[0].kankeChannel}}&channelID={{v.epgs[0].channel_id}}&chaneseName={{v.epgs[0].chaneseName}}" class="J_a cff">
+							<p class="size-cover ptr ovh" style="margin-bottom: 0;">
+								<img class="J_img loading pta wp100 hp100 lazy" original="{{v.lpic}}">
+								<span class="zb_channel ellipsis alic"><img src="{{v.epgs[0].icon2}}" err-src="img/ico_df.png"/>{{v.epgs[0].chaneseName}}</span>
+								<p class="pre ptr"><span class="J_pre pta hp100" style="width:{{v.epgs[0].percentage}}%;"></span></p>
+							</p>
+							<div class="tv_info alic">
+								<p class="til sec-text ellipsis">{{v.title}}</p>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="tyitem"  ng-show="zbtypelistLate.length>0">
+				<div class="topline tlf ptr" style="text-align: center;">
+					<div class="dot-split-left  dot-split-green"></div>
+					<div class="dot-split-right  dot-split-green"></div>
+					即将播
+					<a href="#/TVlive_list?t=1&classId={{classId}}" class="fr pta r0"><img class="wp03" src="img/ico_index06fr.png" /></a>
+				</div>
+				<!--<div class="container">-->
+					<!--<div class="swiper-container">-->
+						<!--<div class="swiper-wrapper" repeat-id="r2">-->
+							<!--<div class="swiper-slide" ng-repeat="v in zbtypelistLate.slice(0,6)"  on-finish-render-filters >-->
+								<!--<li>-->
+									<!--<a ng-href="#/detail?zb=zb&serviceid={{v.epgs[0].channel_id}}&tsid={{(v.epgs[0].channel_sid).split('_')[1]}}&frequence={{v.epgs[0].channel_tid}}&startTime={{v.epgs[0].startTime}}&kankeId={{v.kankeid}}&vodId={{v.vodId}}&columnType={{v.classId}}&videoId={{v.videoId}}&englishName={{v.epgs[0].englishName}}&channelID={{v.epgs[0].channel_id}}&chaneseName={{v.epgs[0].chaneseName}}" class="J_a cff">-->
+										<!--<p class="size-cover ptr ovh" style="margin-bottom: 0;">-->
+											<!--<img class="J_img loading pta wp100 hp100 lazy" original="{{v.lpic}}" >-->
+											<!--<span class="zb_channel ellipsis"><img src="{{v.epgs[0].icon2}}" err-src="img/ico_df.png"/>{{v.epgs[0].chaneseName}}</span>-->
+										<!--</p>-->
+									<!--</a>-->
+								<!--</li>-->
+								<!--<div class="swiper-info">-->
+									<!--<p class="sec-text ellipsis">{{v.title}}</p>-->
+									<!--<p class="thi-text">{{v.epgs[0].startTime}}播出</p>-->
+									<!--<div class="btn-order {{v.isorder?'btn-orderActive':''}} right" ng-show="v.order_active" ng-click="ordertv(v,$index,'type')"></div>-->
+								<!--</div>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="pagination"></div>-->
+				<!--</div>-->
+				<ul class="list mt10 ovh" id="J_hot" repeat-id="r2">
+					<li class="li" ng-repeat="v in zbtypelistLate.slice(0,6)" on-finish-render-filters>
+						<a ng-href="#/detail?zb=zb&serviceid={{v.epgs[0].channel_id}}&tsid={{(v.epgs[0].channel_sid).split('_')[1]}}&frequence={{v.epgs[0].channel_tid}}&kankeId={{v.kankeid}}&vodId={{v.vodId}}&columnType={{v.classId}}&videoId={{v.videoId}}&englishName={{v.epgs[0].kankeChannel}}&channelID={{v.epgs[0].channel_id}}&chaneseName={{v.epgs[0].chaneseName}}" class="J_a cff">
+							<p class="size-cover ptr ovh" style="margin-bottom: 0;">
+								<img class="J_img loading pta wp100 hp100 lazy" original="{{v.lpic}}" >
+								<span class="J_icoadtime">{{v.epgs[0].startTime}}播出</span>
+								<span class="zb_channel ellipsis alic"><img src="{{v.epgs[0].icon2}}" err-src="img/ico_df.png"/>{{v.epgs[0].chaneseName}}</span>
+							</p>
+							<div class="tv_info">
+								<p class="til sec-text ellipsis alic">{{v.title}}</p>
+								<!--<p class="thi-text">{{v.epgs[0].startTime}}播出</p>-->
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="tyitem"  ng-show="zbtypelistTonight.length>0">
+				<div class="topline tlh ptr" style="text-align: center;">
+					<div class="dot-split-left  dot-split-grey"></div>
+					<div class="dot-split-right  dot-split-grey"></div>
+					今晚播
+					<a href="#/TVlive_list?t=2&startTime={{v.epgs[0].startTime}}&classId={{classId}}" class="fr pta r0"><img class="wp03" src="imgnew/rec01fr.png" /></a>
+				</div>
+				<!--<div class="container">-->
+					<!--<div class="swiper-container">-->
+						<!--<div class="swiper-wrapper" repeat-id="r2">-->
+							<!--<div class="swiper-slide" ng-repeat="v in zbtypelistTonight.slice(0,6)"  on-finish-render-filters >-->
+								<!--<li>-->
+									<!--<a ng-href="#/detail?zb=zb&serviceid={{v.epgs[0].channel_id}}&tsid={{(v.epgs[0].channel_sid).split('_')[1]}}&frequence={{v.epgs[0].channel_tid}}&startTime={{v.epgs[0].startTime}}&kankeId={{v.kankeid}}&vodId={{v.vodId}}&columnType={{v.classId}}&videoId={{v.videoId}}&englishName={{v.epgs[0].englishName}}&channelID={{v.epgs[0].channel_id}}&chaneseName={{v.epgs[0].chaneseName}}" class="J_a cff">-->
+										<!--<p class="size-cover ptr ovh" style="margin-bottom: 0;">-->
+											<!--<img class="J_img loading pta wp100 hp100 lazy" original="{{v.lpic}}" >-->
+											<!--<span class="zb_channel ellipsis"><img src="{{v.epgs[0].icon2}}" err-src="img/ico_df.png"/>{{v.epgs[0].chaneseName}}</span>-->
+										<!--</p>-->
+									<!--</a>-->
+								<!--</li>-->
+								<!--<div class="swiper-info">-->
+									<!--<p class="sec-text ellipsis">{{v.title}}</p>-->
+									<!--<p class="thi-text">{{v.epgs[0].startTime}}播出</p>-->
+									<!--<div class="btn-order {{v.isorder?'btn-orderActive':''}} right"  ng-click="ordertv(v,$index,'tonight')"></div>-->
+								<!--</div>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+					<!--<div class="pagination"></div>-->
+				<!--</div>-->
+				<ul class="list mt10 ovh" id="J_hot" repeat-id="r2">
+					<li class="li" ng-repeat="v in zbtypelistTonight.slice(0,6)" on-finish-render-filters>
+						<a ng-href="#/detail?zb=zb&serviceid={{v.epgs[0].channel_id}}&tsid={{(v.epgs[0].channel_sid).split('_')[1]}}&frequence={{v.epgs[0].channel_tid}}&kankeId={{v.kankeid}}&vodId={{v.vodId}}&columnType={{v.classId}}&videoId={{v.videoId}}&englishName={{v.epgs[0].kankeChannel}}&channelID={{v.epgs[0].channel_id}}&chaneseName={{v.epgs[0].chaneseName}}" class="J_a cff">
+							<p class="size-cover ptr ovh" style="margin-bottom: 0;">
+								<img class="J_img loading pta wp100 hp100 lazy" original="{{v.lpic}}" >
+								<span class="J_icoadtime">{{v.epgs[0].startTime}}播出</span>
+								<span class="zb_channel ellipsis alic"><img src="{{v.epgs[0].icon2}}" err-src="img/ico_df.png"/>{{v.epgs[0].chaneseName}}</span>
+							</p>
+							<div class="tv_info">
+								<p class="til sec-text ellipsis alic">{{v.title}}</p>
+								<!--<p class="thi-text">{{v.epgs[0].startTime}}播出</p>-->
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--今日看点-->
+		<div ng-show="tindex==3">
+			<div class="weui_tab">
+				<div class="scrolly" id="tody_scroll">
+					<div class="weui_leftbar">
+						<div class="weui_leftbar_item {{v==leftbarOn?'weui_bar_item_on':''}}" ng-repeat="v in leftbar" ng-click="changetime(v)">
+							{{v}}
+						</div>
+					</div>
+				</div>
+				<ul class="weui_lefttab_bd">
+					<li class="tab_bd_item ptr" ng-repeat="v in epgToday">
+						<a href="#/detail?zb=zb&serviceid={{v.channelId}}&tsid={{(v.channelSid).split('_')[1]}}&frequence={{v.channelTid}}&startTime={{v.startTime}}&kankeId={{v.kankeId}}&vodId=&columnType={{v.videoType}}&englishName={{v.kankeChannel}}&channelID={{v.channelId}}&chaneseName={{v.channelName}}">
+							<p class="img pta">
+								<img class="loading lazy" src="http://xmlip.kanketv.com/image/live/icon/{{v.kankeChannel}}.png" err-src="img/ico_df.png" style="display: block;">
+								<p class="sec-text ellipsis ng-binding pta b0 l10">{{v.channelName}}</p>
+							</p>
+							<div class="dt">
+									<p class="sec-text pb5 ellipsis">{{v.videoTitle}}</p>
+									<p class="thi-text ellipsis">{{v.flag==0?'已结束':(v.flag==1?'正在直播':v.startTime+'播出')}}</p>
+									<!--<a href="#detail?columnType={{v.videoType}}&videoId={{v.videoId}}">-->
+									<!--<span class="btn-db"></span>-->
+							</div>
+						</a>
+						<span class="{{v.flag==2?'btn-order':''}} {{v.isorder&&v.flag==2?'btn-orderActive':''}}" ng-click="ordertv(v,$index,'today',$event)"></span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--央视-卫视-地方台-轮播-->
+		<div ng-show="tindex==4">
+			<ul style="margin: .5rem .05rem 0rem;position: relative;">
+				<!--<div ng-show="tindex==3" class="btn-unfold {{!fold2?'active':''}}" ng-click="unfold(2)">-->
+					<!--位置：{{city}}-->
+				<!--</div>-->
+				<!--<div class="popul popleft" id="J_chose_md" ng-show="!fold2">-->
+					<!--<ul class="puul puul5">-->
+						<!--<li class="puli {{v==city?'active':''}}" ng-repeat="v in cities">-->
+							<!--<a class="tab-text {{v==city?'cf':''}}" href="javascript:;" ng-click="changeCity(v)">{{v}}</a>-->
+						<!--</li>-->
+					<!--</ul>-->
+				<!--</div>-->
+				<li class="tab_bd_item ptr" ng-repeat="v in livecates">
+					<a ng-href="#/detail?zb=zb&serviceid={{v.channelId}}&tsid={{(v.channelSid).split('_')[1]}}&frequence={{v.channelTid}}&startTime={{v.epgs[0].startTime}}&kankeId={{v.epgs[0].kankeId}}&vodId=&columnType={{v.videoType}}&videoId={{v.videoId}}&englishName={{v.kankeChannel}}&channelID={{v.channelId}}&chaneseName={{v.zh_name}}" class="tva alil ng-scope" >
+						<p class="img pta">
+							<img class="loading lazy" ng-src="{{v.icon}}" err-src="img/ico_df.png" style="display: block;">
+						</p>
+						<div class="dt live-box">
+							<p class="sec-text pb5 ellipsis">{{v.zh_name}}</p>
+							<p class="thi-text ellipsis">正在播出{{v.epgs[0].startTime}}{{v.epgs[0].videoTitle}}</p>
+							<p class="thi-text ellipsis" ng-show="v.epgs.length>1">即将播出{{v.epgs[1].startTime}}{{v.epgs[1].videoTitle}}</p>
+						</div>
+					</a>
+					<span class="{{v.epgs.length>1?'btn-order':''}} {{v.isorder?'btn-orderActive':''}}" ng-click="ordertv(v,$index,'live')"></span>
+					<span class="btn-tv"  ng-click="zbPlayLive((v.channelSid),v.channelId,v.en_name,v.channelTid)"></span>
+				</li>
+			</ul>
+		</div>
+		<p class="alic ptb">{{loadtext}}</p>
+		<p class="alic ptb" ng-show="loadtextLate&&loadtextNow&&loadtextTonight">抱歉该时间段暂时无节目</p>
+	</div>
+</div>

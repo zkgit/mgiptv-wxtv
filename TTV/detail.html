@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script src="js/config.js"></script>
+		<title>活动详情</title>
+		<style type="text/css">
+			.mmui-media-object {
+				width: 100%;
+			}
+			
+			.mmui-media-body {
+				text-align: center;
+			}
+			
+			.mmui-media-content {
+				background-color: #FFFFFF
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div id="ac_detail" class="mmui-media-content">
+				<img class="mmui-media-object" src="img/a1.png">
+				<div class="mmui-media-body">投票</div>
+			</div>
+			<ul class="mui-table-view">
+				<p class="mui-split">&nbsp;</p>
+				<div class="mytitle">
+					<div>618饕餮盛宴</div>
+				</div>
+				<ul class="mui-table-view mui-grid-view">
+					<li class="mui-table-view-cell mui-media mui-col-xs-6" ng-repeat="v in similarList1">
+						<a ng-href="{{v.productDetailLink}}"><img class="mui-media-object littlePic" ng-src="{{v.productPicLink}}" err-src="img/little.jpg">
+							<div class="mui-media-body">{{v.adName}}</div>
+						</a>
+					</li>
+					<div class="myblank">&nbsp;</div>
+				</ul>
+			</ul>
+		</div>
+	</body>
+
+</html>

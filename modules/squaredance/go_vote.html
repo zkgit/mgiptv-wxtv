@@ -1,0 +1,89 @@
+
+<div class="sd-vote  pb10">
+   <!-- <div class="headline headline-title ">
+        <a class="pta l10 cff fs16" href="javascript:;" id="J_back" back>
+            <img style="height: .2rem;" src="img/left-arrow.png" />
+        </a>
+        <p class="i-text alic ellipsis" id="J_til" >我要投票</p>
+    </div>-->
+    <div class="headimg">
+        <img src="img/vote_head.png" alt="">
+    </div>
+    <div class="vote">
+        <div class="fs16  cff alic ptr">
+            <div class="l l1"><div class="shadow"></div></div>
+
+            <div class="mt-12">您还有<span class="cred">{{votnum}}</span>次机会 </div>
+            <div class="vote-rule pta r0">
+                <div class="l l2"></div>
+                <a href="#/awards_show" class="fs12 cff bd-f plr5 dsib">查看投票规则
+                    <img src="" alt="">
+                </a>
+            </div>
+
+        </div>
+        <div class="sousuo pt10 fs14 alic">
+            <!--<div class="select cff fl" ng-click="showselect()">全省</div>-->
+            <input type="text" class="cff" placeholder="请输入队伍名称" ng-model="itemname">
+            <div ng-click="search()" class="cff fr plr5">搜索</div>
+        </div>
+    </div>
+    <ul class="list ovh" id="list">
+        <li class="item p10  alic" ng-repeat="v in list" on-finish-render-filters>
+                <p class="sec-text pb5 ovh item-title" ng-bind-html="v.title|trancode"></p>
+                <p class="piao"><span class="cred">{{v.votenums}}</span>票</p>
+                <div class="img ptr"><img class="pta lazy" original="http://wxiptv.api.mgtv.com/{{v.images1.split('http://10.255.0.218/')[1]}}" alt=""></div>
+               <div class="btn bgred dsib cff mt10" ng-click="govote(v)">投一票</div>
+        </li>
+        <!-- <li class="item p10  alic">
+             <p class="sec-text pb5">湘潭县欢乐腰鼓队《大姑娘美大姑娘浪》</p>
+             <p class="piao"><span class="cred">9232</span>票</p>
+             <div class="img ptr"><img ng-src="http://jscn.kanketv.com/image/poster/7B23FD104CBF450198D8D881F181CD6A.jpg" alt=""><img class="pta vd-btn" src="img/sd_vt_video.png" alt=""></div>
+             <div class="btn bgccc dsib cff mt10">已投</div>
+         </li>-->
+    </ul>
+    <div class="chosetv" ng-show="isselect">
+        <div class="select-box ptr">
+            <img src="img/sd_close.png" class="close pta r0" ng-click="hideselect()" alt="">
+            <div class="scroll-box  scrolly ">
+                <ul class="alic">
+                    <li class="active">全省</li>
+                    <li>长沙</li>
+                    <li>株洲</li>
+                    <li>湘潭</li>
+                    <li>衡阳</li>
+                    <li>邵阳</li>
+                    <li>岳阳</li>
+                    <li>长沙</li>
+                    <li>株洲</li>
+                    <li>湘潭</li>
+                    <li>衡阳</li>
+                    <li>邵阳</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="chosetv" ng-show="tips" ng-click="resetstate()" style="display: block;">
+        <div class="remotenew" ng-click="stopBubble($event)">
+            <div class="dsn" id="J_add" style="display: block;">
+                <p class="rn-sm fs14 cff">亲，您还未绑定机顶盒哦~</p>
+                <p class="rn-sm fs14 cff">请按以下步骤进行绑定：</p>
+                <p class="rn-sm fs14 cff">1、找到机顶盒首页下方的“微信电视”并进入；</p>
+                <p class="rn-sm fs14 cff">2、使用微信扫描二维码或在微信公众号内输入绑定码；</p>
+                <p class="rn-sm fs14 cff">3、微信公众号内提示“恭喜绑定成功！”即可。</p>
+                <p class="rn-bnts ovh" style="padding-top: 10px;">
+                    <a href="javascript:;" class="rn-btn rn-btn-a" id="J_add_qx" ng-click="resetstate()" >取消</a>
+                    <a href="#/mine_device" class="rn-btn" id="J_add_lj" ng-click="goto()">去绑定</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <p class="alic ptb cff" id="J_loading" ng-bind="loadtext"></p>
+</div>
+<style>
+    html,body{
+        height:100%;
+    }
+
+
+</style>

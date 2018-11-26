@@ -1,0 +1,29 @@
+<style>
+    body{background: #fff;}
+</style>
+<div class="html  wx_memb_buylist">
+    <div class="declare wx-memb-itex ">
+        <div class="declare_a">
+            <ul class="ul_title">
+                <li>时间</li>
+                <li>名称</li>
+                <li>金额</li>
+            </ul>
+            <div class="ul_content" >
+                <ul ng-repeat="v in list" ng-show="v.name">
+                    <li>{{v.createTime.split(' ')[0]}}</li>
+                    <li>{{v.name}}</li>
+                    <li>{{v.price}}元</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <p class="fs12 c66  buy_bot alic">
+        亲～购买记录显示可能会有所延迟, <br>
+        你可以稍等几分钟再来查看
+    </p>
+</div>
+
+
+
+

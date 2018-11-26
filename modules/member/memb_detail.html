@@ -1,0 +1,75 @@
+<div class="memb-detail">
+    <div class="headline headline-title ">
+        <a class="pta l10 cff fs16" href="javascript:;" id="J_back" back>
+            <img style="height: .2rem;" src="img/left-arrow.png" />
+        </a>
+        <p class="i-text alic ellipsis" id="J_til" >年卡九折购</p>
+    </div>
+    <div class="headimg">
+        <img src="img/memb_head.png" alt="">
+    </div>
+    <div class="tyitem" style="margin-top:0 ;">
+        <p class="sec-text ellipsis pt5">湖南IPTV年卡九折购 <span class="fr tab-text444">黄金会员年卡/钻石会员年卡</span></p>
+       <p class="cred">￥135.00-495.00</p>
+    </div>
+    <!--<div class="tyitem lh44" style="padding-bottom: 0">-->
+        <!--<p class="sec-text"> 请选择:版本 <img src="img/rec01fr.png" class="rjian fr" alt=""></p>-->
+    <!--</div>-->
+    <!--<div class="tyitem cred alic lh44" style="padding-bottom: 0">商品详情</div>-->
+    <!--<div class="alic lh44 cff bgorenge bdfix b0" ng-click="showinfo()">立即购买</div>-->
+    <div class="alic lh44 cff bgorenge bdfix b0" ng-click="sub_order()">{{submission?'立即购买':'提交订单中...'}}</div>
+        <div class="info-cover {{ isshowinfo?'show':''}} ptr">
+                <div class="summary bdb p10 ovh pta ">
+                        <img class="mr10 fl s_head" ng-src="img/memb_head.png" alt="">
+                        <div class="main">
+                            <p class="sec-text ellipsis lh44">湖南IPTV年卡九折购</p>
+                            <p class="cred lh44">￥135.00-495.00</p>
+                        </div>
+                    <div class="closebtn pta r0" ng-click="closeinfo()"><img src="img/memb_close.png" alt=""></div>
+                </div>
+
+            <div class="cover-m pta plr scrolly">
+                <div class="sku-control  pt10">
+                    <p class="sec-text pb10">版本：</p>
+                    <ul class="memb-card bdb ovh">
+                        <li class="">黄金会员年卡</li>
+                        <li class="">钻石会员年卡</li>
+                        <li class="">钻石会员半年卡</li>
+                        <li class="active">钻石会员季卡</li>
+                    </ul>
+                </div>
+                <div class="number plr pt10">
+                    <div class="bdb pb10 ovh">
+                        <p class="sec-text fl">购买数量：</p>
+                        <div class="number-control   fr">
+                            <button type="button" class="decrease  disabled">-</button>
+                            <input type="number" class="num" value="1" min="1" max="543116" step="" name="quantity">
+                            <button type="button" class="increase">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="preson-info">
+                    <div class="devicenum ptr pt10 bdb">
+                        <p class="cred fs12">提示：请务必在机顶盒的用户中心确认设备号</p>
+                        <div class="ovh lh44">
+                            <span class="sec-text"><span class="cred dsib pr5">*</span>设备号</span>
+                            <input type="text" placeholder="请输入或选择绑定的设备激活">
+                        </div>
+                        <div class="pta alic  chose r0">选择</div>
+                    </div>
+                    <div class="phone bdb">
+                        <div class="ovh lh44">
+                            <span class="sec-text"><span class="cred dsib pr5">*</span>手机号</span>
+                            <input type="text" placeholder="请输入您的手机号">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="sback" aria-label="关闭" data-spm-anchor-id="a222m.7628550/A.0.0"></a>
+            <div class="alic lh44 cff bgorenge bdfix b0">下一步</div>
+        </div>
+    <div class="cover-decision dsb" ng-show="isshowinfo">
+    </div>
+    </div>
+</div>

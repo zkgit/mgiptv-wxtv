@@ -1,0 +1,54 @@
+<div class="headline headline-title headline-fixed">
+	<a class="pta l10 cff fs16" href="javascript:;" id="J_back" back>
+		<img style="height: .2rem;" src="img/left-arrow.png" />
+	</a>
+	<p class="i-text alic" id="J_tiptil">人物简介</p>
+</div>
+<div class="tyitem profile" style="margin-top: .44rem;">
+	<div class="dt-mess ptr pt10" style="border-bottom: 0 solid #ddd;">
+		<p class=" pta mt10 dt-img" id="J_image"><img ng-src="{{actor0.localImageSmall?actor0.localImageSmall:'img/mxdefault.png'}}"></p>
+		<p class="tab-text ellipsis pb10">{{actor0.actorName}}</p>
+		<div class="sec-text888">
+			<!--<p class="ellipsis pb10">性别：{{actor0.sex==true?'男':'女'}}</p>-->
+			<!--<p class="ellipsis pb10">出生地：{{actor0.region}}{{actor0.city}}</p>-->
+			<!--<p class="ellipsis pb10">生日：{{actor0.birthday}}</p>-->
+			<!--<p class="ellipsis pb10">星座：{{actor0.starArea}}</p>-->
+			<!--<p class="ellipsis pb10">职业：{{actor0.representativeWorks}}</p>-->
+			<p class="ellipsis pb30"></p>
+			<p class="ellipsis pb30"></p>
+			<p class="ellipsis pb30"></p>
+			<p class="ellipsis pb30"></p>
+			<p class="ellipsis pb30"></p>
+		</div>
+	</div>
+	<div class="sec-text888 pb10">简介:{{introduce}}</div>
+	<div style="margin:0 auto;text-align: center;">
+		<img class="{{fold?'fold':'unfold'}}" ng-click="unfold()" src="img/rec01fr.png" />
+	</div>
+</div>
+<div class="tyitem" style="display: none;">
+	<div class="recos pt10" id="J_list" ng-show="tjshow">
+		<p class="fs16 c33 lh30">热门图片</p>
+		<ul class="list ovh" id="J_topimg">
+			<li class="li" ng-repeat="v in tjlist">
+				<a ng-href="#" class="J_a cff">
+					<p class="size-cover ptr ovh"><img class="J_img lazy loading pta" ng-src="{{v.image}}"></p>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="tyitem">
+	<div class="recos pt10" id="J_list" ng-show="tjshow">
+		<p class="tab-text lh30">相关影片</p>
+		<ul class="list ovh" id="J_topimg">
+			<li class="li" ng-repeat="v in tjlist">
+				<a ng-href="#detail?kankeId={{v.kankeId}}&vodId={{v.vodId}}&columnType={{v.classId|vtype}}&videoId={{v.id}}" class="J_a cff">
+					<p class="size-cover ptr ovh"><img class="J_img lazy loading pta" ng-src="{{v.image}}"></p>
+					<p class="sec-text ellipsis pt5">{{v.title}}</p>
+				</a>
+			</li>
+		</ul>
+		<p class="alic ptb" id="J_loading" ng-bind="loadtext"></p>
+	</div>
+</div>

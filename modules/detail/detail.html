@@ -1,0 +1,333 @@
+<div class="db-detail detial bgcfff pb10">
+	<div class="headline headline-title bdb">
+		<a class="pta l10 cff fs16" href="javascript:;" id="J_back" back>
+			<img style="height: .2rem;" src="img/left-arrow.png" />
+		</a>
+		<p class="i-text alil ellipsis" id="J_til" >{{detail.title}}</p>
+	</div>
+	<div ng-show="wholeshow">
+		<!--海报叠加效果点播正常显示-->
+		<!--<div class="headimg" style="height:1.96rem;overflow:hidden;background: url({{detail.bpic}}) center top  no-repeat;background-attachment: fixed; background-size:1000%  1000% "  ng-hide="!detail.title">-->
+		<!--&lt;!&ndash;<div class="poster-bd-lj"></div>&ndash;&gt;-->
+		<!--<div class="poster-lj"></div>-->
+		<!--<img  ng-repeat="v in bpicitems" on-finish-render-filters original="{{v.bpic}}" style="position: absolute" class="lazy {{v.class}}" />-->
+		<!--</div>-->
+		<!--<div class="headimg" style="height:auto;width:100%;overflow:hidden;" ng-show="sc.zb">-->
+		<!--<video  id="J_video" src=""  webkit-playsinline playsinline x-webkit-airplay="true" x5-video-player-type='h5' x5-video-player-fullscreen='true'  autoplay="autoplay"  controls="controls" style="margin-top: .445rem;width: 100%;height: auto;max-height: 100%;display: block;font-size: 0"></video>-->
+		<!--</div>-->
+		<div class="tyitem ptr mb10" ng-show="detail.title">
+			<div class="tab-text444 pt20 pb10 ovh">
+				<img src="{{detail.bpic}}" err-src="img/icon_mine.jpg" class="poster-bq-left mr10" />
+				<div class="bq-right">
+					<p class="i-text2 ellipsis">{{detail.title?detail.title:'暂无'}}</p>
+					<div class="tag pt5 pb5"><span  ng-repeat="vv in detail.tags.split(';').slice(0,3)">{{vv}}</span></div>
+					<p class=" ellipsis"><span class="sec-text">年份：</span>{{detail.year?detail.year:'暂无'}}</p>
+					<div class="h100 pt5 detailEllipsis" ><span class="sec-text">简介：</span>{{detail.shortdes.substr(0,45)}}...</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div  class="tyitem" style="height: .44rem;color: #888;background-color: #fff;margin-top:0" id="juLi"  ng-show="!sc.zb">
+			<!--<p class="pt10 i-text2 ellipsis fl"><span class="ellipsis fl" style="max-width: 1.9rem">{{detail.title?detail.title:'暂无'}}</span></p>-->
+			<div class="bdb">
+				<div class="comment" ng-click="commentfocus(0,'','')"></div><span style="height: .44rem;line-height: .44rem;">{{commons|to_wan}}</span>
+				<!--<div class="commented" ng-click="commentfocus(0,'','')"></div><span style="height: .44rem;line-height: .44rem;">写评论({{commons|to_wan}})</span>-->
+				<div class="share"></div>
+				<!--<span style="float: right;height: .44rem;line-height: .44rem;">收藏</span>-->
+				<div class="heart {{is_collect?'heartActive':''}}" ng-click="collect()"></div>
+				<span style="width:1px;height:.24rem;background: #e5e5e5;display: inline-block;float: right;position: relative;top:.1rem;"></span>
+				<span style="float: right;height: .44rem;line-height: .44rem;margin-right: 0.08rem;">赞({{likenum|to_wan}})</span>
+				<div class="like {{is_like?'likeActive':''}}" ng-click="like()"></div>
+			</div>
+		</div>
+		<!--<div class="tyitem ptr" style="margin-top: 0;padding-bottom: 0" ng-show="detail.title&&sc.zb" >
+            <div class="ptar" style="z-index: 1">
+                <img class="{{fold1?'fold':'unfold'}}" ng-click="unfold(1)" src="img/rec01fr.png" />
+            </div>
+            <div class="tab-text444 pt5">
+                <img src="{{detail.bpic}}" err-src="img/icon_mine.jpg" class="poster-bq-left" />
+                <div class="bq-right">
+                    <p class="pt10 i-text2 ellipsis" id="J_vtitle"><span class="ellipsis fl" style="max-width: 1.4rem">{{detail.title?detail.title:'暂无'}}</span><span style="font: 15px georgia;color: #ac8655;">{{detail.score}}分</span></p>
+                    <p class="pt5 ellipsis" id="J_director" ng-bind="detail.director?'导演：'+detail.director:'导演：暂无'"></p>
+                    <p class="pt5 ellipsis" id="J_actor" ng-bind="detail.actor?'主演：'+detail.actor:'主演：暂无'"></p>
+                    <p class="pt5 ellipsis" id="J_type" ng-bind="detail.tags?'类型：'+detail.tags:'类型：暂无'"></p>
+                    <p class="pt5 ellipsis" id="J_year" ng-bind="detail.year?'年代：'+detail.year:'年代：暂无'"></p>
+                </div>
+                <div class="pt10 dt-intro pb20 tab-text888" id="J_showintro"  >
+                    <p>剧情介绍</p>
+                    <div  ng-bind="detail.shortdes" ng-show="fold1"></div>
+                    <div id="J_desc_part" ng-bind="detail.description" ng-show="!fold1"></div>
+                </div>
+            </div>
+        </div>-->
+		<!--	<div class="tyitem" style="margin-top: 0;" ng-show="!sc.zb">
+                <div class="tab-text888 pb20">
+                    <p class="pt10 ellipsis"><span class="fl ellipsis " style="width:2.8rem;" ng-bind="detail.director?'导演：'+detail.director:'导演：暂无'"></span><span style="font: 15px georgia;color: #ac8655;" class="fr">{{detail.score}}分</span></p>
+                    <p class="pt10 ellipsis"  ng-bind="detail.actor?'主演：'+detail.actor:'主演：暂无'"></p>
+                    <p class="pt10 ellipsis"  ng-bind="detail.tags?'类型：'+detail.tags:'类型：暂无'"></p>
+                    <p class="pt10 ellipsis"  ng-bind="detail.year?'年代：'+detail.year:'年代：暂无'"></p>
+                    <div class="pt10 dt-intro tab-text888">
+                        <p class="ptr"><span>剧情介绍</span><span class="fr ptar" style="position: absolute;top: -.1rem;right: 0;"><img class="{{fold1?'fold':'unfold'}}" ng-click="unfold(1)" src="img/rec01fr.png" /></span></p>
+                        <div  ng-bind="detail.shortdes" ng-show="fold1"></div>
+                        <div  ng-bind="detail.description" ng-show="!fold1"></div>
+                    </div>
+                </div>
+            </div>-->
+		<!--<div class="tyitem" ng-show="!sc.zb">-->
+		<!--<div class="tyitem" ng-hide="detail.videoType=='film'||sc.zb">-->
+		<!--<p class="tab-text pt10" >{{detail.videoType!='film'?'剧集':'播放源'}}-->
+		<!--<span style="display: block; width: 86%; font-size: 0.14rem;float: right;  color: #888;">更新至{{nottv_darma_total}}集</span>-->
+		<!--</p>-->
+		<!--<div class="episode pb10" >-->
+		<!--<div class="scrollx pt10">-->
+		<!--<div class="scrolly" style="float:left; width: 100%;">-->
+		<!--<table >-->
+		<!--<tr id="J_details_b">-->
+		<!--<td ng-repeat="v in fadedmt" ng-show="detail.videoType!='film'">-->
+		<!--<a href="javascript:;" class="tvls fwb ellipsis {{$index==fdindex?'active':''}}" ng-click="getdm($index+1)">{{$index*10+1}}-{{($index+1)*10}}</a>-->
+		<!--</td>-->
+		<!--</tr>-->
+		<!--</table>-->
+		<!--</div>-->
+		<!--</div>-->
+		<!--<ul class="ovh dm {{detail.columnType}}" ng-if="f" id="J_tv_show" >-->
+		<!--{{nottv_darma?'':'暂无该剧集'}}-->
+		<!--&lt;!&ndash;{{$index==daindex?'mui-bg-primary':''}}剧集高亮显示&ndash;&gt;-->
+		<!--<a href="javascript:;" data-eq="1" class="epils ellipsis {{$index}} {{daindex}} {{$index==daindex?'':''}}" ng-repeat="v in nottv_darma" ng-click="gotoplay($index,v.link,v.code)">{{v.title}}</a>-->
+		<!--</ul>-->
+		<!--<ul class="ovh dm {{detail.columnType}}" ng-if="!f" id="J_nottv_show">-->
+		<!--{{nottv_darma?'':'暂无该剧集'}}-->
+		<!--<a href="javascript:;" data-eq="1" class="epils epilsa ellipsis {{$index==daindex?'':''}}" ng-repeat="v in nottv_darma" ng-click="gotoplay($index,v.link,v.code)">{{v.title}}-{{v.description?v.description:detail.title}}</a>-->
+		<!--</ul>-->
+		<!--</div>-->
+		<!--</div>-->
+		<!--</div>-->
+
+		<div class="tyitem" ng-show="sc.zb" id="J_jmtop">
+			<img class="loading lazy pt5" src="http://ikanpic.kanketv.com/image/live/icon2/{{sc.englishName}}.png" err-src="img/ico_df.png" style="width: .3rem;float: left;">
+			<span class="tab-text lh44 ml5">{{sc.chaneseName}}</span>
+			<div class="dt-tab-panel" id="J_jmlistbox">
+				<p class="J_jmlist_time ovh pb10" id="J_jmlist_time" style="border-bottom: 1px solid #DFDFDF;">
+					<a href="javascript:;" ng-repeat="v in jmtime" class="jm-time {{$index==jmtimeeq?'active':''}} {{$index<3?'becolor':''}} {{$index>3?'afcolor':''}} {{$index==3?'cecolor':''}} " data-time="{{v.timestr}}" ng-click="changeday($index,v.timestr)">{{$index!=3?v.day:'今天'}}</a>
+				</p>
+				<div class=" scrolly" id="J_scroll_go">
+					<ul class="list" id="J_jmlist">
+						<li class="ptr card" ng-repeat="v in jmlist" on-finish-render-filters>
+							<a href="javascript:;" class="jm-l ellipsis {{v.active?'active':''}}" eq="{{$index}}">{{v.startTime}}  {{v.title}}
+								<span  ng-show="v.order_active" class="timer {{v.isorder==1?'timerActive':''}}" ng-click="ordertv(v,$index)"></span>
+								<a href="#detail?columnType={{v.videoType}}&videoId={{v.videoId}}">
+									<!--<span class="play"></span>-->
+									<!--节目单的按钮先隐藏了-->
+								</a>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<!--<div class="tyitem" ng-show="!sc.zb&&sameProgram">-->
+		<!--<div style="float: right;margin-top: -.1rem;">-->
+		<!--<img class="{{fold3?'fold':'unfold'}}" ng-click="unfold(3)" src="img/rec01fr.png" />-->
+		<!--</div>-->
+		<!--<p class="tab-text">节目预告</p>-->
+		<!--<ul class="list ovh jm-pre" id="J_list">-->
+		<!--<li class="ptr mb10" ng-repeat="v in zblist" style="display: {{$index<2||!fold3?'block':'none'}};">-->
+		<!--<p class="img pta">-->
+		<!--<img class="loading lazy" src="{{v.list[0].icon2}}" error="assets/images/ico_df.jpg" style="display: block;">-->
+		<!--</p>-->
+		<!--<div class="dt">-->
+		<!--<p class="thi-text ellipsis">{{v.list[0].chaneseName}}</p>-->
+		<!--<p class="tab-text888 ellipsis clock {{i.isorder==1?'clockActive':''}}" ng-click="ordertv(i,$index,zblist)" style="width: 2rem;" ng-repeat="i in v.list">{{i.startTime.slice(5)}} {{i.title}}</p>-->
+		<!--&lt;!&ndash;<p class="tab-text888 ellipsis clock" style="padding-top: .06rem;">04-28 20:45 欢乐颂 第12集</p>&ndash;&gt;-->
+		<!--</div>-->
+		<!--</li>-->
+		<!--</ul>-->
+		<!--</div>-->
+		<div class="tyitem pb0 pt20" ng-show="actorlist.length>0" >
+			<!--<div style="float: right;">
+                <span class="sec-text888">共{{actorlist.length}}位</span>
+            </div>-->
+			<p class="tab-text">演职员</p>
+			<div class="actorlist scrolly ">
+				<table>
+					<tr>
+						<td ng-repeat="v in actorlist">
+							<a class="actor" href="#profile?name={{v.actorName}}&actorId={{v.id}}&did={{sc.did}}" >
+								<div><img src="{{v.localImageSmall}}" err-src="img/mxdefault.png"  />
+									<p class="tab-text888 ellipsis">{{v.actorName}}</p>
+								</div>
+							</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="pb20 bdb"></div>
+		</div>
+		<div class="tyitem" ng-show="tjshow">
+			<div class="tab-text topline ptr" style="padding-left: 0;margin-left: 0;">
+				相关推荐
+				<a href="#/iti?columnType={{sc.columnType}}&kankeId={{sc.kankeId}}&vodId={{detail.videoId}}" class="fr"><img src="img/rec01fr.png" /></a>
+			</div>
+			<ul class="list ovh" id="J_topimg" ng-show="tjshow">
+				<li class="li" ng-repeat="v in tjlist">
+					<a href="#/{{sc.iti?'detail':'iti_detail'}}?columnType={{v.classId|vtype}}&videoId={{v.vodId}}&kankeId={{v.kankeId}}&vodId={{v.vodId}}&iti={{sc.iti?'':'true'}}" class="J_a cff">
+						<p class="size-cover ptr ovh"><img class="J_img lazy loading pta" ng-src="{{v.image}}"></p>
+						<p class="sec-text ellipsis pt5">{{v.title}}</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="tyitem">
+			<p class="tab-text lh30">评论</p>
+			<div class="sentmsg ptr">
+				<img ng-src="{{headimg?headimg:'img/default.jpg'}}" class="cm-img pta" id="J_heading" style="height: .40rem;">
+				<p class="pt5"><input contenteditable="true" type="text" class="cm-text dsb" id="J_text" placeholder="{{tip}}" ng-model="commenttext"  style="-webkit-user-modify: read-write-plaintext-only;"/></p>
+				<a href="javascript:;" class="cm-btn alic pta r0 dsb" id="J_sent" ng-click="senttext()">发送</a>
+			</div>
+			<div class="cm-list" id="J_comment">
+				<div ng-repeat="v in pllist" style="border-bottom: 1px solid #f0f0f0; padding: .1rem 0;">
+					<div class="cm-li">
+						<img ng-src="{{v.headImgUrl}}" style="height: .40rem;" class="cm-img pta">
+						<p class="comment-name" ng-bind="v.nickName"></p>
+						<p class="comment-time" ng-bind="v.addTime|time_one"></p>
+						<div class="comment comment-ico"style="float: right;" ng-click="commentfocus(v.id,v.nickName,2)"></div>
+					</div>
+					<div class="sec-text" ng-bind="v.context"></div>
+					<div class="comment-back" ng-show="v.parentList.length>0">
+						<div class="comment-name" ng-repeat="back in v.parentList" style="display: {{$index<3||!fold4?'block':'none'}};">{{back.nickname}}:
+							<span class="sec-text">{{back.context}}</span>
+							<span class="comment-time">{{back.addtime|time_one}}</span>
+						</div>
+						<div ng-show="v.parentList.length>3" class="thi-text" style="text-align:center;" ng-if="fold4" ng-click="unfold(4)">查看全部{{v.parentList.length}}条回复
+							<span>></span>
+						</div>
+						<div ng-show="v.parentList.length>3" class="thi-text" style="text-align:center;" ng-if="!fold4" ng-click="unfold(4)">收回全部回复</div>
+					</div>
+				</div>
+				<div ng-show="pllist.length>6" class="thi-text" style="text-align:center; "ng-if="fold4" ng-click="unfold(4)">查看全部{{pllist.length}}条留言
+					<span></span>
+				</div>
+			</div>
+		</div>
+		<!--<div class="tyitem" style="padding: 0;height: .49rem;position: fixed;bottom: 0;width: 100%;" ng-show="sc.zb">
+            <div class="zbtvplay" ng-click="playtv()"></div>
+        </div>-->
+		<!--<div class="tyitem" style="padding: 0;height: .49rem;position: fixed;bottom: 0;width: 100%;" ng-show="!sc.zb">-->
+		<!--<div class="tvbg">-->
+		<!--<div class="tvplay" ng-click="playtv()"></div>-->
+		<!--</div>-->
+		<!--<div class="cellbg">-->
+		<!--<div class="cellplay" ng-click="playmb()"></div>-->
+		<!--</div>-->
+		<!--</div>-->
+		<!--<div class="tyitem" style="padding: 0;height: .49rem;position: fixed;bottom: 0;width: 100%;" ng-show="!sc.zb">-->
+		<!--<div class="tvbg">-->
+		<!--<div class="tvplay" ng-click="playtv()"></div>-->
+		<!--</div>-->
+		<!--<div class="cellbg">-->
+		<!--<div class="cellplay" ng-click="playmb()"></div>-->
+		<!--</div>-->
+		<!--<div class="zbtvplay" ng-click="playtv()"></div>-->
+	</div>
+	<div class="chosetv" ng-show="tips" ng-click="resetstate()" style="display: block;">
+		<div class="remotenew" ng-click="stopBubble($event)">
+			<div class="dsn" id="J_add" style="display: block;">
+				<p class="rn-sm fs14 cff">亲，您还未绑定机顶盒哦~</p>
+				<p class="rn-sm fs14 cff">请按以下步骤进行绑定：</p>
+				<p class="rn-sm fs14 cff">1、找到机顶盒首页下方的“微信电视”并进入；</p>
+				<p class="rn-sm fs14 cff">2、使用微信扫描二维码或在微信公众号内输入绑定码；</p>
+				<p class="rn-sm fs14 cff">3、微信公众号内提示“恭喜绑定成功！”即可。</p>
+				<p class="rn-bnts ovh" style="padding-top: 10px;">
+					<a href="javascript:;" class="rn-btn rn-btn-a" id="J_add_qx" ng-click="resetstate()" >取消</a>
+					<a href="#/mine_device" class="rn-btn" id="J_add_lj" ng-click="goto()">去绑定</a>
+				</p>
+			</div>
+		</div>
+	</div>
+	<!--点播电视推送弹出小窗-->
+	<div class="chosetv" ng-show="diTips" ng-click="dibble()" style="display: block;">
+		<div  ng-click="stopBubble($event)" ng-show="tvPop">
+			<!--电视推送开始-->
+			<div class="tyitem"  ng-hide="detail.videoType=='film'||sc.zb" style="position: fixed;top: 1.5rem;left: 0.15rem;z-index: 11;width: 3.25rem;border-radius: 5px;">
+				<p class="tab-text pt10" >{{detail.videoType!='film'?'剧集':'播放源'}}
+					<span style="display: block; width: 86%; font-size: 0.14rem;float: right;  color: #888;">更新至{{nottv_darma_total}}集</span>
+				</p>
+				<div class="episode pb10" >
+					<div class="scrollx pt10">
+						<div class="scrolly" style="float:left; width: 100%;">
+							<table >
+								<tr id="J_details_b">
+									<td ng-repeat="v in fadedmt" ng-show="detail.videoType!='film'">
+										<a href="javascript:;" class="tvls fwb ellipsis {{$index==fdindex?'active':''}}" ng-click="getdm($index+1)">{{$index*10+1}}-{{($index+1)*10}}</a>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<!--<span style="display: block; float: right; width: 25%; font-size: 0.14rem; height: .4rem; line-height: 0.4rem; color: #888;">更新至{{nottv_darma.length}}集</span>-->
+					</div>
+					<ul class="ovh dm {{detail.columnType}}" ng-if="f" id="J_tv_show" >
+						{{nottv_darma?'':'暂无该剧集'}}
+						<a href="javascript:;" data-eq="1" class="epils ellipsis {{$index==daindex?'':''}}" ng-repeat="v in nottv_darma" ng-click="gotoplay($index,v.link,v.assetCode)">{{v.title}}</a>
+					</ul>
+					<ul class="ovh dm {{detail.columnType}} scrolly" ng-if="!f" id="J_nottv_show" style="max-height: 2.3rem;">
+						{{nottv_darma?'':'暂无该剧集'}}
+						<a href="javascript:;" data-eq="1" class="epils epilsa ellipsis {{$index==daindex?'':''}}" ng-repeat="v in nottv_darma" ng-click="gotoplay($index,v.link,v.assetCode)">{{v.title}}-{{v.description?v.description:detail.title}}</a>
+					</ul>
+				</div>
+			</div>
+			<!--结束-->
+		</div>
+		<!--++手机观看开始++-->
+		<div  ng-click="stopBubble($event)" ng-show="mbPop">
+			<div class="tyitem" style="position: fixed;top: 1.5rem;left: 0.15rem;z-index: 11;width: 3.25rem;border-radius: 5px;">
+				<!--播放源-->
+				<div ng-show="detail.videoType!='film'&&details.length>0" class="tab-text888 sourse-choose" ng-click="unfold(2)">播放源：{{dm.key_zh}}
+					<img src="{{detail.details[dm.dindex].image}}" style="width:0.22rem;margin-right:-5px;"/>
+					<img class="{{fold2?'fold':'unfold'}}" src="img/rec01fr.png" />
+					<div class="popul popright" id="J_chose_md" ng-show="!fold2">
+						<ul class="puul ">
+							<li class="puli" style="padding: .1rem;" ng-repeat="v in detail.details">
+								<img src="{{v.image}}" alt="" style="width: 0.22rem;">
+								<a href="javascript:;" class="tab-text888" ng-click="getPlaySource(v.key_en,$index,v.key)">{{v.key}}</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!--左上角剧集标题以及剧集1-10或者+-->
+				<p class="tab-text pt10  wp50" >{{detail.videoType!='film'?'剧集':'播放源'}}
+					<span style="display: block; width: 68%; font-size: 0.14rem;float: right;  color: #888;" ng-hide="detail.videoType=='film'||details.length==0">更新至{{phone_total}}集</span>
+				</p>
+				<div class="episode pb10" >
+					<div class="scrollx pt10 ">
+						<div class="scrolly" style="float:left;width: 100%">
+							<table>
+								<tr id="J_details_b">
+									<td ng-repeat="v in phone_total_daram" ng-show="detail.videoType!='film'">
+										<a href="javascript:;" class="tvls fwb ellipsis {{$index==fdindexM?'active':''}}" ng-click="getMobiledm($index+1)">{{$index*10+1}}-{{($index+1)*10}}</a>
+									</td>
+									<td ng-repeat="v in detail.details" ng-show="detail.videoType=='film'">
+										<a href="javascript:;" class="tvls fwb ellipsis tab-text888" ng-click="gotoMobilePlay(v.link)">{{v.key}}</a>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<!--剧集列表显示-->
+					<ul class="ovh dm {{detail.columnType}} " ng-if="f" id="J_tv_show" >
+						<a href="javascript:;" data-eq="1" class="epils ellipsis " ng-repeat="v in phone_darma" ng-click="gotoMobilePlay(v.link)">{{v.deTitle}}</a>
+					</ul>
+					<ul class="ovh dm {{detail.columnType}} scrolly" style="max-height: 2.3rem;" ng-if="!f"  id="J_nottv_show">
+						{{details.length==0?'暂无':''}}
+						<a href="javascript:;" ng-hide="detail.videoType=='film'" data-eq="1" class="epils epilsa ellipsis" ng-repeat="v in phone_darma" ng-click="gotoMobilePlay(v.link)">{{v.deTitle}}-{{v.description?v.description:detail.title}}</a>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--结束-->
+	</div>
+</div>
+<!--加载提示-->
+<p class="alic ptb"  id="J_loading" style="position: fixed;top: 2.4rem;left: 1.15rem;" ng-show="loadtextshow"><img src="img/loading.gif" alt="" style="margin-right: .1rem">正在玩命加载...</p>
+</div>

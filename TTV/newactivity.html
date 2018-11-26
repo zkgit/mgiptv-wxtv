@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet" />
+    <script src="js/angular.min.js"></script>
+    <script src="js/jquery-1.3.2.min.js"></script >
+    <script src="js/getRequest.js"></script>
+
+    <title>活动</title>
+    <style type="text/css">
+        body{
+            margin-top: -10px;
+        }
+        .info{
+            position: absolute;
+            left:0;
+            top:0;
+            right:0;
+            bottom:0;
+            margin:auto;
+            height:30px;
+            color:#fff;
+            font-size: 30px;
+            font-family: "黑体";
+        }
+
+        @media (min-width: 540px) {
+            .info{
+                font: 40px/ 1.5 Microsoft YaHei, Helvitica, Verdana, Arial, san-serif;
+            }
+        }
+        .mmui-media-object {
+            width: 100%;
+        }
+        a.hot{
+            position: relative;
+            text-align: center;
+            display: block;
+            overflow: hidden;
+        }
+
+    </style>
+</head>
+<body>
+<div class="mui-content"  ng-app="myapp" ng-controller="activityCtr">
+    <ul class="mui-table-view mmui-media-object" id="J_list">
+        <li>
+            <a ng-href="goodList.html">
+                <img class="lazy mmui-media-object littlePic" original="img/banner1.jpg" src="img/big.jpg" error="img/big.jpg">
+            </a>
+       </li>
+        <li>
+            <a class="hot" ng-href='list.html?channelId={{sc}}'>
+                <div class="info">近期热门推荐</div>
+                <img class="lazy mmui-media-object littlePic" original="img/view.png" src="img/big.jpg" error="img/big.jpg">
+            </a>
+        </li>
+    </ul>
+</div>
+<p class="alic ptb" id="J_loading" ng-bind="loadtext"></p>
+</body>
+<script>
+    // 懒加载
+    var lazyload = function(option) {
+        function bindappear() { // 绑定事件
+            _this.imgs.each(function(i, n)
+            {
+                var self = $(this);
+
+                if (self.data('loaded') != 1 && self.attr("original")) {
+                    self.one("appear", function() {
+                        var img = new Image,
+                             src = self.attr("original");
+                         img.src = src;
+                        img.onload = function() {
+                            self.hide().attr("src", src).removeClass('lazy').fadeIn();
+                        }
+                        img.onerror = function() {
+                            self.hide().attr("src", self.attr('error')).removeClass('lazy').fadeIn();
+                        }
+                    });
+                    self.data('loaded', 1);
+                }
+            });
+        }
+
+        function setarr() { // 重置数组
+            _this.srcarr = [];
+            for (var i = 0,len=_this.imgs.length; i < len; i++) {
+                _this.srcarr.push(_this.imgs.eq(i).offset().top);
+                _this.imgs.eq(i).loaded = true;
+            }
+        }
+        var _this = this;
+        _this.imgs = $(option.elm).find(option.class);
+        bindappear();
+        _this.srcarr = [];
+        _this.isoff = false;
+        _this.winh = window.innerHeight; //浏览器显示区的高度
+        setarr();
+        _this.setlazy = function(imgs) { // 抛出的图片加载事件
+            _this.imgs = imgs;
+            setarr();
+            bindappear();
+            $(window).trigger("scroll");
+        }
+        _this.timer = null;
+        $(window).scroll(function() {
+            clearTimeout(_this.timer);
+            if (_this.isoff) {
+                return false;
+            }
+            _this.timer = setTimeout(function(){
+                var scrollTop = $(window).scrollTop();
+                for (var i = 0,len1=_this.srcarr.length; i <len1 ; i++) {
+                    if (_this.srcarr[i] > 0 && _this.srcarr[i] <= (scrollTop + _this.winh + option.outbot)) {
+                        _this.imgs.eq(i).trigger("appear");
+                        _this.srcarr[i] = -1;
+                    }
+                }
+            }, 10);
+        });
+        $(window).trigger("scroll");
+        return this;
+    }
+    var app = angular.module('myapp', []);
+    app.controller('activityCtr', function($scope) {
+        $scope.sc=getRequest().channelId;
+        $scope.lazy = new lazyload({
+            'class': '.lazy',
+            'elm': '#J_list',
+            'outbot': 100
+        });
+        $scope.loadtext= '正在加载···';
+    });
+</script>
+</html>

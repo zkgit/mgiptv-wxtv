@@ -1,0 +1,1 @@
+{"list":[{"boxId":"8120011555992233","boxName":"","random":"970ucp","state":"1","stb":"0"},{"boxId":"8120011555920233","boxName":"","random":"96zasp","state":"0","stb":"0"}],"active":"8120011555992233"}

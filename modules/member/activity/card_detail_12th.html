@@ -1,0 +1,51 @@
+<style>
+    body{background: #fff;}
+</style>
+<div class="html">
+    <div class="wx_card_detail_12">
+        <div class="top">
+              <div class="img cff fs14">
+                  <p class="fs18 fwb pb10 ovh">{{detail.name}} <span class="fr" style="width:auto;">{{detail.price}}<span class="fs15 fwn">元</span></span></p>
+                  <p class="">激活号码 <span class="fr ellipsis ">{{detail.code==0?'':detail.code}}</span></p>
+                  <p class="">订单编号 <span class="fr fs14" style="white-space: nowrap;">{{detail.orderId.split('_')[2]}}</span></p>
+                  <p class="">购买时间 <span class="fr ellipsis fs14">{{detail.createTime}}</span></p>
+                  <p class="">订单状态 <span class="fr ellipsis">{{detail.codeStatus=='1'?'已激活':'未激活'}}</span></p>
+              </div>
+              <p class="fs12 c99 alic">— 该激活码只能用于一个设备使用，请妥善保管 —</p>
+        </div>
+        <div class="center alic" ng-click="findGif()"><img src="img12th/mem_12_gif.png" alt=""></div>
+        <div class="bottom">
+            <div class="alic pt10 pb10">
+               <img src="imgnew/card_shiyong.png" alt="">
+            </div>
+            <ul class="fs13 c66 pl15">
+                <li>1.激活方法:湖南IPTV+首页-VIP专区-VIP激活-输入激活码。</li>
+                <li>2.自激活日起，有效试用期为365天。</li>
+                <li>3.该卡购买后不予以退货。</li>
+                <li>4.客服电话：11832500</li>
+            </ul> 
+        </div>
+        <div class="chosetv " style="display:{{(unchose||chosed)?'block':'none'}}" >
+            <div class="whiteBox alic fs14 c33  unchose" ng-show="unchose">
+                <p class="fs18 c33 pb15 fwb">您的礼品</p>
+                <p>您还未挑选您的礼品</p>
+                <p class="pb20">快去领取吧~</p>
+                <a class="redbtn dsb" href="#/buy_gift_12th">马上去</a>
+            </div>
+            <div class="whiteBox alic fs14 c33 chosed" ng-show="chosed">
+                <p class="fs18 c33 pb20 fwb">您的礼品</p>
+                <div class="gif_info alil ptr">
+                    <img src="img12th/shop{{orderDetail.gifId}}.png" alt="" class="fl mr10">
+                    <p class="fs15  fwb">{{list['shop'+orderDetail.gifId].name}}</p>
+                    <p class="fs14  price">市场价：<span style="color:#ff4444">{{list['shop'+orderDetail.gifId].price}}</span></p>
+                </div>
+                <p class="pl30 user_info alil fwb pt10"><span class="mr10">{{orderDetail.name}}</span>{{orderDetail.phone}}</p>
+                <p class="pl30 pb20 alil"><span class="fwb">地址：</span>{{orderDetail.address}}</p>
+                <p class="redbtn" ng-click="chosed=false">知道了</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

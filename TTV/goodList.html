@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>活动商品列表</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/activity.css">
+    <script src="js/config.js"></script>
+</head>
+<script>
+    (function (doc, win) {
+        var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if(clientWidth>=640){
+                        docEl.style.fontSize = '100px';
+                    }else{
+                        docEl.style.fontSize = 100 * (clientWidth /640) + 'px';
+                    }
+                };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+</script>
+
+<body>
+<div class="content" ng-app="myapp" ng-controller="goodListCtr" id="J_list">
+    <div class="banner"><img src="img/banner.png" original="img/banner.png" class="lazy" error="img/big.jpg" alt=""></div>
+    <ul class="list">
+        <li>
+            <div class="title"><img original="img/line_l.png" class="lazy" alt=""><span>618饕餮盛宴</span><img original="img/line_r.png" class="lazy" alt=""></div>
+            <ul class="shangpin">
+                <li ng-repeat="v in similarList.foodList" ><a  ng-href="{{v.productDetailLink}}"><img original="{{v.productPicLink}}" class="lazy" error="img/little.jpg" src="img/little.jpg" alt="">
+                    <p>{{v.productMainTitle}}</p>
+                    <p class="btn">立即抢购</p></a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="title"><img original="img/line_l.png" alt="" class="lazy"><span>618数码风暴</span><img class="lazy" original="img/line_r.png" alt=""></div>
+            <ul class="shangpin">
+                <li ng-repeat="v in similarList.digitalList" ><a  ng-href="{{v.productDetailLink}}"><img class="lazy" original="{{v.productPicLink}}" error="img/little.jpg" src="img/little.jpg" alt="">
+                    <p>{{v.productMainTitle}}</p>
+                    <p class="btn">立即抢购</p></a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <div class="title"><img original="img/line_l.png" alt="" class="lazy"><span>618家居狂欢</span><img class="lazy" original="img/line_r.png" alt=""></div>
+            <ul class="shangpin">
+                <li ng-repeat="v in similarList.householdList" on-finish-render-filters><a  ng-href="{{v.productDetailLink}}"><img original="{{v.productPicLink}}" class="lazy" error="img/little.jpg" src="img/little.jpg" alt="">
+                    <p>{{v.productMainTitle}}</p>
+                    <p class="btn">立即抢购</p></a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<script>
+    var app = angular.module('myapp', []);
+    // 懒加载
+    var lazyload = function(option) {
+        function bindappear() { // 绑定事件
+            _this.imgs.each(function(i, n)
+            {
+                var self = $(this);
+                if (self.data('loaded') != 1 && self.attr("original")) {
+                    self.one("appear", function() {
+                        var img = new Image,
+                                src = self.attr("original");
+                        img.src = src;
+                        img.onload = function() {
+                            self.hide().attr("src", src).removeClass('lazy').fadeIn();
+                        }
+                        img.onerror = function() {
+                            self.hide().attr("src", self.attr('error')).removeClass('lazy').fadeIn();
+                        }
+                    });
+                    self.data('loaded', 1);
+                }
+            });
+        }
+        function setarr() { // 重置数组
+            _this.srcarr = [];
+            for (var i = 0,len=_this.imgs.length; i < len; i++) {
+                _this.srcarr.push(_this.imgs.eq(i).offset().top);
+                _this.imgs.eq(i).loaded = true;
+            }
+        }
+        var _this = this;
+        _this.imgs = $(option.elm).find(option.class);
+        bindappear();
+        _this.srcarr = [];
+        _this.isoff = false;
+        _this.winh = window.innerHeight;
+        setarr();
+        _this.setlazy = function(imgs) { // 抛出的图片加载事件
+            _this.imgs = $('.lazy');
+            setarr();
+            bindappear();
+            $(window).trigger("scroll");
+        }
+        _this.timer = null;
+        $(window).scroll(function() {
+            clearTimeout(_this.timer);
+            if (_this.isoff) {
+                return false;
+            }
+            _this.timer = setTimeout(function() {
+                var scrollTop = $(window).scrollTop();
+                for (var i = 0,len1=_this.srcarr.length; i <len1 ; i++) {
+                    if (_this.srcarr[i] > 0 && _this.srcarr[i] <= (scrollTop + _this.winh + option.outbot)) {
+                        _this.imgs.eq(i).trigger("appear");
+                        _this.srcarr[i] = -1;
+                    }
+                }
+            }, 10);
+        });
+        $(window).trigger("scroll");
+        return this;
+    }
+    app.directive('onFinishRenderFilters', function($timeout) {
+        return {
+            restrict: 'A',
+            link: function(scope, element, attr) {
+                if (scope.$last === true) {
+                    $timeout(function() {
+                        scope.$emit('ngRepeatFinished');
+                    });
+                }
+            }
+        };
+    });
+    app.controller('goodListCtr', function($scope, $http) {
+        $http.get(goodListUrl, {}).success(function(res) {
+            if (res.foodList.length==4 && res.digitalList.length==4 && res.householdList.length==4 ) {
+                $scope.similarList = res;
+                $scope.lazy = new lazyload({
+                    'class': '.lazy',
+                    'elm': '#J_list',
+                    'outbot': 100
+                });
+            }
+        });
+        $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
+            $scope.lazy.setlazy($('.lazy'));
+        });
+    });
+</script>
+</body>
+</html>

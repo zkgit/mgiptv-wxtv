@@ -1,0 +1,16 @@
+.ad .li{ padding-left: 1.05rem;height: 0.75rem;}
+.ad .dt{height: 0.75rem; border-bottom: .01rem solid #dadada;}
+.ad .li .img{width: 0.70rem;}
+.ad .tva{
+    display: block;
+    margin-right: .03rem;
+    border-radius: .05rem;
+    border: .01rem solid #59c4bc;
+    background: #59c4bc;
+    width: .94rem;
+    padding: 0rem;
+    float: right;
+    margin-top: 0.03rem;
+    }
+.ad .ico{ border-radius: .05rem; overflow: hidden; height: .36rem;}
+.ad .loading{ width: auto;}

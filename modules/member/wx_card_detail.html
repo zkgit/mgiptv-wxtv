@@ -1,0 +1,31 @@
+<style>
+    body{background: #fff;}
+</style>
+<div class="html  wx_memb_buylist">
+    <div class="wx_card_detail">
+        <div class="top">
+              <div class="img cff fs14">
+                  <p class="fs18 fwb pb10 ovh">{{detail.name}} <span class="fr" style="width:auto;">{{detail.price}}<span class="fs15 fwn">元</span></span></p>
+                  <p class="">激活号码 <span class="fr ellipsis ">{{detail.code==0?'':detail.code}}</span></p>
+                  <p class="">订单编号 <span class="fr fs14" style="white-space: nowrap;">{{detail.orderId.split('_')[2]}}</span></p>
+                  <p class="">购买时间 <span class="fr ellipsis fs14">{{detail.createTime}}</span></p>
+                  <p class="">订单状态 <span class="fr ellipsis">{{detail.codeStatus=='1'?'已激活':'未激活'}}</span></p>
+              </div>
+              <p class="fs12 c99 alic">— 该激活码只能用于一个设备使用，请妥善保管 —</p>
+        </div>
+        <div class="bottom">
+            <div class="alic pt10 pb10">
+               <img src="imgnew/card_shiyong.png" alt="">
+            </div>
+            <ul class="fs13 c66 pl15">
+                <li>1.激活方法：湖南IPTV+首页-VIP专区-VIP激活-输入激活码。</li>
+                <li>2.自激活日起，有效试用期为365天。</li>
+                <li>3.该卡购买后不予以退货。</li>
+                <li>4.客服电话：11832500</li>
+            </ul> 
+        </div>
+    </div>
+</div>
+
+
+

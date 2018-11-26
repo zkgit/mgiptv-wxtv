@@ -1,0 +1,83 @@
+<div class="user_address mb20">
+    <div class="fs12 tishi cff alic">
+        <p>收货信息保存后不能修改，请仔细填写哦~</p>
+        <p>我们将把礼品送货到您家</p>
+    </div>
+    <img class="wp33 shop_img fl" src="img12th/{{sc.id}}.png" alt="">
+    <div class="info pt5">
+        <p class="fs14 fwb ellipsis" ng-bind="list[sc.id].name"></p>
+        <p class="pt50">
+            <span class="c33">市场价格：</span>
+            <span class="cred" ng-bind="list[sc.id].price"></span>
+        </p>
+    </div>
+
+    <div class="ptr bgcffffff mt10 ">
+        <!--姓名-->
+        <span class="fl alir wp24" style="line-height:.4rem;">
+            <span class="cred" ng-show="keyname.length<2||!keyname?true:false">*</span>收货人姓名</span>
+        <input class="fs12" type="text" autocomplete="off" autocorrect="off" ng-model="keyname" class="weui_search_input " placeholder="请填写不少于两个字符"
+            required />
+        <p class="lin"></p>
+        <!--联系电话-->
+        <span class="fl alir wp20" style="line-height:.4rem;">
+            <span class="cred" ng-show="keytel.toString().length==11?false:true">*</span>联系电话</span>
+        <input class="fs12" type="number" onkeyup="value=value.replace(/[^\d]/g,'')" pattern="[0-9]*" autocomplete="off" autocorrect="off" ng-model="keytel"
+            class="weui_search_input " placeholder="请填写11位数字" required />
+    </div>
+    <div class="pt20"></div>
+    <div class="ptr">
+        <span class="cred pta z1" style="padding: .1rem 0 0 .076rem;" ng-show="sheng.name.length>0?false:true">*</span>
+        <select class="fs14" required="" ng-model="sheng" ng-change="changesheng(sheng.name)" ng-options="m.name for m in division">
+            <option value="">省份</option>
+        </select>
+        <img class="pta img_l" src="img12th/right.png" alt="">
+    </div>
+    <div class="ptr">
+        <span class="cred pta z1" style="padding: .1rem 0 0 .076rem;" ng-show="shi.name.length>0?false:true">*</span>
+        <select class="fs14 ptr" required="" ng-model="shi" ng-change="changeshi(shi.name)" ng-options="m.name for m in sheng.children">
+            <option value="">市区</option>
+        </select>
+        <img class="pta img_l" src="img12th/right.png" alt="">
+    </div>
+    <div class="ptr">
+        <span class="cred pta z1" style="padding: .1rem 0 0 .076rem;" ng-show="qu.name.length>0?false:true">*</span>
+        <select class="fs14 ptr" required="" ng-model="qu" ng-change="changequ(qu.name)" ng-options="m.name for m in shi.children">
+            <option value="">地区</option>
+        </select>
+        <img class="pta img_l" src="img12th/right.png" alt="">
+    </div>
+    <p class="lin"></p>
+    <div class="ptr bgcffffff">
+        <span class="fl alir wp20" style="line-height:.4rem;">
+            <span class="cred" ng-show="keyadr.length<5?true:false">*</span>详细地址</span>
+        <input class="fs12" type="text" autocomplete="off" autocorrect="off" ng-model="keyadr" class="weui_search_input " placeholder="请填写不少于5个字符"
+            required />
+        <p class="lin"></p>
+        <div class="hp44"></div>
+        <div class="hp44"></div>
+        <!--<p class="user_btn alic cff fs14 " ng-click="btn_user_info()" style="position: fixed;bottom: .4rem;left: 16%;">保存信息</p>-->
+        <p class="user_btn alic cff fs14 pta" style="left: 17%;top: 1rem;" ng-click="btn_user_info()" >保存信息</p>
+        <div class="hp20 "></div>
+        <!--<div class="hp20 "></div>-->
+        <div class="hp44"></div>
+        <div class="hp44"></div>
+    </div>
+
+    <div class="chosetv " style="display:{{tipshow?'block':'none'}}">
+        <div class="whiteBox alic fs14 c33 send_chose">
+            <p class="fwb fs16 pb10">信息填写有误</p>
+            <p class="pb10 fs14">已用
+                <span class="cred">*</span>为您标记出错误选项</p>
+            <p class="redbtn" ng-click="close()">知道了</p>
+        </div>
+    </div>
+    <div class="chosetv " style="display:{{tipshow_1?'block':'none'}}">
+        <div class="whiteBox alic fs14 c33 send_chose">
+            <p class="fwb fs16 pb5">保存成功</p>
+            <p class="fs13 lh16">7个工作日内将有工作人员联系您</p>
+            <p class="fs13 lh16 pb10 ">请保持电话畅通</p>
+            <p class="redbtn" id="J_back" back>知道了</p>
+        </div>
+    </div>
+</div>

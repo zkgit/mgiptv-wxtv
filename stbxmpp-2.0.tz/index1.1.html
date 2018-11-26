@@ -1,0 +1,437 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="1280*720 text/html; charset=utf-8" />
+		<!--<script type="text/javascript" src="js/jquery.min.js"></script>-->
+		<script type="text/javascript" src="js/fun.js"></script>
+		<!--<script type="text/javascript" src="js/main.js"></script>-->		
+		<link rel="stylesheet" href="css/main.css" />
+		<title>中间件</title>
+		<style>
+		#body{
+			background-color:transparent;
+			position: relative;
+			/*color: #AAAAAA;
+			font-size: 24px;
+			font-weight: normal;*/
+		}
+			p{margin-bottom: 14px;}
+			#mui-title-logo img{
+				width: 100%;
+				height: 100%;
+			}
+			ul li {
+				display: block;
+				/*height:71.5%;
+				width: 25%;*/
+				height: 62.5%;
+				width: 22%;
+				margin-top: 62px;
+				margin-right: 3%;
+				float: left;
+				overflow: hidden;					
+			}
+			
+			.mui-table-view .mui-grid-view .mui-table-view-cell .mui-media-object {
+				width: 88%;
+				height: 486px;
+				
+			}
+			/*头像*/
+			.mui-media-object-r{
+				position: absolute;
+				top:26%;
+				left:36%;
+				width: 52%;
+			}	
+			#mui-title-head{
+				    height: 85%;
+				    /*width: 2960px;*/
+				    overflow: hidden;
+				    position: relative;
+				    left: 7%;
+				    top: 0%;
+					/*display: inline-flex;*/
+			}
+			/*解决左右隐藏*/
+			#mui-title-head-full{
+				/*width: 2960px;;*/
+				overflow: hidden;
+				position: relative;
+				left: 0;
+				height: 380px;	
+			}
+			.mui-head-list{
+				width: 250px;
+				height:81%;
+				text-align: center;
+				float: left;
+				margin-right: 2.5%;
+				padding: 15px;
+				margin-bottom: 49px;
+			}
+			.mui-head-list-img{
+				width: 100%;
+				height: 100%;
+			}
+			.mui-head-list-img img{
+				border-radius: 130px;
+				width: 100%;
+				height: 100%;
+				/*margin-top: 10px;*/
+			}
+			/*添加的Img的样式*/
+			.addImgBorder{
+				border: 5px solid chartreuse;
+			}
+			/*提示*/
+			.mui-bottom-tip{
+				background: url(img/bottom1.png) no-repeat;
+				width: 25%;
+				height: 80px;
+				position: absolute;
+				left: 38.25%;
+				top: 84%;
+				text-align: center;
+				line-height: 80px;
+			}
+			/*删除蒙层*/
+			.mui-bottom-delete{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+    			left: 0;
+    			top:62%;
+    			color: #FFFFFF;
+			}
+			.mui-bottom-delete-f{
+				height: 100%;
+				width: 100%;
+				background: #241C27;
+				opacity: 0.7;	
+				-webkit-opacity:0.7 ;
+ 				-moz-opacity:0.7 ;
+ 				-ms-opacity: 0.7;
+ 				-o-opacity: 0.7;				
+				filter: "alpha(opacity=70)"; /* IE 8 */
+ 				filter: alpha(opacity=70);   /* IE 4-7 */
+ 				zoom: 1;  		
+				text-align: center;				
+			}
+			.mui-bottom-delete-l{
+
+				background: url(img/bottom.png) no-repeat;
+				position: absolute;
+				width: 29%;
+				height: 112px;
+				left: 18%;
+				top: 20%;
+				line-height: 112px;
+				text-align: center;
+				font-size: 36px;
+			}
+			.mui-bottom-delete-r{
+				background: url(img/bottom.png) no-repeat;
+				position: absolute;
+				width: 29%;
+				height: 112px;
+				left: 54%;
+				top: 20%;
+				line-height: 112px;
+				text-align: center;
+				font-size: 36px;
+			}
+			.bnbgshow{
+				background: url(img/bottom.png) no-repeat;
+				background-size: contain;
+			}
+			.bnbghide{
+				background: 0;
+				background-size: contain;
+			}
+
+		</style>
+	</head>
+
+	<body id="body">
+		<!--头部标签-->
+		<div id="mui-title">
+			<div id="mui-title-logo">
+				<img src="img/logo.png"/>
+			</div>
+			<span style="display: block;line-height:104px;width:225px;font-size: 36px;float: left;">微信助手</span>		
+		</div>
+			<p style="font-size: 36px;margin-bottom: 4%;margin-top: 3%;margin-left: 6.25%;" id="usertotle"></p>
+		<!--头像-->		
+		<div id="mui-title-head-full">		
+			<div id="mui-title-head">
+			</div>
+		</div>
+		<!--绑定人数提示-->
+			<!--<div class="mui-bottom-tip" id="tipShow"></div>-->
+		<!--删除-->		
+			<div class="mui-bottom-delete openid" id="deleteTips">
+				<div class="mui-bottom-delete-f">
+					<p style="font-size: 36px;height: 100px;line-height: 100px;">确定删除该绑定成员</p>
+					<div class="mui-bottom-delete-l" id="yes">确定</div>
+					<div class="mui-bottom-delete-r" id="no">取消</div>
+				</div>
+			</div>
+	</body>
+	<script type="text/javascript">
+
+		var webserverbase='http://jscn.kanketv.com/b2b-jscn/tran?DEEPURL=',//上线需更改zzb-jscn
+			boxid,
+			openid;
+
+		function deletebind(){
+			console.info(openid);
+			console.info(boxid);
+			var req = createXMLHTTPRequest();
+			if(req){
+				req.open("GET", webserverbase+'http://172.16.177.58/version-api/api/v1/user/device/delete.json?openId='+openid+'&boxId='+boxid, true);
+				req.setRequestHeader("Content-Type","application/x-www-form-urlencoded ; charset=utf-8;");
+				req.setRequestHeader("Accept","*/*,text/*,text/html");
+				req.onreadystatechange = function(e){
+					if(req.readyState == 4){
+						var res = eval('('+ req.responseText +')');
+						if(res.responseHeader.code=='200'){
+							console.info('删除用户绑定成功');
+							window.location.reload()
+						}else{
+							console.info('删除用户绑定失败')
+						}
+					}
+				};
+				req.send(null);
+			}
+		}
+		//获取用户列表
+		postUserList();
+		function postUserList(){
+			var req = createXMLHTTPRequest();
+			if(req){
+				req.open("GET", webserverbase+"http://172.16.177.58/version-api/api/v1/user/boxBindList.json?boxId="+getCookie('UId')+"&pageNo=1&pageSize=100", true);
+				req.setRequestHeader("Content-Type","application/x-www-form-urlencoded ; charset=utf-8;");
+				req.setRequestHeader("Accept","*/*,text/*,text/html");
+				req.onreadystatechange = function(e){
+					if(req.readyState == 4){
+						var res = eval('('+ req.responseText +')'),
+							usertotle=res.response.responseBody.totalrecords,
+							userInfo = res.response.responseBody.list;
+						console.log('用户列表',res);
+						document.getElementById('usertotle').innerHTML ="已绑定"+usertotle+"位微信成员";
+
+						//没有绑定用户的时候不显示绑定
+						if(usertotle>0){
+							var tipsdiv = document.createElement('div');
+							// 添加class
+							tipsdiv.className = 'mui-bottom-tip';
+							tipsdiv.id='tipShow';
+							tipsdiv.innerHTML ="【"+userInfo[0].userName+"】绑定成功";
+							document.getElementById('body').appendChild(tipsdiv);
+						}
+
+
+						for(var i=0 ;i<usertotle;i++){
+							var muiheadlist = document.createElement('div'),
+								muiheadlistImg = document.createElement('div'),
+								img = document.createElement('img'),
+								h4 = document.createElement('h4');
+							// 添加class
+							muiheadlist.className = 'mui-head-list';
+							muiheadlistImg.className ='mui-head-list-img';
+							img.name='mui-table-view-img';
+							h4.className='mui-head-list-name';
+							h4.id='nameInner';
+							// 属性
+							img.src = userInfo[i].headImageUrl;
+							img.setAttribute('boxid',userInfo[i].boxId);
+							img.setAttribute('openid',userInfo[i].openId);
+							//默认的style
+							if(i==0){
+								img.className='addImgBorder';
+								muiheadlist.style.padding='0px';
+							}
+							document.getElementById('mui-title-head').appendChild(muiheadlist);
+							muiheadlist.appendChild(muiheadlistImg);
+							muiheadlistImg.appendChild(img);
+							muiheadlistImg.appendChild(h4);
+							h4.innerHTML=res.response.responseBody.list[i].userName;
+						}
+					}
+				};
+				req.send(null);
+			}
+		}
+
+		function createXMLHTTPRequest() {
+			var xmlHttpRequest;
+			if (window.XMLHttpRequest) {
+				xmlHttpRequest = new XMLHttpRequest();
+				if (xmlHttpRequest.overrideMimeType) {
+					xmlHttpRequest.overrideMimeType("text/xml");
+				}
+			} else if (window.ActiveXObject) {
+				var activexName = [ "MSXML2.XMLHTTP", "Microsoft.XMLHTTP" ];
+				for ( var i = 0; i < activexName.length; i++) {
+					try {
+						//取出一个控件名进行创建，如果创建成功就终止循环
+						//如果创建失败，回抛出异常，然后可以继续循环，继续尝试创建
+						xmlHttpRequest = new ActiveXObject(activexName[i]);
+						if(xmlHttpRequest){
+							break;
+						}
+					} catch (e) {
+					}
+				}
+			}
+			return xmlHttpRequest;
+		}
+
+        var choseopinion = true,
+			choseNum = 1,
+			//焦点改变
+			//右键
+			index = 0,
+			img = document.getElementsByName("mui-table-view-img"),
+			count=0;
+
+		function nextSetSelectedOptBgColor() {
+			if(img.length>1){
+				if (index <=2 && index>=0 && img.length>0||index-count!=3) {
+					img[index].parentNode.parentNode.style.padding="15px";
+					img[index].className="";
+					index++;
+					img[index].parentNode.parentNode.style.padding="0";
+					img[index].className="addImgBorder"
+				} else if(index>=3 && index<=img.length-2&&index-count==3){
+					img[index].parentNode.parentNode.style.padding="15px";
+					img[index].className="";
+					img[count].parentNode.parentNode.style.display="none";
+					count++;
+					index++;
+					img[index].parentNode.parentNode.style.padding="0";
+					img[index].className="addImgBorder"
+				}else{
+					return;
+				}
+			}
+
+		console.info("右键结束时候index"+index+"结束时的count"+count)
+		}
+
+		function previousSetSelectedOptBgColor() {
+			if (index>count) {
+				img[index].parentNode.parentNode.style.padding="15px";
+				img[index].className="";
+				index--;
+				img[index].parentNode.parentNode.style.padding="0";
+				img[index].className="addImgBorder";
+				console.info("左键结束时候index+执行的"+index+"结束时的count"+count)
+			}else if(index<=count && index>0){
+				console.info("左键结束时候执行了222222："+index+"此时的count"+count);
+				img[index].parentNode.parentNode.style.padding="15px";
+				img[index].className="";
+				index--;
+				count--;
+				img[index].parentNode.parentNode.style.display="block";
+				img[index].parentNode.parentNode.style.padding="0";
+				img[index].className="addImgBorder"
+			}
+		}
+
+
+		//默认选中是确定按键
+		document.getElementById('no').className='mui-bottom-delete-r bnbghide';
+		//选择删除左按键；
+		function previousChoseDelete(){
+			document.getElementById('yes').className='mui-bottom-delete-l ';
+			document.getElementById('no').className='mui-bottom-delete-r bnbghide';
+			choseNum = 1;
+			console.info('左键',"1确定删除:",choseNum)
+		}
+		//选择删除右按键；
+		function nextChoseDelete(){
+			document.getElementById('no').className='mui-bottom-delete-r';
+			document.getElementById('yes').className='mui-bottom-delete-l bnbghide';
+			choseNum = 2;
+			console.info('右键',"2取消删除:",choseNum)
+		}
+		//删除按键
+		function deleteuserBind(){
+			choseopinion=false;
+			document.getElementById('deleteTips').className='mui-bottom-delete showid';
+		}
+		//删除取消enter确定
+		function deleteEnter(){
+			if(choseNum==1){
+				console.info(index);
+				boxid=img[index].getAttribute('boxid');
+				openid=img[index].getAttribute('openid');
+
+				//删除用户绑定
+				deletebind();
+
+				//取消删除提示
+				document.getElementById('deleteTips').className='mui-bottom-delete openid';
+			}else if(choseNum==2){
+				choseopinion=true;
+				//取消删除提示
+				document.getElementById('deleteTips').className='mui-bottom-delete openid';
+			}
+
+		}
+
+		//页面跳转到主页
+		function removeSelectedEnterPiture(){	
+			window.location.href="index.html"
+		}
+
+		//键盘事件
+		document.onkeydown = function(event) {
+			var e = event || window.event || arguments.callee.caller.arguments[0];
+			if (e && e.keyCode == 27) {
+				// 按 Esc
+			}
+			if (e && e.keyCode == 8) {
+				// 按 BackSpace 
+				removeSelectedEnterPiture()
+			}
+			if (e && e.keyCode == 13) {
+				// enter 键
+				if(choseopinion==false){
+					deleteEnter();
+				}
+			}
+			if (e && e.keyCode == 37) {
+				// 左 键
+				if(choseopinion){
+					previousSetSelectedOptBgColor();
+				}else{
+					previousChoseDelete();
+				}
+			}
+			if (e && e.keyCode == 39) {
+				// 右 键
+				if(choseopinion){
+					nextSetSelectedOptBgColor();
+				}else{
+					nextChoseDelete();
+				}
+			}
+			if (e && e.keyCode == 40) {
+				// 下 键
+				//downSelectUser();
+			}
+			if (e && e.keyCode == 38) {
+				// 上 键
+			}
+			if(e && e.keyCode == 46){
+				//Delete删除
+				deleteuserBind();
+			}
+		}
+	</script>	
+
+</html>

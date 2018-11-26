@@ -1,0 +1,390 @@
+{
+  "responseStatus": {
+    "code": "0000",
+    "msg": "请求数据成功！",
+    "object": {
+      "anime": [
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "anime",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/cartoon/android/180x240/D1/D121044885B996599758.jpg",
+          "word": "奥特曼"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "anime",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/cartoon/android/180x240/6B/6BC465BF7B0981B156574.jpg",
+          "word": "火影忍者"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "anime",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/cartoon/android/180x240/0C/0C0FF175AAA8426357139.jpg",
+          "word": "熊出没"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "anime",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/cartoon/android/180x240/D4/D4952B4EDF7D356253866.jpg",
+          "word": "名侦探柯南"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "anime",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://ikanpic.kanketv.com/image/cartoon/android/180x240/C5/C5CADDD4BC3F617C40394.jpg",
+          "word": "葫芦兄弟"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "anime",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://ikanpic.kanketv.com/image/cartoon/android/180x240/F2/F2377DD89A5F81CB48191.jpg",
+          "word": "秦时明月之君临天下"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "anime",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/cartoon/android/180x240/D8/D88D5656170E3F5557433.jpg",
+          "word": "新葫芦兄弟"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "anime",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://ikanpic.kanketv.com/image/cartoon/android/180x240/CC/CC35000B44FC287333082.jpg",
+          "word": "假面骑士"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "anime",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://ikanpic.kanketv.com/image/cartoon/android/180x240/58/58EA0ABC9E12B63433307.jpg",
+          "word": "大头儿子小头爸爸"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "anime",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/cartoon/android/180x240/4A/4ADCA76EF96CE79E55776.jpg",
+          "word": "超级飞侠"
+        }
+      ],
+      "arts": [
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "arts",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/arts/android/180x240/9A/9ABCAEE5A2AC7A1E809130.jpg",
+          "word": "超级女声"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "arts",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/arts/android/180x240/C9/C9E89C0B54CD209F808295.jpg",
+          "word": "奔跑吧兄弟"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "arts",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://ikanpic.kanketv.com/image/arts/android/180x240/03/035354958D9FFD3124287.jpg",
+          "word": "大学生来了"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "arts",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/arts/android/180x240/16/161295720C577164808249.jpg",
+          "word": "我想和你唱"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "arts",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/arts/android/180x240/DC/DCEE62D7DBE69BD635655.jpg",
+          "word": "欢乐喜剧人"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "arts",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/arts/android/180x240/42/425580F9728ADD7C28126.jpg",
+          "word": "超人回来了"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "arts",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/arts/android/180x240/88/88931F7ABF2359724803.jpg",
+          "word": "暴走大事件"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "arts",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/arts/android/180x240/F1/F1DF4E5ED9A81AB936160.jpg",
+          "word": "极速前进"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "arts",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/arts/android/180x240/0C/0C7F2CD533FAEF0F809082.jpg",
+          "word": "加油美少女"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "arts",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://ikanpic.kanketv.com/image/arts/android/180x240/21/2104327559855488402.jpg",
+          "word": "中国好声音"
+        }
+      ],
+      "documentary": [
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "documentary",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/doc/android/180x240/53/53699AF6DCC87AB428209.jpg",
+          "word": "鸿观"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "documentary",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://ikanpic.kanketv.com/image/doc/android/180x240/BF/BF357279CABECB0015111.jpg",
+          "word": "荒野求生秘技"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "documentary",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/doc/android/180x240/01/017BBB981053BB94132188.jpg",
+          "word": "经典传奇"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "documentary",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/doc/android/180x240/B4/B4788EFE5C244A4A56.jpg",
+          "word": "军情解码"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "documentary",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/doc/android/180x240/C2/C26F54F5E403AD8172753.jpg",
+          "word": "动物世界"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "documentary",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/doc/android/180x240/AB/ABCFDF7F0DB9D6B218224.jpg",
+          "word": "舌尖上的中国"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "documentary",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://ikanpic.kanketv.com/image/doc/android/180x240/E7/E7215597C986A8DB12295.jpg",
+          "word": "档案"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "documentary",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://ikanpic.kanketv.com/image/doc/android/180x240/2E/2E9C059336A037AE2332.jpg",
+          "word": "大阅兵"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "documentary",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://ikanpic.kanketv.com/image/doc/android/180x240/98/98BC4A0B8000311C25036.jpg",
+          "word": "怪兽来了"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "documentary",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/doc/android/180x240/BF/BF248A3B01013A0172736.jpg",
+          "word": "军武次位面"
+        }
+      ],
+      "film": [
+        {
+          "addtime": "2016-07-15 17:01:09.0",
+          "classId": "film",
+          "effectiveTime": "2016-07-21 17:01:06.0",
+          "imageLink": "http://tv.kanketv.com/image/film/web/120x160/D3/D32FC1F53266ED113015.jpg",
+          "word": "失踪的双碑"
+        },
+        {
+          "addtime": "2016-07-13 11:25:59.0",
+          "classId": "film",
+          "effectiveTime": "2016-07-22 11:25:59.0",
+          "imageLink": "http://tv.kanketv.com/image/film/web/120x160/C2/C261A02C2AA8AD271438532.jpg",
+          "word": "超能陆战队"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "film",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/film/android/180x240/96/96F873EB95309AFF1433161.jpg",
+          "word": "致我们终将逝去的青春"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "film",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/film/android/180x240/29/29D86BA0F0E541F441594.jpg",
+          "word": "寒战"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "film",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/film/android/180x240/EF/EFEFC90D4534B94F1523050.jpg",
+          "word": "美人鱼"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "film",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/film/android/180x240/BD/BD1F30FD3115488650833.jpg",
+          "word": "追击者"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "film",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/film/android/180x240/8E/8E0C48221A1FE6611523563.jpg",
+          "word": "疯狂动物城"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "film",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/film/android/180x240/CA/CA7883E57AE5619C1523994.jpg",
+          "word": "魔兽"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "film",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/film/android/180x240/EC/EC3192692AE3556C1524389.jpg",
+          "word": "夜孔雀"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "film",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/film/android/180x240/0D/0DEE1B429F26C0A51443723.jpg",
+          "word": "驱魔少年"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "film",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/film/android/180x240/14/1430E3264488443819318.jpg",
+          "word": "x战警"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "film",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/film/android/180x240/E8/E8D896E6265EB0D21523493.jpg",
+          "word": "功夫熊猫3"
+        }
+      ],
+      "null": true,
+      "tv": [
+        {
+          "addtime": "2016-07-15 17:07:58.0",
+          "classId": "tv",
+          "effectiveTime": "2016-07-28 17:07:56.0",
+          "imageLink": "http://tv.kanketv.com/image/tv/web/120x160/00/0092D7C9D9D95E5E35480.jpg",
+          "word": "急诊室的故事第3季"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "tv",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/tv/android/180x240/DE/DE9DACBE5406F1F852064.jpg",
+          "word": "致青春"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "tv",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/tv/android/180x240/89/89D1FCADD115431F2238.jpg",
+          "word": "爱情公寓第一季"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "tv",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/tv/android/180x240/93/93A483DC675C406F51900.jpg",
+          "word": "好先生"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "tv",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/tv/android/180x240/58/585B46028ED960E248039.jpg",
+          "word": "神犬小七"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "tv",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/tv/android/180x240/C1/C143250B89705F7551882.jpg",
+          "word": "好运罗曼史"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "tv",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/tv/android/180x240/5F/5F8784678A1BD4F66537.jpg",
+          "word": "恶作剧之吻"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "tv",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/tv/android/180x240/03/0356F8FDCE83B40D48023.jpg",
+          "word": "花千骨"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "tv",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/tv/android/180x240/AF/AFEADA52FEB396FC51872.jpg",
+          "word": "亲爱的翻译官"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "tv",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/tv/android/180x240/26/26597CB0FD5330E732753.jpg",
+          "word": "西游记"
+        },
+        {
+          "addtime": "2016-07-15 17:48:00.0",
+          "classId": "tv",
+          "effectiveTime": "2016-07-16 18:18:00.0",
+          "imageLink": "http://tv.kanketv.com/image/tv/android/180x240/F2/F298A58EF49F676748694.jpg",
+          "word": "秦时明月"
+        }
+      ]
+    }
+  }
+}

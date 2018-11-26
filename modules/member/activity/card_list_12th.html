@@ -1,0 +1,47 @@
+<style>
+    body{background: #fff;}
+    .wx_card_detail_12{height:0;overflow: hidden;}
+</style>
+<div class="html  wx_card_12">
+    <div class="card_list" ng-show="list.length">
+        <div class="delay alic">
+            <div class="delay_line ptr"></div>
+            <p class="fs14 c66 bgcffffff dsib plr5 ptr z10">
+                亲～卡券消息可能会有所延迟<br>
+                您可以稍等几分钟再来查询
+            </p>
+        </div>
+        <ul class="plr">
+            <li class="ptr" ng-repeat="v in list" on-finish-render-filters>
+                <a href="#/card_detail_12th?orderId={{v.orderId}}">
+                    <div class="fl c_l c33">
+                       <p class="fs18 pb10"><span class="czi fwb">{{v.name}}</span> <span class="fr fwb">{{v.price}}<span class="fs12 fwn">元</span></span></p>
+                       <p class="pt5 fs14" ng-show="v.code">激活号码 <span class="fr fwb">{{v.code==0?'':v.code}}</span></p>
+                       <p class="pt5 fs14">购买时间 <span class="fr">{{v.createTime}}</span></p>
+                   </div>
+                    <div class="fr c_r pta r0">
+                        <div class="pta btn">
+                             <div class=" czi fs14 mr10 fl">
+                                 <p>年卡</p>
+                                 <p>详情</p>
+                             </div>
+                            <img src="imgnew/card_jiantou.png" alt="" >
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <p class="alic pb20">{{loadtext}}</p>
+    </div>
+    <div class="alic pt40" ng-show="isDefault">
+        <img src="imgnew/card_detault.png" alt="" class="wp40 pt10 pb20">
+        <p class="fs14 c66 ">
+            亲～卡券消息可能会有所延迟<br>
+            您可以稍等几分钟再来查询
+        </p>
+    </div>
+</div>
+
+
+
+

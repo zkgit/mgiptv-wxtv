@@ -1,0 +1,33 @@
+<div class="device">
+    <!-- <div class="list pb60 {{doname}}">
+        <div class="item" ng-repeat="v in $root.device.list">
+            <p class="name">{{v.boxName==''?'未命名':v.boxName}}-{{v.boxId}}</p>
+            <p class="input" style="display:{{showinput==$index?'block':'none'}}"><input type="text" class="control" placeholder="请输入设备名称" value="{{v.boxName}}" ng-model="$parent.selectValue"></p>
+            <a href="javascript:;" ng-click="edit($index,v.boxName)" class="edit do">编辑</a>
+            <a href="javascript:;" ng-click="del(v.id)" class="del do">删除</a>
+            <p class="issave" style="display:{{showinput==$index?'block':'none'}}">
+                <a href="javascript:;" ng-click="savey(v.id)" class="sy do">保存</a>
+                <a href="javascript:;" ng-click="saven()" class="sn do">取消</a>
+            </p>
+        </div>
+
+        <div class="adddev">
+            <a href="javascript:;" class="addnew" ng-click="addnew()" style="display:{{showadd?'none':'block'}}">+&ensp;添加设备</a>
+            <div class="input" style="display:{{showadd?'block':'none'}}">
+                <input type="text" class="control" placeholder="请输入设备名称" ng-model="newdevice">
+                <p class="issave">
+                    <a href="javascript:;" ng-click="addy()" class="sy do">添加</a>
+                    <a href="javascript:;" ng-click="addn()" class="sn do">取消</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="editline" style="display: block;">
+        <a href="javascritpt:;" class="f" ng-click="goedit()">编辑</a>
+        <a href="javascript:;"  class="f" ng-click="godel()">删除</a>
+    </div> -->
+    <p class="til alic fs16">请输入电视上的设备码</p>
+    <p class="input"><input type="text" ng-model="key" class="inp dsb wp100 bgcfff"></p>
+    <p class="tip fs12 c99 lh18">微信绑定码见："应用设置"-"微信助手"页面右上方</p>
+    <div class="btns pt30"><a href="javascript:;" class="btn dsb alic cff" ng-click="bangding()">绑定</a></div>
+</div>

@@ -1,0 +1,316 @@
+{
+  "response": {
+    "responseHeader": {
+      "code": "200",
+      "msg": "获取首页数据成功",
+      "t": 1467856807859
+    },
+    "responseBody": {
+      "film": [
+        {
+          "actors": "甄子丹|迈克·泰森|张晋",
+          "description": "已在香港立足开馆的叶问与太太张永成平静地生活，不料小儿子叶正就读的小学发生了流氓滋扰事件，参与闹事的正是田傲山昔日的徒弟马鲸笙。于是叶问带领徒弟徐力等人保护，并结识了同样是永春传人的车夫张天志，二人惺惺相惜。",
+          "director": "叶伟信",
+          "image": "http://tv.kanketv.com/image/film/web/120x160/05/05B7506EE7F8D1551523320.jpg",
+          "isMatched": "1",
+          "kankeId": "film_1523320",
+          "playCount": "398885",
+          "region": "内地",
+          "tag": "历史;传记;动作;剧情;",
+          "title": "[HD]叶问3",
+          "videoType": "film",
+          "vodId": 72,
+          "year": "2016"
+        },
+        {
+          "actors": "小罗伯特-唐尼 克里斯-海姆斯沃斯 马克-鲁弗洛",
+          "description": "在本集中，钢铁侠研发的一个维和项目意外成为危机导火索，本来用于保护世界的奥创机器人却产生了灭绝人类的邪恶意图，随着奥创崛起，复仇者联盟必须重新站在一起面对前所未有的强大劲敌，一场独一无二的史诗冒险就此展开！",
+          "director": "乔斯-韦登",
+          "image": "http://tv.kanketv.com/image/film/web/120x160/01/01F4DA1DAEE875A21438343.jpg",
+          "isMatched": "1",
+          "kankeId": "film_1438343",
+          "playCount": "319217",
+          "region": "美国;",
+          "tag": "动作;科幻;冒险;院线;奇幻;",
+          "title": "复仇者联盟2：奥创纪元",
+          "videoType": "film",
+          "vodId": 6666,
+          "year": "2015"
+        },
+        {
+          "actors": "安迪-瑟金斯 杰森-克拉科 加里-奥德曼",
+          "description": "在上集结尾，致命病毒弥漫全球，遭此横祸的人类只有一小部分幸存下来，而他们正威胁着凯撒统领的高度进化的猿族大军，虽然两族群双方一度达成和解，但为争夺地球的绝对领导权，一场激烈的人猿大战一触即发……",
+          "director": "马特-里夫斯",
+          "image": "http://tv.kanketv.com/image/film/web/120x160/55/55DA4556246F53681434550.jpg",
+          "isMatched": "1",
+          "kankeId": "film_1434550",
+          "playCount": "104333",
+          "region": "美国;",
+          "tag": "科幻;动作;惊悚;",
+          "title": "猩球崛起：黎明之战",
+          "videoType": "film",
+          "vodId": 6148,
+          "year": "2015"
+        },{
+          "actors": "甄子丹|迈克·泰森|张晋",
+          "description": "已在香港立足开馆的叶问与太太张永成平静地生活，不料小儿子叶正就读的小学发生了流氓滋扰事件，参与闹事的正是田傲山昔日的徒弟马鲸笙。于是叶问带领徒弟徐力等人保护，并结识了同样是永春传人的车夫张天志，二人惺惺相惜。",
+          "director": "叶伟信",
+          "image": "http://tv.kanketv.com/image/film/web/120x160/05/05B7506EE7F8D1551523320.jpg",
+          "isMatched": "1",
+          "kankeId": "film_1523320",
+          "playCount": "398885",
+          "region": "内地",
+          "tag": "历史;传记;动作;剧情;",
+          "title": "[HD]叶问3",
+          "videoType": "film",
+          "vodId": 72,
+          "year": "2016"
+        },
+        {
+          "actors": "小罗伯特-唐尼 克里斯-海姆斯沃斯 马克-鲁弗洛",
+          "description": "在本集中，钢铁侠研发的一个维和项目意外成为危机导火索，本来用于保护世界的奥创机器人却产生了灭绝人类的邪恶意图，随着奥创崛起，复仇者联盟必须重新站在一起面对前所未有的强大劲敌，一场独一无二的史诗冒险就此展开！",
+          "director": "乔斯-韦登",
+          "image": "http://tv.kanketv.com/image/film/web/120x160/01/01F4DA1DAEE875A21438343.jpg",
+          "isMatched": "1",
+          "kankeId": "film_1438343",
+          "playCount": "319217",
+          "region": "美国;",
+          "tag": "动作;科幻;冒险;院线;奇幻;",
+          "title": "复仇者联盟2：奥创纪元",
+          "videoType": "film",
+          "vodId": 6666,
+          "year": "2015"
+        },
+        {
+          "actors": "安迪-瑟金斯 杰森-克拉科 加里-奥德曼",
+          "description": "在上集结尾，致命病毒弥漫全球，遭此横祸的人类只有一小部分幸存下来，而他们正威胁着凯撒统领的高度进化的猿族大军，虽然两族群双方一度达成和解，但为争夺地球的绝对领导权，一场激烈的人猿大战一触即发……",
+          "director": "马特-里夫斯",
+          "image": "http://tv.kanketv.com/image/film/web/120x160/55/55DA4556246F53681434550.jpg",
+          "isMatched": "1",
+          "kankeId": "film_1434550",
+          "playCount": "104333",
+          "region": "美国;",
+          "tag": "科幻;动作;惊悚;",
+          "title": "猩球崛起：黎明之战",
+          "videoType": "film",
+          "vodId": 6148,
+          "year": "2015"
+        }
+      ],
+      "arts": [
+        {
+          "actors": "布兰登 罗斯",
+          "description": "在神秘失踪的六年间，其实“超人”是去自己的故乡氪星寻找其他和自己一样的幸存者，不幸的是，他一个人都没有找到。",
+          "director": "布莱恩 辛格",
+          "image": "http://ikanpic.kanketv.com/image/arts/web/120x160/50/50E2349A29F0FAD96803.jpg",
+          "isMatched": "1",
+          "kankeId": "arts_6803",
+          "playCount": "21169",
+          "region": "韩国;",
+          "tag": "文艺;搞笑;真人秀;",
+          "title": "超人归来",
+          "videoType": "arts",
+          "vodId": 6621,
+          "year": "2013"
+        },
+        {
+          "actors": "安·扎卡赖亚斯 朱利安·吉奥马尔",
+          "description": "杜士曼先生是法国一位专门对各饭店和旅馆进行评价的人。他有一个儿子，违反了父亲希望继承其衣钵的意愿，去了马戏团当了一名小丑。杜士曼在享尽人间美食的同时，也做出了各类爆笑的事情，最终他们共同对付了一位想并吞法国餐饮业的快餐大王。",
+          "director": "克劳德·齐迪",
+          "image": "http://ikanpic.kanketv.com/image/arts/web/120x160/1F/1F220543876322652649.jpg",
+          "isMatched": "1",
+          "kankeId": "arts_2649",
+          "playCount": "34",
+          "region": "台湾;",
+          "tag": "美食;",
+          "title": "美食家",
+          "videoType": "arts",
+          "vodId": 6669,
+          "year": "2007"
+        },
+        {
+          "actors": "凯特-布兰切特 鲁妮-玛拉",
+          "description": "50年代的美国，年轻女子特芮丝（鲁妮·玛拉 饰）在纽约百货公司担任售货员，但心中向往的却是摄影师工作。某日，一位美丽优雅的金发贵妇卡罗尔（凯特·布兰切特 饰）来到百货公司购买圣诞节礼物，结果和特芮丝一见投缘。两人相识后特芮丝得知原来卡罗尔有一个女儿，而且正和丈夫哈吉（凯尔·钱德勒 饰）办理离婚手续",
+          "director": "托德-海因斯",
+          "image": "http://img3.douban.com/view/movie_poster_cover/spst/public/p2312679154.jpg",
+          "isMatched": "-2",
+          "kankeId": "5baa27a3-4a8e-4163-8a78-d853f598bb25",
+          "playCount": "0",
+          "region": "",
+          "tag": "",
+          "title": "《卡罗尔》预告片",
+          "videoType": "",
+          "vodId": 6568,
+          "year": "2016"
+        }
+      ],
+      "tv": [
+        {
+          "actors": "吴映洁 戴阳天 刘前程",
+          "description": "“暗算”版民国虐恋大戏。“壁咚”不新鲜，男女主角全新演绎“椅咚”。剧集未见众多大咖加盟，却处处凸显制作精良。全剧多达100场的吻",
+          "director": "郑军 颜光兴",
+          "image": "http://tv.kanketv.com/image/tv/android/180x240/12/12EA0472A0B83FA049612.jpg",
+          "isMatched": "1",
+          "kankeId": "tv_49612",
+          "playCount": "252661",
+          "region": "内地",
+          "tag": "爱情;偶像",
+          "title": "戴流苏耳环的少女",
+          "videoType": "tv",
+          "vodId": 5871,
+          "year": "2015"
+        },
+        {
+          "actors": "陈赫 王传君 娄艺潇",
+          "description": "爱情公寓系列开篇之作。一幢并不奢华的公寓，住着7个不同背景的青年男女。他们用嬉笑怒骂传达新一代年轻人的生活状态和价值观念，用连珠",
+          "director": "韦正",
+          "image": "http://tv.kanketv.com/image/tv/android/180x240/89/89D1FCADD115431F2238.jpg",
+          "isMatched": "1",
+          "kankeId": "tv_2238",
+          "playCount": "132286",
+          "region": "内地;",
+          "tag": "喜剧;爱情",
+          "title": "爱情公寓1",
+          "videoType": "tv",
+          "vodId": 5644,
+          "year": "2009"
+        },
+        {
+          "actors": "郭京飞 袁咏仪 李倩",
+          "description": "《武林外传》姐妹篇。讲述了一群年轻人在龙门镖局内上演的一幕幕搞笑场面，剧集在搞笑手法上相当出奇制胜，比如古装人物说现代词甚至英语",
+          "director": "王勇",
+          "image": "http://tv.kanketv.com/image/tv/android/180x240/0E/0E2328A915DCE5E533043.jpg",
+          "isMatched": "1",
+          "kankeId": "tv_33043",
+          "playCount": "62506",
+          "region": "内地;",
+          "tag": "喜剧;古装",
+          "title": "龙门镖局",
+          "videoType": "tv",
+          "vodId": 5530,
+          "year": "2013"
+        }
+      ],
+      "poster": [
+        {
+          "bImage": "http://hbiptv.kanketv.com/file/posterImage/72.jpg",
+          "columnType": "",
+          "isMatched": "1",
+          "kankeId": "film_1523320",
+          "videoType": "film",
+          "vodId": "72"
+        },
+        {
+          "bImage": "http://hbiptv.kanketv.com/file/posterImage/6148.jpg",
+          "columnType": "",
+          "isMatched": "1",
+          "kankeId": "film_1434550",
+          "videoType": "film",
+          "vodId": "6148"
+        },
+        {
+          "bImage": "http://hbiptv.kanketv.com/file/posterImage/6667.jpg",
+          "columnType": "",
+          "isMatched": "1",
+          "kankeId": "film_104828",
+          "videoType": "film",
+          "vodId": "6667"
+        }
+      ],
+      "documentary": [
+        {
+          "actors": "凯特-布兰切特 鲁妮-玛拉",
+          "description": "50年代的美国，年轻女子特芮丝（鲁妮·玛拉 饰）在纽约百货公司担任售货员，但心中向往的却是摄影师工作。某日，一位美丽优雅的金发贵妇卡罗尔（凯特·布兰切特 饰）来到百货公司购买圣诞节礼物，结果和特芮丝一见投缘。两人相识后特芮丝得知原来卡罗尔有一个女儿，而且正和丈夫哈吉（凯尔·钱德勒 饰）办理离婚手续",
+          "director": "托德-海因斯",
+          "image": "http://img3.douban.com/view/movie_poster_cover/spst/public/p2312679154.jpg",
+          "isMatched": "-2",
+          "kankeId": "5baa27a3-4a8e-4163-8a78-d853f598bb25",
+          "playCount": "0",
+          "region": "",
+          "tag": "",
+          "title": "《卡罗尔》预告片",
+          "videoType": "",
+          "vodId": 6568,
+          "year": "2016"
+        },
+        {
+          "actors": "西尔莎-罗南 艾莫里-科恩",
+          "description": "爱尔兰的小镇生活，纽约的大城美梦，酒馆老板吉姆，意大利裔水管工托尼，一念之间，女孩艾利丝要做出改变她一生的选择。",
+          "director": "约翰-克劳利",
+          "image": "http://img3.doubanio.com/view/movie_poster_cover/spst/public/p2266027536.jpg",
+          "isMatched": "-2",
+          "kankeId": "4a14f37d-7294-4081-a641-3e73793bfa03",
+          "playCount": "0",
+          "region": "",
+          "tag": "",
+          "title": "《布鲁克林》预告片",
+          "videoType": "",
+          "vodId": 6569,
+          "year": "2016"
+        },
+        {
+          "actors": "巩俐 李保田 李纬",
+          "description": "本世纪中叶江南一个农村，染坊老板杨金山为了传宗接代，续弦娶了年轻姑娘菊豆（巩俐饰）为妻，杨金山上了年纪又身患暗疾，没有生育能力，日子一长，菊豆偷偷与他的养子杨天青产生了爱情并生下一子天白。四岁时，天白无意将瘫了下肢的杨金山撞入染地淹死。",
+          "director": "张艺谋 杨凤良",
+          "image": "http://img3.douban.com/view/movie_poster_cover/spst/public/p846905562.jpg",
+          "isMatched": "-2",
+          "kankeId": "cdaf5b1b-c8aa-4f7b-82ff-533893f25ef6",
+          "playCount": "0",
+          "region": "",
+          "tag": "",
+          "title": "菊豆",
+          "videoType": "",
+          "vodId": 6570,
+          "year": ""
+        }
+      ],
+      "anime": [
+        {
+          "actors": "沈达威 夏磊 倪春佳",
+          "description": "小小魔法师成长之旅。美星进入魔法星学院学习后，结识了小月、菲洛、北林和之江等。突然有一天，学院里保存着的魔法宝物心石和美星父亲一",
+          "director": "孙纪剑 邓凯",
+          "image": "http://tv.kanketv.com/image/cartoon/web/120x160/02/0255DFFF7D39DA1451925.jpg",
+          "isMatched": "1",
+          "kankeId": "anime_51925",
+          "playCount": "177908",
+          "region": "内地;",
+          "tag": "魔幻;动画",
+          "title": "星学院",
+          "videoType": "anime",
+          "vodId": 5699,
+          "year": "2015"
+        },
+        {
+          "actors": "刘海霞 贾丽娜 白楠",
+          "description": "《艾可魔法少女》是由惠州本土动漫企业惠州艾米动漫文化传播有限公司与央视动画联合打造，由央视主导制作，在中国国内首创三维与二维互换",
+          "director": "袁化冰 马清风",
+          "image": "http://tv.kanketv.com/image/cartoon/web/120x160/BD/BD99C1AE847F47D250966.jpg",
+          "isMatched": "1",
+          "kankeId": "anime_50966",
+          "playCount": "59361",
+          "region": "内地;",
+          "tag": "动画;魔幻",
+          "title": "艾可魔法少女",
+          "videoType": "anime",
+          "vodId": 5555,
+          "year": "2015"
+        },
+        {
+          "actors": "沈达威 洪海天 张安琪",
+          "description": "螃蟹岛上的恩怨情愁。为了拯救陷入能源危机的玉兔村，村长派兔子白枝去人类社会寻找嫦娥娘娘，无意中白枝碰到了人类小孩小中并从流氓手中",
+          "director": "吴建中 余明",
+          "image": "http://tv.kanketv.com/image/cartoon/web/120x160/26/268D6C5D66925DAA49032.jpg",
+          "isMatched": "1",
+          "kankeId": "anime_49032",
+          "playCount": "22865",
+          "region": "内地",
+          "tag": "动画;搞笑",
+          "title": "兔子帮第二季",
+          "videoType": "anime",
+          "vodId": 5717,
+          "year": "2014"
+        }
+      ]
+    }
+  }
+}

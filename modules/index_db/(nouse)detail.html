@@ -1,0 +1,111 @@
+<div ng-include="'modules/detail/detail.html'"></div>
+<div class="tyitem">
+	<div class="tab-text888 sourse-choose" ng-click="unfold(2)">播放源：{{dm.key_zh}}
+		<img class="{{fold2?'fold':'unfold'}}" src="img/rec01fr.png" />
+		<div class="popul popright" id="J_chose_md" ng-show="!fold2">
+			<ul class="puul">
+				<li class="puli" ng-repeat="v in detail.details">
+					<a href="javascript:;" ng-click="getpartdm(v.key_en,$index,v.key)">{{v.key}}</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<p class="tab-text">剧集</p>
+	<div class="episode pb10">
+		<div class="scrollx pt10">
+			<table>
+				<tr id="J_details_b">
+					<td ng-repeat="v in fadedmt">
+						<a href="javascript:;" class="tvls fwb ellipsis {{$index==fdindex?'active':''}}" ng-click="getdm($index+1)">{{$index*10+1}}-{{($index+1)*10}}</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<ul class="ovh dm{{sc.type}}" ng-if="f" id="J_tv_show">
+			<a href="javascript:;" data-eq="1" class="epils ellipsis" ng-repeat="v in nottv_darma" ng-click="gotoplay($index,v.link)">{{v.deTitle}}</a>
+		</ul>
+		<ul class="ovh dm{{sc.type}}" ng-if="!f" id="J_nottv_show">
+			<a href="javascript:;" data-eq="1" class="epils epilsa ellipsis" ng-repeat="v in nottv_darma" ng-click="gotoplay($index,v.link)">{{v.deTitle}}-{{v.description?v.description:detail.title}}</a>
+		</ul>
+	</div>
+
+</div>
+<div class="tyitem">
+	<p class="tab-text">明星</p>
+	<div class="actorlist">
+		<a class="actor" href="#profile?name={{v.name}}" ng-repeat="v in actorlist">
+			<div><img src="{{v.localImageSmall}}" />
+				<p class="tab-text888 ellipsis">{{v.name}}</p>
+			</div>
+		</a>
+	</div>
+</div>
+<div class="tyitem">
+	<div style="float: right;margin-top: -.1rem;">
+		<img class="{{fold3?'fold':'unfold'}}" ng-click="unfold(3)" src="img/rec01fr.png" />
+	</div>
+	<p class="tab-text">节目预告</p>
+	<ul class="list ovh jm-pre" id="J_list">
+		<li class="ptr mb10" ng-repeat="v in zblist" style="display: {{$index<2||!fold3?'block':'none'}};">
+			<p class="img pta">
+				<img class="loading lazy" src="{{v.list[0].icon2}}" error="assets/images/ico_df.jpg" style="display: block;">
+			</p>
+			<div class="dt">
+				<p class="thi-text ellipsis">{{v.list[0].chaneseName}}</p>
+				<p class="tab-text888 ellipsis clock" style="width: 2rem;" ng-repeat="i in v.list">{{i.startTime.slice(5)}} {{i.title}}</p>
+				<!--<p class="tab-text888 ellipsis clock" style="padding-top: .06rem;">04-28 20:45 欢乐颂 第12集</p>-->
+			</div>
+		</li>
+	</ul>
+</div>
+<div class="tyitem">
+	<div class="tab-text topline ptr" style="padding-left: 0;margin-left: 0;">
+		相关推荐
+		<a href="#/list_db?t=6" class="fr"><img src="img/rec01fr.png" /></a>
+	</div>
+	<ul class="list ovh" id="J_topimg" ng-show="tjshow">
+		<li class="li" ng-repeat="v in tjlist">
+			<a ng-href="#detail_db?columnType={{v.classId|vtype}}&videoId={{v.id}}" class="J_a cff">
+				<p class="size-cover ptr ovh"><img class="J_img lazy loading pta" ng-src="{{v.imageLink}}"></p>
+				<p class="sec-text ellipsis pt5">{{v.title}}</p>
+			</a>
+		</li>
+	</ul>
+</div>
+<div class="tyitem">
+	<p class="tab-text lh30">评论</p>
+	<div class="sentmsg ptr">
+		<img src="{{headimg?headimg:'img/default.jpg'}}" class="cm-img pta" id="J_heading">
+		<p class="pt5"><input class="cm-text dsb" id="J_text" placeholder="我也说句话" ng-model="commenttext" /></p>
+		<a href="javascript:;" class="cm-btn alic pta r0 dsb" id="J_sent" ng-click="senttext()">发送</a>
+	</div>
+	<div class="cm-list" id="J_comment">
+		<div class="cm-li" ng-repeat="v in pllist">
+			<img src="{{v.avatar?v.avatar:'img/default.jpg'}}" class="cm-img pta">
+			<p class="fs14 c66">{{v.u_nick}}</p>
+			<p class="fs14 c66">{{v.time|time_one}}</p>
+			<div class="fs14 c66 lh18">{{v.content}}</div>
+		</div>
+	</div>
+</div>
+<div class="tyitem" style="padding: 0;height: .49rem;position: fixed;bottom: 0;width: 100%;">
+	<div class="tvbg">
+		<div class="tvplay"></div>
+	</div>
+	<div class="cellbg">
+		<div class="cellplay"></div>
+	</div>
+</div>
+<div class="chosetv" id="J_chosetv" style="display:{{showremove?'block':'none'}};" ng-click="closeend()">
+	<div class="remotenew">
+		<div class="choseend">
+			<p class="">
+				<a href="javascript:;" class="J_chose_tv btn_end" ng-click="playtv(true)">电视播放</a>
+			</p>
+			<p class="pt40">
+				<a href="javascript:;" ng-click="playmb()" class="J_chose_mb btn_end">手机播放</a>
+			</p>
+		</div>
+	</div>
+</div>

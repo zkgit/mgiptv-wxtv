@@ -1,0 +1,68 @@
+<div class="html wx_memb_od_detail">
+    <div class="bindtip c66 ptr" ng-show="ifbind">
+        <span class="zh ellipsis">账号：{{currentDevice}}</span>
+        <div class="pta t0 r0">
+            <span class="bord"></span>
+            <span class="jc" ng-click="bd_tip(true)" >解除绑定</span>
+        </div>
+    </div>
+    <div class="bgwx_mem_h alic">
+        <img src="imgnew/{{sc.type}}.jpg" alt="">
+        <p class="fs24 cff pt5 m_title">{{res_info.name}}</p>
+        <p class="fs16 cff pt20 pb10">￥<span class="fs38">{{res_info.price}}</span>元</p>
+        <div ng-show="erma">
+            <p><img ng-src="{{erma}}" class="wp40" alt=""></p>
+            <p class="pt10 fs15 cff">长按图中二维码立即购买</p>
+            <!--<p class="pb20 fs12 cff" >如已完成支付,请点击 <span ng-click="order_result()" class="payed ">已支付</span></p>-->
+        </div>
+        <div ng-show="!erma">
+            <img src="imgnew/wx_buy.png" alt="" class="plr35" ng-click="buy()">
+            <p class="fs12 cfc pb20" ng-show="!ifbind">你还未绑定设备与账号</p>
+        </div>
+
+    </div>
+    <div class="c66 mb_bot">
+            <p class="pb10 pt30 fs16 fwb">什么是{{res_info.name}}？</p>
+            <p class="fs15" ng-repeat="v in res_info.list">{{v.info}}</p>
+            <p class="pb10 pt30 fs16 fwb">购买注意事项</p>
+            <p class="fs15">1.该产品包只能在湖南IPTV+平台使用</p>
+            <p class="fs15">2.购买后将实时生效，您可在电视上直接观看购买的付费影片</p>
+            <p class="fs15">3.购买后如遇网络原因会有所延迟</p>
+            <p class="fs15">4.如有其它问题请联系客服热线11832500</p>
+            <a href="#/wx_memb_buylist?id={{res_info.id}}">
+                <img src="imgnew/wx_buy_history.png" alt="" class="pt30 pb30" >
+            </a>
+    </div>
+    <div class="chose"  ng-show="tips">
+            <div class="tip">
+                <p class="alic wx-memb-title pt20 fwb">购买失败</p>
+                <p class="wx-memb-itex pt10 content ">{{msg.content}}</p>
+                <p class="wx-memb-itex alic btn" ng-click="resetstate()">确定</p>
+            </div>
+    </div>
+    <div class="chose_bind" ng-show="bd_choose" >
+        <div class="tip">
+            <p class="wx-memb-itex content alic  fwb">是否解除绑定账号</p>
+            <p class="wx-memb-itex alic btn" >
+                <span class="no" ng-click="bd_tip(false)">取消</span>
+                <span class="yes" ng-click="unbind(currentDevice)">确定</span>
+            </p>
+        </div>
+    </div>
+    <div class="chose_bind" ng-show="bd_success" >
+        <div class="tip">
+            <p class="wx-memb-itex content alic  fwb">解除绑定成功</p>
+            <p class="wx-memb-itex alic btn" >
+                <span class="yes" ng-click="yes()">确定</span>
+            </p>
+        </div>
+    </div>
+    <div class="chose_bind" ng-show="bd_err" >
+        <div class="tip">
+            <p class="wx-memb-itex content alic  fwb">解除绑定成功</p>
+            <p class="wx-memb-itex alic btn" >
+                <span class="yes" ng-click="no()">确定</span>
+            </p>
+        </div>
+    </div>
+</div>

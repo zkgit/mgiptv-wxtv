@@ -1,0 +1,229 @@
+{
+  "response": {
+    "responseHeader": {
+      "code": "200",
+      "msg": "获取数据成功",
+      "t": 1467856749900
+    },
+    "responseBody": {
+      "totalPage": 5,
+      "currentPage": 1,
+      "totalrecords": 26,
+      "pageSize": 6,
+      "systemTime": 1467856749900,
+      "type": "VOD",
+      "list": [
+        {
+          "actor": "凌潇肃|刘洁|张瑞珈|李彩桦|杨浩煜|江祖平|蒋菲菲|郑佩佩|李思蓓|汤晶晶|贺镪",
+          "bpic": "http://tv.kanketv.com/image/tv/android/360x480/D0/D0F89B4B91897BE251707.jpg",
+          "channelType": "34",
+          "classId": "tv",
+          "desc": "",
+          "director": "高先明",
+          "epgs": [
+            {
+              "chaneseName": "江西卫视",
+              "channelId": "213",
+              "code": "00000001000000050000000000000065",
+              "endTime": "10:10",
+              "englishName": "jiangxi",
+              "icon": "http://ikanpic.kanketv.com/image/live/icon/jiangxi.png",
+              "icon2": "http://ikanpic.kanketv.com/image/live/icon2/jiangxi.png",
+              "intervalTime": "33",
+              "ismatch": "-2",
+              "next": false,
+              "now": false,
+              "percentage": "73",
+              "startTime": "09:25",
+              "title": "",
+              "todayDate": ""
+            }
+          ],
+          "imageLink": "http://tv.kanketv.com/image/tv/web/120x160/D0/D0F89B4B91897BE251707.jpg",
+          "kankeid": "tv_51707",
+          "lpic": "http://tv.kanketv.com/image/tv/android/180x240/D0/D0F89B4B91897BE251707.jpg",
+          "playCount": "7646263",
+          "sinacount": "0",
+          "time_type": "",
+          "title": "情谜睡美人",
+          "videoId": "0"
+        },
+        {
+          "actor": "朴海镇|李菲儿|刘雨欣|王佳佳|张伦硕|吴磊|郑佩佩|宋轶|屈菁菁|杨金承|张静东|汪粤|张爱丽|李兰迪|邓岚|张大礼|易勇",
+          "bpic": "http://tv.kanketv.com/image/tv/android/360x480/79/797C153E80AAE09151489.jpg",
+          "channelType": "34",
+          "classId": "tv",
+          "desc": "",
+          "director": "朱时茂|牛乐|秘天慧",
+          "epgs": [
+            {
+              "chaneseName": "广东卫视高清",
+              "channelId": "925",
+              "code": "00000001000000050000000000000445",
+              "endTime": "10:08",
+              "englishName": "guangdong",
+              "icon": "http://ikanpic.kanketv.com/image/live/icon/guangdong.png",
+              "icon2": "http://ikanpic.kanketv.com/image/live/icon2/guangdong.png",
+              "intervalTime": "43",
+              "ismatch": "-2",
+              "next": false,
+              "now": false,
+              "percentage": "81",
+              "startTime": "09:15",
+              "title": "",
+              "todayDate": ""
+            }
+          ],
+          "imageLink": "http://tv.kanketv.com/image/tv/web/120x160/79/797C153E80AAE09151489.jpg",
+          "kankeid": "tv_51489",
+          "lpic": "http://tv.kanketv.com/image/tv/android/180x240/79/797C153E80AAE09151489.jpg",
+          "playCount": "6616728",
+          "sinacount": "0",
+          "time_type": "",
+          "title": "远得要命的爱情",
+          "videoId": "0"
+        },
+        {
+          "actor": "李幼斌|童蕾|何政军|张光北|孙俪|张桐|王全有|陆鹏|张笑君|车晓彤|梁林琳|杨联春|由力|战卫华|江水|宗利群|张伟|陈旺林|袁满|张国荣|柳秉钰|田勇|赵中华|李江|张建祥|孟耿成|都梁|陈艺戈",
+          "bpic": "http://tv.kanketv.com/image/tv/android/360x480/67/67EC3D752BBA4648855.jpg",
+          "channelType": "34",
+          "classId": "tv",
+          "desc": "",
+          "director": "张前|陈健|江奇涛|都梁",
+          "epgs": [
+            {
+              "chaneseName": "江苏卫视高清",
+              "channelId": "919",
+              "code": "00000001000000050000000000000198",
+              "endTime": "10:18",
+              "englishName": "jiangsu",
+              "icon": "http://ikanpic.kanketv.com/image/live/icon/jiangsu.png",
+              "icon2": "http://ikanpic.kanketv.com/image/live/icon2/jiangsu.png",
+              "intervalTime": "25",
+              "ismatch": "-2",
+              "next": false,
+              "now": false,
+              "percentage": "55",
+              "startTime": "09:33",
+              "title": "",
+              "todayDate": ""
+            }
+          ],
+          "imageLink": "http://tv.kanketv.com/image/tv/web/120x160/67/67EC3D752BBA4648855.jpg",
+          "kankeid": "tv_855",
+          "lpic": "http://tv.kanketv.com/image/tv/android/180x240/67/67EC3D752BBA4648855.jpg",
+          "playCount": "3470153",
+          "sinacount": "0",
+          "time_type": "",
+          "title": "亮剑",
+          "videoId": "0"
+        },
+        {
+          "actor": "张铎|徐百卉|杨明娜|石文中|林栋甫|李亚天|原子霏",
+          "bpic": "http://tv.kanketv.com/image/tv/android/360x480/89/89626BE368B455C452027.jpg",
+          "channelType": "28",
+          "classId": "tv",
+          "desc": "",
+          "director": "刘雪松",
+          "epgs": [
+            {
+              "chaneseName": "CCTV-1高清",
+              "channelId": "901",
+              "code": "00000001000000050000000000000152",
+              "endTime": "10:15",
+              "englishName": "CCTV1",
+              "icon": "http://ikanpic.kanketv.com/image/live/icon/CCTV1.png",
+              "icon2": "http://ikanpic.kanketv.com/image/live/icon2/CCTV1.png",
+              "intervalTime": "34",
+              "ismatch": "-2",
+              "next": false,
+              "now": false,
+              "percentage": "66",
+              "startTime": "09:24",
+              "title": "",
+              "todayDate": ""
+            }
+          ],
+          "imageLink": "http://tv.kanketv.com/image/tv/web/120x160/89/89626BE368B455C452027.jpg",
+          "kankeid": "tv_52027",
+          "lpic": "http://tv.kanketv.com/image/tv/android/180x240/89/89626BE368B455C452027.jpg",
+          "playCount": "2701711",
+          "sinacount": "0",
+          "time_type": "",
+          "title": "风云年代",
+          "videoId": "0"
+        },
+        {
+          "actor": "严屹宽|于荣光|刘流|古力娜扎|孙骁骁|张晓晨|张鹰|杜奕衡|杨玏|林允儿|林更新|范雨林|贾青|赵韩樱子|邹兆龙|金桢勋|高以翔",
+          "bpic": "http://tv.kanketv.com/image/tv/android/360x480/2B/2B81226EDB83F73751604.jpg",
+          "channelType": "34",
+          "classId": "tv",
+          "desc": "",
+          "director": "国建勇|程力栋|袁英明",
+          "epgs": [
+            {
+              "chaneseName": "广西卫视",
+              "channelId": "222",
+              "code": "00000001000000050000000000000086",
+              "endTime": "10:29",
+              "englishName": "guangxi",
+              "icon": "http://ikanpic.kanketv.com/image/live/icon/guangxi.png",
+              "icon2": "http://ikanpic.kanketv.com/image/live/icon2/guangxi.png",
+              "intervalTime": "24",
+              "ismatch": "-2",
+              "next": false,
+              "now": false,
+              "percentage": "43",
+              "startTime": "09:34",
+              "title": "",
+              "todayDate": ""
+            }
+          ],
+          "imageLink": "http://tv.kanketv.com/image/tv/web/120x160/2B/2B81226EDB83F73751604.jpg",
+          "kankeid": "tv_51604",
+          "lpic": "http://tv.kanketv.com/image/tv/android/180x240/2B/2B81226EDB83F73751604.jpg",
+          "playCount": "1733066",
+          "sinacount": "0",
+          "time_type": "",
+          "title": "武神赵子龙",
+          "videoId": "0"
+        },
+        {
+          "actor": "娄艺潇|陈赫|邓家佳|王传君|孙艺洲|金世佳|李金铭|赵霁|李佳航|赵文琪|榕榕|刘萌萌|徐佳琦|杜俊",
+          "bpic": "http://tv.kanketv.com/image/tv/android/360x480/74/7487CE98B0E31ED017289.jpg",
+          "channelType": "34",
+          "classId": "tv",
+          "desc": "",
+          "director": "韦正|汪远",
+          "epgs": [
+            {
+              "chaneseName": "浙江卫视高清",
+              "channelId": "918",
+              "code": "00000001000000050000000000000265",
+              "endTime": "10:49",
+              "englishName": "zhejiang",
+              "icon": "http://ikanpic.kanketv.com/image/live/icon/zhejiang.png",
+              "icon2": "http://ikanpic.kanketv.com/image/live/icon2/zhejiang.png",
+              "intervalTime": "4",
+              "ismatch": "-2",
+              "next": false,
+              "now": false,
+              "percentage": "7",
+              "startTime": "09:54",
+              "title": "",
+              "todayDate": ""
+            }
+          ],
+          "imageLink": "http://tv.kanketv.com/image/tv/web/120x160/74/7487CE98B0E31ED017289.jpg",
+          "kankeid": "tv_17289",
+          "lpic": "http://tv.kanketv.com/image/tv/android/180x240/74/7487CE98B0E31ED017289.jpg",
+          "playCount": "991115",
+          "sinacount": "0",
+          "time_type": "",
+          "title": "爱情公寓3",
+          "videoId": "0"
+        }
+      ]
+    }
+  }
+}

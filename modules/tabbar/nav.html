@@ -1,0 +1,58 @@
+<nav class="mui-bar mui-bar-tab mui-bar-tab-top sec-text" ng-show="$root.showBottomBar">
+	<div class="second scrolly " style="background: #FFFFFF" id="J_second" >
+		<table>
+			<tr id="J_second_tr" >
+				<td>
+					<a class="sec-text tvls ellipsis bta {{$root.current_menu==2?'active s':''}}" ui-sref="/slide_entry.TVlive_guide" >直播</a>
+				</td>
+				<td>
+					<a class="sec-text tvls ellipsis bta {{$root.current_menu==1?'active s ':''}}" ui-sref="/slide_entry.index" >推荐</a>
+				</td>
+				<!--<td>-->
+					<!--<a class="sec-text tvls ellipsis bta {{$root.current_menu==8?'active s ':''}}" href="#/activitydetail" >广场舞</a>-->
+				<!--</td>-->
+				<td>
+					<a class="sec-text tvls ellipsis bta {{$root.current_menu==3?'active s':''}}" ui-sref="/slide_entry.index_db_tv({t:'2',coltype:'tv'})" >电视剧</a>
+				</td>
+				<td>
+					<a class="sec-text tvls ellipsis bta {{$root.current_menu==4?'active s ':''}}" ui-sref="/slide_entry.index_db_film({t:'1', coltype:'film'})" >电影</a>
+				</td>
+				<td>
+					<a class="sec-text tvls ellipsis bta {{$root.current_menu==5?'active s':''}}" ui-sref="/slide_entry.index_db_arts({t:'3', coltype:'arts'})" >综艺</a>
+				</td>
+				<td>
+					<a class="sec-text tvls ellipsis bta {{$root.current_menu==6?'active s':''}}" ui-sref="/slide_entry.index_db_anime({t:'4', coltype:'anime'})" >动漫</a>
+				</td>
+				<td>
+					<a class="sec-text tvls ellipsis bta {{$root.current_menu==7?'active s':''}}" ui-sref="/slide_entry.index_db_documentary({t:'5', coltype:'documentary'})" >纪录片</a>
+				</td>
+			</tr>
+		</table>
+	</div>
+</nav>
+
+<nav class="mui-bar mui-bar-tab mui-bar-tab-top-h bColor" ng-show="$root.showTopBar">
+	<a href="#/search" class="l58 t0 lh0 dsb hp100 cff fs24" style="margin-right: 1.1rem">
+		<span style="width:100%">
+			<input type="search" style="height: .28rem;margin: 0;" class="mui-input-clear alic" placeholder="请输入关键字">
+			<img style="position: absolute;top: .16rem;left: .6rem;width: .15rem;" src="img/search.png" />
+		</span>
+	</a>
+	<div class="index_mine " ng-show="$root.current_menu==1||$root.current_menu==2">
+		<a  class="imgbox dsb  ptr ovh headbox" href="#/mine">
+			<img  width="100%" src="{{headimg}} " err-src="img/mine.png" class="loading pta bdrp50">
+		</a>
+		<a  class="imgbox dsb  ptr ovh historybox" href="#/mine_history">
+			<img  width="100%" src="img/mine_his.png" class="loading pta ">
+		</a>
+		<a  class="imgbox dsb  ptr ovh sacnbox" href="" ng-click="add_d()" >
+			<img  width="100%" src="img/main_ss.png" class="loading pta ">
+		</a>
+	</div>
+	<div class="index_choose " ng-show="$root.current_menu!=1&&$root.current_menu!=2">
+		<a id="J_a" class="choosebox ptr ovh " href="{{$root.choose_class}}">
+			<img id="J_img" width="100%" src="img/nav_xuan.png" >
+			<span>筛选</span>
+		</a>
+	</div>
+</nav>

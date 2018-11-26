@@ -1,0 +1,30 @@
+<div class="headline headline-title">
+	<a class="pta l10 cff fs16" href="javascript:;" id="J_back" back>&lt;返回</a>
+	<a class="pta r10 cff fs16" href="javascript:;" id="J_edit" ng-click="goedit()">{{isedit?'完成':'编辑'}}</a>
+	<p class="i-text alic">管理设备成员</p>
+</div>
+<div class="">
+	<div class="pt10"id="order_list">
+		<ul class="list ovh plr {{isedit?'active':''}}" >
+			<li class="li ptr mb10" style="background: url(img/my_order_bg.jpg) 50% 50% no-repeat;height: 1rem;background-size: 100%;" ng-repeat="v in list" on-finish-render-filters>
+				<a class="edit" href="javascript:;">
+					<span class="ico" ng-click="del(v)"></span>
+				</a>
+				<a href="#/detial?zb=zb&kankeId={{v.kankeId}}&vodId={{v.vodId}}&channelId={{v.channelId}}&ChannelCode={{v.channelCode}}" class="lstv ptr">
+					<p class="img pta">
+						<img class="loading lazy" ng-src="{{v.channelPicUrl}}">
+					</p>
+					<p class="name">
+						<span class="fs16 dsb ellipsis">{{v.programName}}</span>
+						<span class="fs16 dsb ellipsis" style="background: url(img/line.jpg) 50% 50% no-repeat;height: 0.05rem;width: 0.8rem;"></span>
+						<span class="lh16 ellipsis dsb pt5" style="color: #c1c1c1;font-size: 0.1rem;"><span class="order_icon order_icon1"></span>已有{{v.reserveAmount}}人预约</span>
+						<span class="lh16 ellipsis dsb pt5" style="color: #3e9aff;font-weight: bold;font-size: 0.13rem;width: 1.7rem;"><span class="order_icon2"></span>{{v.liveStartTime|mytime}} 
+							<span style="color:#c1c1c1 ;font-weight: normal;font-size: 0.1rem;">{{v.channelNameZh}}</span>
+						</span>
+					</p>
+					<span class="order_icon3"></span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,33 @@
+<div class="headline headline-title headline-fixed">
+	<a class="pta l10 cff fs16" href="javascript:;" id="J_back" back>
+		<img style="height: .2rem;" src="img/left-arrow.png" />
+	</a>
+	<p class="i-text " id="J_til">我的收藏</p>
+	<a href="javascript:;" class="pta r10 t0 lh0 dsb hp100 cff fs24" ng-click="deletefcn()">
+		<span class="tab-text">
+		{{deleteState?'取消':'删除'}}
+		</span>
+	</a>
+</div>
+<div style="margin-top: .44rem;">
+    <div class="actlist" style="padding: .06rem;" id="collectlist">
+        <ul class="list ovh {{isedit?'active':''}}" id="J_list">      	
+            <li class="li" ng-repeat="v in list" data-vodid= "{{v.vodId}}" data-kankeid = "{{v.kankeId}}">
+            	<input name="checkbox" type="checkbox" style="display:{{deleteState?'block':'none'}};">
+                <!--<a class="edit" href="javascript:;" ng-click="del(v.kankeId,v.vodId)"><span class="ico"></span></a>-->
+                <a href="#detail?columnType={{v.classId|vtype}}&videoId={{v.videoId}}&kankeId={{v.kankeId}}&vodId={{v.vodId}}" class="lia">
+                    <p class="size-cover ptr ovh">
+                        <img class="lazy loading pta mycollect" ng-src="{{v.lpic}}">
+                    </p>
+                    <p class="sec-text ellipsis pt5">{{v.title}}</p>
+                    <!--<p class="c66 lh16">播放:{{v.allcount|to_wan}}</p>-->
+                </a>
+            </li>
+        </ul>
+    </div>
+    <p class="alic ptb" id="J_loading">{{loadtext}}</p>
+</div>
+<div class="editline" id="J_editline" ng-show="deleteState" style="display: block;">
+	<a href="javascript:;" class="f" id="J_del_all" ng-click="checkAll()">全选</a>
+	<a href="javascript:;" id="J_del" ng-click="deleteButton()">删除</a>
+</div>

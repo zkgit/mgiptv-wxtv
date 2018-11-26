@@ -1,0 +1,69 @@
+<div class="html memb_order memb_od_detail">
+  <!--  <div style="display: none;">
+        <div class="headline headline-title ">
+            <a class="pta l10 cff fs16" href="#/index">
+                <img style="height: .2rem;" src="img/left-arrow.png" />
+            </a>
+            <p class="i-text alic ellipsis" id="J_til" >订单详情</p>
+        </div>
+        <div class="paystate p10 {{pay_icon}} mt10 mb10"><p class="tab-text cf ">{{pay_text}}</p> <p class="thi-textfff">待付金额：￥135.00</p></div>
+        <div class="p10 ovh memb_order_t bgbai">
+            <img class="mr10 fl img" ng-src="img/order-item.png" alt="">
+            <div class="main c33 ptr">
+                <p class="sec-text ellipsis">湖南IPTV年卡九折购 <span class="fr">￥135.00</span></p>
+                <p class="tab-text444 ">黄金会员卡/钻石会员年卡</p>
+                <p class="thi-text222 pta b0 p_b">钻石会员季卡 </p><span class="fr thi-text pta b0 r0">x1</span>
+            </div>
+        </div>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell sec-text">
+                <span class="dsib mr10">买家留言:</span><span class="tab-text444 ">希望以后常有这种优惠哦！</span>
+            </li>
+            <li class="mui-table-view-cell sec-text">
+                <span>价格合计:</span> <span class=" fr">￥135.00</span>
+            </li>
+            <li class="mui-table-view-cell sec-text">
+                <span>设备号</span> <span class="thi-text fr">{{boxId}}</span>
+            </li>
+        </ul>
+        <div class="twocode p10 mb10 mt10 bgbai alic thi-text222" ng-show="payoff">
+            <p class="ptr">请长按二维码扫描支付
+                &lt;!&ndash;<span class="cred pta r0 dsib clocks">{{date}}</span>&ndash;&gt;
+            </p>
+            <div class="two-code-img ptr ovh">
+                <img src="{{sc.qrcodeUrl}}" alt="" class="wp100">
+                &lt;!&ndash;<div class="twobgcover pta cred" ng-show="qr_expired">二维码已失效</div>&ndash;&gt;
+            </div>
+
+            <p class="lh18">如已完成支付，请点击 <a href="" class="" ng-click="order_result()">已支付</a></p>
+        </div>
+        <div class="p10 tab-text444">
+            &lt;!&ndash;<p>联系人:周先生</p>&ndash;&gt;
+            &lt;!&ndash;<p>手机号：13125678970</p>&ndash;&gt;
+            <p>订单编号：{{sc.order}}</p>
+        </div>
+        <div class="tippop back ptf z11 fs12 wp100 alic cff" ng-show="djstips">倒计时:[{{djs}}s]回到主页</div>
+    </div>-->
+    <div class="memb_bg">
+        <div class="memb_pay alic pt30">
+            <img src="img/VIPcard.png" alt="" class="vip">
+            <p class="memb_title memb_bc">湖南IPTV•年卡</p>
+            <p class="cff fs22 pt10"><span class="fs13">￥</span>495.00</p>
+            <div class="pt10 pl20 pr20">
+                <img src="img/memb_quanyi.png" alt="" class="fl mr10 mt-12">
+                <div class="alil cff fs12 ">
+                    <p><span class="memb_bc">会员</span>即可观看高清影院、好莱坞、3D和4K影院高清剧场、日韩剧、欧美剧、高清动画、迪士尼成长乐园、热血动漫、经典记录、广场舞、音乐及所有付费直播频道</p>
+                </div>
+            </div>
+            <div class="pta b20 wp100 alic">
+                <p><img src="img/memb_erwei.png" alt="" class="wp40 "></p>
+                <div class="ptr">
+                    <img src="{{sc.qrcodeUrl}}" alt="" class="wp40">
+                    <div class="cover pta ailc" ng-show="paysuccess"><img src="img/memb_ok.png" alt="" class="img"></div>
+                </div>
+                <p class="fs12 pb5">如已完成支付,请点击 <span ng-click="order_result()" class="payed ">已支付</span></p>
+            </div>
+        </div>
+
+    </div>
+</div>

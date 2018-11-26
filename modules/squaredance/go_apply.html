@@ -1,0 +1,76 @@
+
+<div class="sd-vote  pb10">
+    <div class="headline headline-title ">
+        <a class="pta l10 cff fs16" href="javascript:;" id="J_back" back>
+            <img style="height: .2rem;" src="img/left-arrow.png" />
+        </a>
+        <p class="i-text alic ellipsis" id="J_til" >我要投票</p>
+    </div>
+    <div class="headimg">
+        <img src="img/vote_head.png" alt="">
+    </div>
+    <div class="vote">
+        <div class="fs16  cff alic ptr">
+            <div class="l l1"><div class="shadow"></div></div>
+
+            <div class="mt-12">您还有<span class="cred">1</span>次机会 </div>
+            <div class="vote-rule pta r0">
+                <div class="l l2"></div>
+                <a href="#/awards_show" class="fs12 cff bd-f plr5 dsib">查看投票规则
+                    <img src="" alt="">
+                </a>
+            </div>
+
+        </div>
+        <div class="sousuo pt10 fs14 alic">
+            <div class="select cff fl" ng-click="showselect()">全省</div>
+            <input type="text" placeholder="请输入队伍名称">
+            <a href="javascript:;" class="cff fr plr5">搜索</a>
+        </div>
+    </div>
+    <ul class="list ovh">
+        <li class="item p10  alic">
+            <p class="sec-text pb5">湘潭县欢乐腰鼓队《大姑娘美大姑娘浪》</p>
+            <p class="piao"><span class="cred">9232</span>票</p>
+            <div class="img ptr"><img ng-src="http://jscn.kanketv.com/image/poster/7B23FD104CBF450198D8D881F181CD6A.jpg" alt=""><img class="pta vd-btn" src="img/sd_vt_video.png" alt=""></div>
+            <div class="btn bgred dsib cff mt10">投一票</div>
+        </li>
+        <li class="item p10  alic">
+            <p class="sec-text pb5">湘潭县欢乐腰鼓队《大姑娘美大姑娘浪》</p>
+            <p class="piao"><span class="cred">9232</span>票</p>
+            <div class="img ptr"><img ng-src="http://jscn.kanketv.com/image/poster/7B23FD104CBF450198D8D881F181CD6A.jpg" alt=""><img class="pta vd-btn" src="img/sd_vt_video.png" alt=""></div>
+            <div class="btn bgccc dsib cff mt10">已投</div>
+        </li>
+    </ul>
+    <div class="chosetv" ng-show="isselect">
+        <div class="select-box ptr">
+            <img src="img/sd_close.png" class="close pta r0" ng-click="hideselect()" alt="">
+            <div class="scroll-box  scrolly ">
+                <ul class="alic">
+                    <li class="active">全省</li>
+                    <li>长沙</li>
+                    <li>株洲</li>
+                    <li>湘潭</li>
+                    <li>衡阳</li>
+                    <li>邵阳</li>
+                    <li>岳阳</li>
+                    <li>长沙</li>
+                    <li>株洲</li>
+                    <li>湘潭</li>
+                    <li>衡阳</li>
+                    <li>邵阳</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="chosetv alic" ng-show="isloading">
+        <p class="cff ptr loading"><img src="img/sd_loading.png" alt="">正在玩命加载中...</p>
+    </div>
+</div>
+<style>
+    html,body{
+        height:100%;
+    }
+    .html{height:100%}
+
+</style>

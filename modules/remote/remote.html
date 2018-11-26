@@ -1,0 +1,78 @@
+<div class="remote pta hp100 wp100" id="remote" unselectable="on" style="-moz-user-select:none;-webkit-user-select:none;webkit-touch-callout:none">
+	<div class="ico-item ico-item1">
+		<!--<img class="ico ico1" src="img/remote01.png" />-->
+		<span id="choose" class="remote-01 l10" ></span>
+		<span class="text1 wp13 ellipsis alic">{{dname}}</span>
+		<span class="l100 wp10 ellipsis ">{{state}}</span>
+		<ul class="remote-01-01 scrolly" style="width:0.85rem;max-height: 2.3rem;color: #d6d6d7">
+			<li ng-repeat="v in deviceList" class="ellipsis" ng-click="changedevice(v.boxId)">{{v.boxName}}</li>
+		</ul>
+		<span class="text2 remote-02" ng-click="showgesture()">{{showmodel=='gesture'?'触屏模式':'按键模式'}}</span>
+		<p class="i-text1 alic" style="color: #d6d6d7;">遥控器</p>
+	</div>
+	<div class="ico-item ico-item2">
+		<span data-keyCode="reduceVolume" class="remote-03 J_code">&nbsp;</span>
+		<span data-keyCode="addVolume" class="remote-04 J_code">&nbsp;</span>
+		<span data-keyCode="449" class="remote-05 J_code">&nbsp;</span>
+	</div>
+	<div id="svgbox" class="ico-item3" style="display: {{showmodel=='default'?'block':'none'}}">
+		<svg id="svg" class="svg dsb mc" currentScale="1" width="200px" height="200px" viewBox="0 0 200 200" style="-webkit-transform:scale(1); transform:scale(1)">
+            <circle cx="100 " cy="100 " r="99 " stroke="#fff " stroke-width="1 " fill="none "/>
+            <g class="g1 " data-keyCode="up" transform="rotate(-45 100 100) ">
+                <path d="m100 1 A99,99 0 0,1 199,100 L100 100 z " class="svg-up " />
+            </g>
+            <g class="g1 " data-keyCode="right" transform="rotate(45 100 100) ">
+                <path d="m100 1 A99,99 0 0,1 199,100 L100 100 z " class="svg-right " />
+            </g>
+            <g class="g1 " data-keyCode="down" transform="rotate(135 100 100) ">
+                <path d="m100 1 A99,99 0 0,1 199,100 L100 100 z " class="svg-bottom " />
+            </g>
+            <g class="g1 " data-keyCode="left" transform="rotate(225 100 100) ">
+                <path d="m100 1 A99,99 0 0,1 199,100 L100 100 z " class="svg-left " />
+            </g>
+            <g class="yuan " data-keyCode="ok">
+                <circle cx="100 " cy="100 " r="40 " class="c " stroke="#fff " stroke-width="1 " fill="#007aff "/>
+                <text x="100 " y="50% " fill="#fff " class="t " font-size="20px " text-anchor="middle " dy="8px ">OK</text>
+            </g>
+        </svg>
+		<div data-keyCode="ok" class="remote-ok J_code "></div>
+		<div class="svg-up direction remote-top "></div>
+		<div class="svg-right direction remote-right "></div>
+		<div class="svg-bottom direction remote-bottom "></div>
+		<div class="svg-left direction remote-left "></div>
+	</div>
+	<div class="ico-item3-2" style="display: {{showmodel=='num'?'block':'none'}}">
+		<ul>
+			<li><span data-keyCode="one" data-keyNumber="1" class="my-button-num1 J_code" >1</span></li>
+			<li><span data-keyCode="two" data-keyNumber="2" class="my-button-num2 J_code" >2</span></li>
+			<li><span data-keyCode="three" data-keyNumber="3" class="my-button-num3 J_code" >3</span></li>
+			<li><span data-keyCode="four" data-keyNumber="4" class="my-button-num4 J_code" >4</span></li>
+			<li><span data-keyCode="five" data-keyNumber="5" class="my-button-num5 J_code" >5</span></li>
+			<li><span data-keyCode="six" data-keyNumber="6" class="my-button-num6 J_code" >6</span></li>
+			<li><span data-keyCode="seven" data-keyNumber="7" class="my-button-num7 J_code" >7</span></li>
+			<li><span data-keyCode="eight" data-keyNumber="8" class="my-button-num8 J_code" >8</span></li>
+			<li><span data-keyCode="nine" data-keyNumber="9" class="my-button-num9 J_code" >9</span></li>
+			<li style="width: 100%;"><span data-keyCode="zero" data-keyNumber="0" class="my-button-num0  J_code" >0</span></li>
+		</ul>
+	</div>
+	<div class="ico-item3-2" style="display: {{showmodel=='gesture'?'block':'none'}}">
+		<a href="javascript:; " class="mt10 " id="J_touch ">
+			<span class="go " id="gotop "><img src="imgnew/ico_po.png "></span>
+			<span class="go " id="goright "><img src="imgnew/ico_po.png "></span>
+			<span class="go " id="godown "><img src="imgnew/ico_po.png "></span>
+			<span class="go " id="goleft "><img src="imgnew/ico_po.png "></span>
+			<span class="go" id="ok"><img src="imgnew/remote-dot-1.png"></span>
+		</a>
+	</div>
+	<div class="ico-item ico-item4 ">
+
+		<span class="my-button-little {{showmodel=='num'?'active':''}}" ng-click="shownum()">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+		<!--<span data-keyCode="36" class="my-button_cai J_code ">&nbsp;&nbsp;&nbsp;&nbsp;</span>-->
+		<span data-keyCode="home" class="my-button_zhu J_code ">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+		<span data-keyCode="back" class="my-button_back J_code ">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+	</div>
+
+</div>
+
+<!--遥控器的数字提示-->
+<div class="remotetip ptf z10 wp100 alic ellipsis  "><div class="dsilb fs26  info"><div class="ellipsis"><sapn class="remotetipitext" >{{option}}</sapn></div></div></div>

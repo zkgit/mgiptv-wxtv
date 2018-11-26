@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/mui.min.js"></script>
+		<script src="js/angular.min.js"></script>
+		<script src="js/config.js"></script>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			html,
+			body {
+				font: 18px/100% "微软雅黑", "Lucida Grande", "Lucida Sans", Helvetica, Arial, Sans;
+				background-color: #fff;
+				line-height: 1.42;
+			}
+			
+			.mui-split {
+				height: 13px;
+				margin-bottom: 0;
+				background: #EEEEEE;
+				width: 100%;
+				/*padding: 13px;
+				color: #999;
+				text-transform: uppercase;
+				text-align: center;
+				text-shadow: 1px 1px 0px #212121;*/
+			}
+			
+			.myblank {
+				height: 8px;
+				margin-bottom: 0;
+				background: #FFFFFF;
+				width: 100%;
+				border: 0;
+			}
+			
+			.mui-text {
+				border: 0;
+				padding: 25px 20px 20px 20px;
+			}
+			
+			.mui-navigate-right:after,
+			.mui-push-right:after {
+				left: 49%;
+				right: 49%;
+			}
+			
+			.mui-buy {
+				width: 20%;
+				color: #fff;
+				border: 1px solid #666666;
+				background-color: #666666;
+				margin-bottom: 0;
+				padding: 5px 0;
+			}
+			
+			.mui-media-body {
+				display: none;
+			}
+			
+			.myrelative {
+				position: relative;
+			}
+			
+			.myright {
+				height: 38px;
+				text-align: right;
+				margin: auto;
+			}
+			
+			.myright img,
+			.myright a {
+				margin-left: 0px;
+				margin-right: 6px;
+				width: 32px;
+				margin-top: 2px;
+			}
+			
+			.myright a,
+			.myright a span {
+				height: 32px;
+				margin-top: auto;
+				margin-bottom: auto;
+			}
+			
+			.myright a span {
+				text-align: center;
+				line-height: 32px;
+				font-size: 18px;
+				padding: 0px 0px;
+			}
+			
+			.mybuy {
+				border-color: #0072ff;
+				background-color: #0072ff;
+				color: #FFFFFF;
+				height: 32px;
+				font: 18px/100% "微软雅黑", "Lucida Grande", "Lucida Sans", Helvetica, Arial, Sans;
+				line-height: 1.42;
+			}
+			
+			.mycollect {
+				border-color: #FFFFFF;
+				background-color: #FFFFFF;
+				color: #0072ff;
+			}
+			
+			.mui-slider-indicator .mui-indicator {
+				width: 7px;
+				height: 7px;
+				margin: 1px 7px;
+				background: #aaa;
+				-webkit-box-shadow: 0 0 1px 1px rgba(130, 130, 130, .7);
+				box-shadow: 0 0 1px 1px rgba(130, 130, 130, .7);
+			}
+			
+			.mui-slider-indicator .mui-active.mui-indicator {
+				background: #0072ff;
+			}
+			
+			.mytitle {
+				width: 100%;
+				background: url(img/dash.png);
+				background-repeat: repeat-x;
+				background-position: 50% 50%;
+				text-align: center;
+			}
+			
+			.mytitle div {
+				width: 50%;
+				margin-left: auto;
+				margin-right: auto;
+				background-color: #FFFFFF;
+				color: #999;
+				font-size: 16px;
+			}
+			
+			.mui-slider .mui-slider-group .mui-slider-item>a:not(.mui-control-item) {
+				text-align: center;
+			}
+			
+			.mui-slider .mui-slider-group .mui-slider-item img {
+				width: 70%;
+			}
+			
+			.mui-slider .mui-slider-group .mui-slider-item>a:not(.mui-control-item) {
+				text-align: center;
+			}
+			
+			.bigPic {
+				/*height: 208px;*/
+			}
+			
+			.littlePic {
+				/*background-color: #999;*/
+			}
+			
+			.mui-slider-item a {
+				background-color: #e2e2e2;
+			}
+			
+			.mui-toast-container {
+				top: 50%;
+				opacity: 0.8;
+			}
+			
+			.mui-toast-message {
+				font-size: 16px;
+				width: 158px;
+				margin: 5px auto;
+				padding: 7px;
+				text-align: center;
+				color: #fff;
+				border-radius: 7px;
+				background-color: #000;
+			}
+		</style>
+		<title>商品详情</title>
+	</head>
+
+	<body style="overflow-x: hidden;overflow-y: auto;">
+		<div ng-app="myapp" ng-controller="goodCtr">
+			<div id="slider" class="mui-slider">
+				<div class="mui-slider-group mui-slider-loop">
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a ng-href="{{}}">
+							<img class="littlePic" ng-src="{{bannerlas.productPicLink}}" err-src="img/little.jpg">
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a ng-href="{{}}">
+							<img class="littlePic" ng-src="{{banner.productPicLink}}" err-src="img/little.jpg">
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a ng-href="{{}}">
+							<img class="littlePic" ng-src="{{banner.productPicLink}}" err-src="img/little.jpg">
+						</a>
+					</div>
+					<div class="mui-slider-item">
+						<a ng-href="{{}}">
+							<img class="littlePic" ng-src="{{banner.productPicLink}}" err-src="img/little.jpg">
+						</a>
+					</div>
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a ng-href="{{}}">
+							<img class="littlePic" ng-src="{{bannerfir.productPicLink}}" err-src="img/little.jpg">
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+			<ul class="mui-table-view mui-detail" style="margin-left: 5px;margin-right: 5px;">
+				<div class="mui-text">{{banner.productMainTitle}}</div>
+				<div class="myrelative myright">
+					<a ng-click="collect()"><img src="img/collect.png" /><span class="mui-btn mycollect">{{banner.isCollection==1?'已收藏':'收藏&#12288;'}}</span></a>
+					<a ng-href="{{banner.productDetailLink}}"><button type="button" class="mui-btn mybuy"style="padding: 0 15px;">购买</button></a>
+				</div>
+				<li style="display: none;" class="mui-table-view-cell mui-collapse mymui-collapse">
+					<a class="mui-navigate-right" href="#">
+					</a>
+				</li>
+				<div class="myblank">&nbsp;</div>
+			</ul>
+			<ul class="mui-table-view">
+				<p class="mui-split">&nbsp;</p>
+				<div class="mytitle">
+					<div>看这个商品的还买了</div>
+				</div>
+				<ul class="mui-table-view mui-grid-view">
+					<li class="mui-table-view-cell mui-media mui-col-xs-6" ng-repeat="v in similarList1">
+						<a ng-href="{{v.productDetailLink}}"><img class="mui-media-object littlePic" ng-src="{{v.productPicLink}}" err-src="img/little.jpg">
+							<div class="mui-media-body">{{v.adName}}</div>
+						</a>
+					</li>
+					<div class="myblank">&nbsp;</div>
+				</ul>
+			</ul>
+
+			<ul class="mui-table-view">
+				<ul class="mui-table-view mui-grid-view">
+					<li class="mui-table-view-cell mui-media mui-col-xs-6" ng-repeat="v in similarList2">
+						<a ng-href="{{v.productDetailLink}}"><img class="mui-media-object littlePic" ng-src="{{v.productPicLink}}" err-src="img/little.jpg">
+							<div class="mui-media-body">{{v.adName}}</div>
+						</a>
+					</li>
+				</ul>
+			</ul>
+		</div>
+		<script>
+			var app = angular.module('myapp', []);
+
+			function getlist() {
+				var aQuery = window.location.href.split("?"); //取得Get参数
+				var aGET = new Array();
+				if (aQuery.length > 1) {
+					var aBuf = aQuery[1].split("&");
+					for (var i = 0, iLoop = aBuf.length; i < iLoop; i++) {
+						var aTmp = aBuf[i].split("="); //分离key与Value
+						aGET[aTmp[0]] = aTmp[1];
+					}
+				}
+				return aGET;
+			}
+			app.controller('goodCtr', function($scope, $http) {
+				//默认图片
+				$scope.similarList = [{
+					productPicLink: 'img/little.jpg',
+					adName: '正在加载'
+				}, {
+					productPicLink: 'img/little.jpg',
+					adName: '正在加载'
+				}]
+				$scope.banner = {
+					productPicLink: 'img/little.jpg',
+				};
+				$scope.bannerfir = $scope.banner;
+				$scope.bannerlas = $scope.banner;
+				mui.init();
+				var slider = mui("#slider");
+				slider.slider({
+					interval: 3000
+				});
+				var token;
+				if(window.parameter){
+					token=window.parameter.getParameter("token");
+				}else{
+					token="";//33493393C2821068D29349AB87115A1CDE4287595D30EBEE
+				}
+				var params = {
+					adName: getlist()['adName'] ? getlist()['adName'] : '',
+					adId: getlist()['adId'] ? getlist()['adId'] : '',
+					token:token
+				}
+				$http.get(goodDetailUrl + '&token='+params.token+'&adName=' + params.adName + '&adId=' + params.adId).success(function(res) {
+					if (res.kanke&&res.kanke.code==200&&res.kanke.responseBody&& res.kanke.responseBody != "") {
+						var items = document.getElementsByClassName('mui-slider-item');
+						for (i = 0; i < items.length; i++) {
+							items[i].childNodes[1].style.backgroundColor = "#fff";
+						}
+						$scope.banner = res.kanke.responseBody;
+						$scope.bannerfir = $scope.banner;
+						$scope.bannerlas = $scope.banner;
+						$scope.collectInfo = {
+							adId: $scope.banner.adId,
+							adName: $scope.banner.adName,
+							productDetailLink: $scope.banner.productDetailLink,
+							productPicLink: $scope.banner.productPicLink,
+							productMainTitle: $scope.banner.productMainTitle,
+							productSearchResults: $scope.banner.productSearchResults
+						};
+						$scope.collect = function() {
+							if(window.parameter){params.token=window.parameter.getParameter("token");}
+							if(params.token==""){
+								if(window.parameter){
+									window.parameter.startWeiXinLogin();
+								}
+//								mui.toast('请先登录');
+								return;
+							}
+							$http.post(goodCollectUrl + '&token=' + params.token + '&goodinfo=' + encodeURIComponent(JSON.stringify($scope.collectInfo)), {}).success(function(res) {
+								if (res.kanke && res.kanke.code == "200") {
+									document.getElementsByClassName('mycollect')[0].innerHTML="已收藏";
+									mui.toast('收藏成功');
+								} else if (res.kanke && res.kanke.code == "P_206") {
+									$http.post(gooddelCollectUrl + '&token=' + params.token + '&goodId=' + params.adId, {}).success(function(res) {
+										if (res.kanke && res.kanke.code == "200") {
+											document.getElementsByClassName('mycollect')[0].innerHTML="收藏&#12288;";
+											mui.toast("已取消");
+										} else {
+											mui.toast("取消收藏失败");
+										}
+										console.log(res.kanke);
+									});
+								} else {
+									mui.toast("收藏失败");
+								}
+								console.log(res.kanke);
+							});
+						};
+					}
+					console.log($scope.banner);
+				});
+//				$http.get(goodSimilarUrl + '?adName=' + params.adName + '&adId=' + params.adId, {}).success(function(res) {
+//					if (res.similarAdProductList && res.similarAdProductList.length > 0) {
+//						$scope.similarList = res.similarAdProductList.slice(0, 2);
+//					}
+//					console.log($scope.similarList);
+//				});
+				$http.get(playeradsUrl, {}).success(function(res) {
+					if (res.kanke &&res.kanke.responseBody&&res.kanke.responseBody.list&& res.kanke.responseBody.list.length ==4) {
+						$scope.similarList1 = res.kanke.responseBody.list.slice(0, 2);
+						$scope.similarList2 = res.kanke.responseBody.list.slice(2, 4);
+					}
+					console.log($scope.similarList);
+				});
+			});
+			app.directive('errSrc', function() {
+				return {
+					link: function(scope, element, attrs) {
+						element.bind('error', function() {
+							if (attrs.src != attrs.errSrc) {
+								attrs.$set('src', attrs.errSrc);
+							}
+						});
+					}
+				}
+			});
+		</script>
+	</body>
+
+</html>

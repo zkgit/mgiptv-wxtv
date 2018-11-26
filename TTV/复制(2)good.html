@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="js/angular.min.js"></script>
+		<title>商品详情</title>
+	</head>
+
+	<body style="overflow-x: hidden;overflow-y: auto;">
+		<div ng-app="myapp" ng-controller="goodCtr">
+			<ul class="mui-table-view mui-grid-view">
+					<li class="mui-table-view-cell mui-media mui-col-xs-6" ng-repeat="v in similarList">
+						<a ng-href="{{v.productDetailLink}}">
+							<div class="littlePic"><img class="mui-media-object" ng-src="{{v.productPicLink}}" err-src="img/little.jpg">
+								<div class="mui-media-body">{{v.adName}}</div>
+							</div>
+						</a>
+					</li>
+			</ul>
+		</div>
+		<script>
+			var app = angular.module('myapp', []);
+			app.controller('goodCtr', function($scope, $http) {
+				$http.get(playeradsUrl, {}).success(function(res) {
+					if (res.kanke && res.kanke.responseBody && res.kanke.responseBody.list && res.kanke.responseBody.list.length == 4) {
+						$scope.similarList = res.kanke.responseBody.list.slice(0, 4);
+					}
+					console.log($scope.similarList);
+				});
+			});
+			app.directive('errSrc', function() {
+				return {
+					link: function(scope, element, attrs) {
+						element.bind('error', function() {
+							if (attrs.src != attrs.errSrc) {
+								attrs.$set('src', attrs.errSrc);
+							}
+						});
+					}
+				}
+			});
+		</script>
+	</body>
+
+</html>

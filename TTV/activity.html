@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/style.css" />
+		<!--<script src="js/angular.min.js"></script>-->
+		<script src="js/config.js"></script>
+		<script src="js/jquery-1.3.2.min.js"></script>
+		<title>活动</title>
+		<style type="text/css">
+			.tip img{z-index: 999;position: absolute;width: 100%;top: 0;left: 0;height: 100%;}
+		</style>
+	</head>
+	<body style="overflow: hidden;width: 100%;height: 100%;">
+		<div class="tip"style="display: none;"><img src="img/tip.png"/></div>
+		<div id="gallery" ng-app="myapp" ng-controller="acCtr">
+			<div id="pictures">
+				<img src="img/a3.png" />				
+				<img src="img/a2.png" />
+				<img src="img/a1.png" />
+				<!--<img ng-repeat="i in aclist" on-finish-render-filters ng-src="{{i.activityPic}}" />-->
+			</div>
+			<div id='start'></div>
+			<div id="move"></div>
+			<div id="rect"></div>
+			<div id="dire"></div>
+		</div>
+		
+		<div style="text-align:center;clear:both;margin-top:50px"></div>
+		<!--<script>
+			var app = angular.module('myapp', []);
+			app.directive('onFinishRenderFilters', function($timeout) {
+				return {
+					restrict: 'A',
+					link: function(scope, element, attr) {
+						if (scope.$last === true) {
+							$timeout(function() {
+								scope.$emit('ngRepeatFinished');
+							});
+						}
+					}
+				};
+			});
+			app.controller('acCtr', function($scope, $http) {
+				$http.get(activitylistUrl, {}).success(function(e) {
+					if (e.kanke && e.kanke.code == 200 && e.kanke.responseBody.list && e.kanke.responseBody.list.length > 0) {
+						$scope.aclist = e.kanke.responseBody.list.slice(3, 7);
+					}
+					console.log($scope.aclist);
+				});
+				$scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
+					var z = 0;
+					var inAnimation = false;
+					$('#pictures img').each(function() {
+						z++;
+						$(this).css('z-index', z);
+					});
+					function swapFirstLast(dd, isFirst) {
+						if (inAnimation) return false;
+						else inAnimation = true;
+						var direct, processZindex, direction, newZindex, inDeCrease;
+						if (isFirst) {
+							processZindex = z;
+							direction = '-' + $(this).height() + 'px';
+							newZindex = 1;
+							inDeCrease = 1;
+						} else {
+							processZindex = 1;
+							direction = '' + $(this).height() + 'px';
+							newZindex = z;
+							inDeCrease = -1;
+						}
+						if (dd == "up") {
+							$('#pictures img').each(function() {
+								if ($(this).css('z-index') == processZindex) {
+									$(this).animate({
+										'top': direction
+									}, 'normal', function() {
+										$(this).css('z-index', newZindex)
+											.animate({
+												'top': '0'
+											}, 'normal', function() {
+												inAnimation = false;
+											});
+									});
+								} else {
+									$(this).css('z-index', parseInt($(this).css('z-index')) + inDeCrease);
+								}
+							});
+						} else {
+							$('#pictures img').each(function() {
+								if ($(this).css('z-index') == processZindex) {
+									$(this).animate({
+										'right': direction
+									}, 'normal', function() {
+										$(this).css('z-index', newZindex)
+											.animate({
+												'right': '0'
+											}, 'normal', function() {
+												inAnimation = false;
+											});
+									});
+								} else {
+									$(this).css('z-index', parseInt($(this).css('z-index')) + inDeCrease);
+								}
+							});
+						}
+						return false; //don't follow the clicked link
+					}
+					//滑动手势事件
+					window.noscroll = function(event) {
+						event.preventDefault();
+					}
+					document.body.addEventListener('touchmove', noscroll, false);
+					document.body.addEventListener('touchstart', function() {});
+					var fx = 0,
+						fy = 0,
+						lx = 0,
+						ly = 0,
+						po = null,
+						ismove = false;
+					var touch = document.getElementById('pictures');
+					touch.addEventListener('touchstart', function(event) {
+						if (window.touchJs) {
+							window.touchJs.preventParentTouchEvent();
+						}
+						fx = event.touches[0].pageX;
+						fy = event.touches[0].pageY;
+					})
+					touch.addEventListener('touchmove', function(event) {
+						var j = Math.atan2((fy - event.touches[0].pageY), (event.touches[0].pageX - fx));
+						if (j >= 0.785 && j <= 2.356) {
+							po = 'top';
+						} else if (j >= -0.785 && j < 0.785) {
+							po = 'right';
+						} else if (j <= -0.785 && j > -2.356) {
+							po = 'bottom';
+						} else {
+							po = 'left';
+						}
+						ismove = true;
+					})
+					touch.addEventListener('touchend', function() {
+						if (ismove) {							
+							if (po == "top") {
+								lx = 0, ly = 0, po = null, ismove = false;
+								return swapFirstLast('up', true);
+							} else if (po == "right") {
+								lx = 0, ly = 0, po = null, ismove = false;
+								return swapFirstLast('right', true);
+							} else if (po == "bottom") {
+								lx = 0, ly = 0, po = null, ismove = false;
+								return swapFirstLast('up', false);
+							} else {
+								lx = 0, ly = 0, po = null, ismove = false;
+								return swapFirstLast('ritht', false);
+							}						
+						}else{
+							window.location.href="ac_detail.html";
+						}
+						
+					})
+				});
+			});
+		</script>-->
+		<script src="js/script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,246 @@
+{
+  "response": {
+    "responseHeader": {
+      "code": "200",
+      "msg": "获取热搜榜数据成功",
+      "t": 1467879746551
+    },
+    "responseBody": {
+      "film": [
+        {
+          "actors": "袁媛",
+          "description": "十年魔兽,满载青春与回忆,讲述一群玩游戏的兄弟们相知、成长,共同经历生活甘苦的真实故事。",
+          "director": "",
+          "image": "http://tv.kanketv.com/image/film/android/180x240/CA/CA7883E57AE5619C1523994.jpg",
+          "isMatched": "3",
+          "kankeId": "film_1523994",
+          "playCount": "",
+          "region": "",
+          "tag": "",
+          "title": "魔兽",
+          "videoType": "film",
+          "vodId": 0,
+          "year": "2016"
+        },
+        {
+          "actors": "休·杰克曼|法米克·詹森|詹姆斯·麦斯登|伊安·麦克莱恩|伊恩·麦克莱恩|哈莉·贝瑞|安娜·帕奎因|泰勒·梅恩|布鲁斯·戴维森|丽贝卡·罗梅恩|劳伦·舒勒·唐纳|雷·帕克",
+          "description": "一群天生怀有特异功能的变种人，在X教授的号召下，成立了保护人类与地球的战警小组。不料，人类对变种人开始产生疑虑而展开了彼此的争斗......X战警小组：独眼龙（X战警的队长，可由两眼射出致命雷射光）、琴葛蕾（有心电感应、隔空取物，及瞬间移动的能力）、R暴风女（X战警的副队长，拥有控制气候的能力）与小淘气（有着经由身体接触就能吸收对方记忆与能力的特异功能）是X战警的核心人物。现在X战警队伍来了一位危险人物－－金钢狼（拥有超强的回复能力，两腕上有超合金的金钢爪）是个脾气暴躁，几乎不受控制的变种人，使X战警内部危机四伏X战警让它训练新兵，并想吸收它加入自己的行列。但这是否可能？无人知道它的来历，不久，又发现它的大部分思维受外人操纵。更糟的是，又一种突变生物“万磁王出现了，它能控制磁力和地球引力。它曾被人类当作怪物巡回展出，饱受屈辱。它憎恨人类，认为突变生物比人类更优秀，应该主宰人类。它和“金钢狼携手为实现这一目标而不择手段。它们能被及时阻止吗？它们是否将导致人类和X战警的共同毁灭呢？而誓死保卫人类的X战警，将会发现他们在尽力保卫人类之时，人类也对他们也产生了极大的恐惧，双方关系渐渐紧绷。再加上X战警得面...查看全文",
+          "director": "布莱恩·辛格",
+          "image": "http://tv.kanketv.com/image/film/android/180x240/14/1430E3264488443819318.jpg",
+          "isMatched": "3",
+          "kankeId": "film_19318",
+          "playCount": "",
+          "region": "",
+          "tag": "",
+          "title": "x战警",
+          "videoType": "film",
+          "vodId": 0,
+          "year": "2000"
+        },
+        {
+          "actors": "邓超|罗志祥|张雨绮|林允|文章|李尚正|孔连顺|白客|吴亦凡|张美娥|田启文|徐克|周星驰",
+          "description": "白手起家的富豪刘轩新拍下了一块地皮,并联合了女强人李若兰使用恐怖的声纳技术驱赶鱼类,用于填海造地。人鱼一族长期居住在附近区域的海里,为了继续生存,带头大哥章鱼八哥派出了美人鱼珊珊“色诱刘轩,准备刺杀。没想到珊珊在卧底过程中与刘轩暗生情愫,一次次破坏暗杀计划,而李若兰却在准备一个更丧心病狂的邪恶计划…",
+          "director": "周星驰",
+          "image": "http://tv.kanketv.com/image/film/android/180x240/EF/EFEFC90D4534B94F1523050.jpg",
+          "isMatched": "3",
+          "kankeId": "film_1523050",
+          "playCount": "",
+          "region": "",
+          "tag": "",
+          "title": "美人鱼",
+          "videoType": "film",
+          "vodId": 0,
+          "year": "2016"
+        }
+      ],
+      "tv": [
+        {
+          "actors": "杨幂|黄轩|高伟光|周奇奇|李溪芮|张云龙|王仁君",
+          "description": "根据缪娟同名小说翻译官改编。法语系女硕士生乔菲,从小立志做一名翻译,偶然机会她邂逅了翻译天才程家阳。乔菲为躲避前男友、程家阳之兄程家明,误打误撞与程家阳结下梁子。不料在第二日的高翻局实习生迎新会上,乔菲发现程家阳竟是自己的实习教师。两人带着对彼此的误会开始...",
+          "director": "王迎",
+          "image": "http://tv.kanketv.com/image/tv/android/180x240/AF/AFEADA52FEB396FC51872.jpg",
+          "isMatched": "3",
+          "kankeId": "tv_51872",
+          "playCount": "",
+          "region": "",
+          "tag": "",
+          "title": "亲爱的翻译官",
+          "videoType": "tv",
+          "vodId": 0,
+          "year": "2016"
+        },
+        {
+          "actors": "张一山|吴优|常戎|张锦程|杜子名|王戈|葛铮|张承|白一弘|孙佳雨|张雨剑|于笑|李又麟|徐冬冬|门东毅",
+          "description": "超级网剧余罪由新丽传媒联合爱奇艺共同制作,张睿执导,改编自常书欣同名IP小说余罪,由张一山、孙佳雨、吴优势等领衔主演。该剧讲述警校学生“余罪“从一场特殊的选拔开始,进入了生活和社会矛盾之中,且在成为一个卧底后遭遇各种惊险事件的故事。",
+          "director": "张睿",
+          "image": "http://tv.kanketv.com/image/tv/android/180x240/A6/A6C326CA41FC373C51869.jpg",
+          "isMatched": "3",
+          "kankeId": "tv_51869",
+          "playCount": "",
+          "region": "",
+          "tag": "",
+          "title": "余罪",
+          "videoType": "tv",
+          "vodId": 0,
+          "year": "2016"
+        },
+        {
+          "actors": "刘锡明|刘雅瑟|卢森堡|古力娜扎|叶青|吴建飞|奚美娟|宋宁|小彩旗|尹铸胜|张睿|张翔|张雷|李媛|杨轶|王妍苏|王宣予|王祉萱|经超|耿乐|车永莉|邓立民|郑元畅|郭晓婷|金晨|韩东君|韩栋",
+          "description": "二十年前,净天派因受到邪派卢戎部落长老的挑拨,与武林为敌,受到武林四大家族和蜀山围攻。教主姜世离送走已怀身孕的妻子欧阳倩,自己被蜀山镇压在禁洞中。二十年后,姜世离之子姜云凡偶遇身患怪病的唐雨柔、女娲后人小蛮及夜叉族二皇子龙幽后,他是净天派教主姜世离的儿子的消息不胫而走。被视为姜世离孽子的他,成为各家追杀的对象。",
+          "director": "姚壮宪|徐惠康|李国立|王莉芝|郑伟文",
+          "image": "http://tv.kanketv.com/image/tv/android/180x240/CB/CBC3642ED6B3A0A851870.jpg",
+          "isMatched": "3",
+          "kankeId": "tv_51870",
+          "playCount": "",
+          "region": "",
+          "tag": "",
+          "title": "云之凡",
+          "videoType": "tv",
+          "vodId": 0,
+          "year": "2016"
+        }
+      ],
+      "arts": [
+        {
+          "actors": "",
+          "description": "奔跑吧兄弟20150123，祖蓝模仿娘娘跳惊鸿舞，baby遇偶像尽显娇羞。",
+          "director": "李晨|王宝强|王祖蓝|邓超|郑恺|陈赫|Angelababy",
+          "image": "http://tv.kanketv.com/image/arts/android/180x240/C9/C9E89C0B54CD209F808295.jpg",
+          "isMatched": "3",
+          "kankeId": "arts_808295",
+          "playCount": "",
+          "region": "",
+          "tag": "",
+          "title": "奔跑吧兄弟",
+          "videoType": "arts",
+          "vodId": 0,
+          "year": "2015"
+        },
+        {
+          "actors": "何炅|Ella|贾乃亮",
+          "description": "来吧冠军是浙江卫视推出的一档大型励志竞技体育综艺节目,由何炅担任仲裁,陈欢担任主持人。节目由姚明担任体育顾问,李娜、贝克汉姆、乔丹、巴乔等担任嘉宾,贾乃亮、Ella(陈嘉桦)担任固定明星队队长,率领明星队展开颠覆性真实对抗。全新模式加超强阵容,来吧冠军...",
+          "director": "陈欢",
+          "image": "http://tv.kanketv.com/image/arts/android/180x240/7C/7CEF68F3C0882177807754.jpg",
+          "isMatched": "3",
+          "kankeId": "arts_807754",
+          "playCount": "",
+          "region": "",
+          "tag": "",
+          "title": "来吧冠军",
+          "videoType": "arts",
+          "vodId": 0,
+          "year": "2016"
+        },
+        {
+          "actors": "",
+          "description": "RunningMan是韩国SBS电视台周末娱乐节目星期天真好新的版块，是韩国著名主持人刘在石自“家族诞生第一季结束后时隔五个月接手的SBS新艺能节目，作为刘在石的SBS艺能节目回归之作，runningman致力于打造一个不同于过去realvariety的新型态娱乐节目。可以说是SBS赌上自尊心的新艺能节目。2010年7月11日起作为‘星期日真好-1部’播放。节目通过组队游戏获取金币或runningball最后决定胜者，输的一队将接受惩罚...",
+          "director": "刘在石|池石镇|金钟国|宋智孝|李光洙|河东勋|Gary|宋钟基",
+          "image": "http://tv.kanketv.com/image/arts/android/180x240/36/36315498C66A9DB0510.jpg",
+          "isMatched": "3",
+          "kankeId": "arts_510",
+          "playCount": "",
+          "region": "",
+          "tag": "",
+          "title": "runningman",
+          "videoType": "arts",
+          "vodId": 0,
+          "year": "2016"
+        }
+      ],
+      "anime": [
+        {
+          "actors": "小柳友|滨田龙臣|土屋太凤|石桥保|南原健朗|平泉成",
+          "description": "奥特战士们的故乡——M78·星云“光之国遭到神秘敌人的突然袭击，年轻战士赛罗奥特曼对自己的力量过于自信，一度陷入危机。在父亲赛文奥特曼的帮助下，赛罗奥特曼成功突围并消灭了敌人。为了弥补自己的草率，赛罗奥特曼只身一人担负起一探敌人真正身份的任务。他戴着父亲给予他的万能物品——赛罗手镯，向着未知的宇宙空间，独自踏上旅途。在经历艰苦的旅途后，赛罗奥特曼到达了一颗行星。在拯救遭遇巨型机器人兵团蹂躏的行星上的人们时，他和身负重伤、奄奄一息的青年“岚以及他的弟弟“小治相遇。赛罗奥特曼被岚的勇气所感动，与他合为一体，以岚作为人类形态，拯救了岚的生命。之后，在通过与行星艾斯美拉鲁达的公主艾美拉娜会面后，赛罗奥特曼知晓了敌人的真正身份……操控谜一般的敌方军团的幕后黑手，是“银河皇帝贝利亚！曾被奥特战士们齐心打倒的邪恶奥特战士贝利亚复活了，他构筑起强大的银河帝国，展开了称霸宇宙的征程。与岚一心同体的赛罗奥特曼，为了粉碎皇帝贝利亚的野心，和小治、艾美拉娜公主一同乘坐宇宙飞船——皇家宇宙船，穿梭于浩瀚的宇宙之中，等待着向贝利亚银河帝国发起挑战的赛罗奥特曼和他的伙伴们的将会是……",
+          "director": "阿部雄一",
+          "image": "http://tv.kanketv.com/image/cartoon/android/180x240/D1/D121044885B996599758.jpg",
+          "isMatched": "3",
+          "kankeId": "anime_9758",
+          "playCount": "",
+          "region": "",
+          "tag": "",
+          "title": "奥特曼",
+          "videoType": "anime",
+          "vodId": 0,
+          "year": "2010"
+        },
+        {
+          "actors": "",
+          "description": "",
+          "director": "",
+          "image": "http://tv.kanketv.com/image/cartoon/android/180x240/A6/A6552D5D178583D149119.jpg",
+          "isMatched": "3",
+          "kankeId": "anime_49119",
+          "playCount": "",
+          "region": "",
+          "tag": "",
+          "title": "航海王",
+          "videoType": "anime",
+          "vodId": 0,
+          "year": "2000"
+        },
+        {
+          "actors": "竹内顺子|杉山纪彰|中村千绘|井上和彦",
+          "description": "距离鸣人跟随自来也离开村子外出修行已经过去了两年半。时光流逝,修行归来的鸣人与已经成长了的伙伴们再次重逢,并继续朝着“成为火影的目标而努力着。与此同时,曾经计划捕获九尾妖狐的忍者组织“晓,也在长时间的沉默后终于开始行动,将目标指向了拥有“尾兽的忍者村。鸣人与“晓,双方之间的冲突一触即发。",
+          "director": "伊达勇登",
+          "image": "http://tv.kanketv.com/image/cartoon/android/180x240/BB/BB93E78C88189CF655773.jpg",
+          "isMatched": "3",
+          "kankeId": "anime_55773",
+          "playCount": "",
+          "region": "",
+          "tag": "",
+          "title": "火影忍者",
+          "videoType": "anime",
+          "vodId": 0,
+          "year": "2007"
+        }
+      ],
+      "documentary": [
+        {
+          "actors": "",
+          "description": "由探险专家贝尔·格里尔斯主持,教我们怎样在世上最恶劣,却又是最多人毅然前往的环境中求生。在每一集节目中,他利用自身的专业和技巧,置身于一名被困旅客的处境中各种真实的艰难环境下如何求生。",
+          "director": "",
+          "image": "http://tv.kanketv.com/image/doc/android/180x240/63/63B8F6871445F10F73024.jpg",
+          "isMatched": "3",
+          "kankeId": "documentary_73024",
+          "playCount": "",
+          "region": "",
+          "tag": "",
+          "title": "荒野求生秘技",
+          "videoType": "documentary",
+          "vodId": 0,
+          "year": "2012"
+        },
+        {
+          "actors": "",
+          "description": "经典传奇是一档大型化的历史人文故事节目,故事人性化讲述,同时力求新的突破。节目最大的亮点还是在于选题的“升级,选题集中在重大历史问题,时代人物,动人心魄的政治军事斗争,离奇事件。",
+          "director": "洪禹",
+          "image": "http://tv.kanketv.com/image/doc/android/180x240/01/017BBB981053BB94132188.jpg",
+          "isMatched": "3",
+          "kankeId": "documentary_132188",
+          "playCount": "",
+          "region": "",
+          "tag": "",
+          "title": "经典传奇",
+          "videoType": "documentary",
+          "vodId": 0,
+          "year": "2012"
+        },
+        {
+          "actors": "",
+          "description": "鸿观是一档“以金融视角还原过去、审视现在、回到未来;正经不严肃,解密不浮夸的新一代财经节目。节目中他提到“战争胜负的背后都有经济、金融原理,任何战争都是货币战争的观点,令人眼前一亮。",
+          "director": "宋鸿兵",
+          "image": "http://tv.kanketv.com/image/doc/android/180x240/53/53699AF6DCC87AB428209.jpg",
+          "isMatched": "3",
+          "kankeId": "documentary_28209",
+          "playCount": "",
+          "region": "",
+          "tag": "",
+          "title": "鸿观",
+          "videoType": "documentary",
+          "vodId": 0,
+          "year": "2016"
+        }
+      ]
+    }
+  }
+}

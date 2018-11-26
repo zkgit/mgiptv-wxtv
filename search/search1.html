@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta content="black" name="apple-mobile-web-app-status-bar-style">
+		<meta name="format-detection" content="telephone=no">
+		<meta content="telephone=no" name="format-detection">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<script type="text/javascript" src="angular.min.js"></script>
+		<script type="text/javascript" src="jquery-2.1.4.min.js" ></script>
+		<script type="text/javascript" src="search.js" ></script>
+		<link rel="stylesheet" href="search.css" />
+		<title>江苏有线</title>
+	</head>
+
+	<body>
+		<div id="container" class="html search bgcfff pb60" ng-view ng-app="myapp" ng-controller="searchCtr">
+			<div class="headline headline-title" style="padding: 0;">
+				<div class="bd">
+					<!--<a href="javascript:;" class="weui_btn weui_btn_primary">点击展现searchBar</a>-->
+					<div class="weui_search_bar" id="search_bar">
+						<form class="weui_search_outer">
+							<div class="weui_search_inner">
+								<!--<i class="weui_icon_search"></i>-->
+								<img class="weui_icon_search" src="img/search.png" />
+								<input type="search" ng-model="keyword" ng-keyup="keyup()" class="weui_search_input" id="search_input" placeholder="请输入片名、主演或导演" required/>
+								<a href="javascript:" class="weui_icon_clear" id="search_clear"></a>
+							</div>
+							<label for="search_input" class="weui_search_text" id="search_text">
+								<img class="weui_icon_search" src="img/search.png" />
+								<span>请输入片名、主演或导演</span>
+							</label>
+						</form>
+						<a href="javascript:" class="pta r05 t0 lh0 dsb hp100 cff fs24" ng-click="searchsub()">
+							<span class="mui-icon">
+							<img src="img/searchi.png" style="height: .44rem;"/>
+							</span>
+						</a>
+						<!--<a href="javascript:" class="weui_search_cancel" id="search_cancel">取消</a>-->
+					</div>
+					<div class="weui_cells weui_cells_access search_show" id="search_show">
+						<div class="weui_cell" ng-repeat="text in textlist">
+							<div class="weui_cell_bd weui_cell_primary">
+								<p>{{text}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--<a class="pta r10 cff fs16" href="javascript:;" id="J_searchbtn" ng-click="searchsub()">搜索</a>
+    <p class="input cff fs18 alic"><input type="text" placeholder="请输入片名、主演或导演" autofocus="autofocus" ng-model="keyword" ng-keyup="keyup()" class="icontrol" id="J_itext"></p>-->
+			</div>
+			<div class="">
+				<div class="result" id="J_result" ng-show="isresult">
+					<div class="rtab" id="J_tab">
+						<div class="rtab-til dsn">
+							<a href="javascript:;" class="opt active">点播</a>
+							<a href="javascript:;" class="opt">直播</a>
+						</div>
+						<div class="panels">
+							<div class="panel">
+								<p class="pt10 ovh borderc">
+									<a href="javascript:;" ng-click="searchsub(0)" class="searchtype borderr {{searchtype==0?'active':''}}">点播</a>
+									<a href="javascript:;" ng-click="searchsub(1)" class="searchtype borderr {{searchtype==1?'active':''}}">直播</a>
+									<a href="javascript:;" ng-click="searchsub(2)" class="searchtype {{searchtype==2?'active':''}}">回看</a>
+								</p>
+								<p class="pt10 ovh" style="display: {{searchtype==0?'block':'none'}};">
+									<a href="javascript:;" ng-repeat="v in typearr" data-type="{{v.v}}" class="ttype {{istype==$index?'active':''}}" ng-click="sccol($index,v.v)">{{v.k}}</a>
+								</p>
+								<div class="actlist">
+									<ul class="list ovh" id="J_relist_db">
+										<!--点播-->
+										<li class="li" style="display: {{searchtype==0?'block':'none'}};" ng-repeat="v in list" on-finish-render-filters>
+											<a href="#/detial?kankeId={{v.kankeId}}&columnType={{v.videoType}}&isMatch={{v.isMatched}}&vodId={{v.vodId}}" class="lia">
+												<p class="size-cover ptr img"><img class="J_img loading pta wp100 hp100" ng-src="{{v.image}}"></p>
+												<p class="til sec-text ellipsis pt5">{{v.title}}</p>
+											</a>
+										</li>
+										<!--直播、回看-->
+										<div class="searchtv ptr bcolor" style="display: {{searchtype!=0?'block':'none'}};" ng-repeat="vs in list" on-finish-render-filters>
+											<a href="#/TVlive?cid={{vs.channelId}}&classtype={{vs.classType}}&vid={{(vs.epglist[0].kankeId.split('_')[1])}}&type={{(vs.epglist[0].kankeId.split('_')[0])}}&cname={{vs.zh_name}}&channelType=" class="lstv ptr">
+												<p class="img">
+													<img class="lazy loading ico" ng-src="{{(vs.icon?vs.icon:'assets/images/ico_df.png')}}">
+													<span class="sec-text dsb ellipsis">[{{vs.channelId.toString().substr(2)+']'+vs.zh_name}}</span>
+												</p>
+												<p class="time" style="display: {{vs.epglist&&vs.epglist.length<2?'block':'none'}};"><span class="lh16">&ensp;</span></p>
+												<div ng-repeat="v in vs.epglist" on-finish-render-filters>
+													<p class="time"><span class="lh16">{{(v.date+' '+v.time)|mytime}}</span></p>
+													<p class="name"><span class="lh16 ellipsis">{{v.playTitle}}</span>
+														<span data-list="'+i+'" data-epglist="'+j+'" class="order" style="display:{{(aftertime(v.date+' '+v.endTime)&&searchtype==1?'block':'none')}}">预约</span></p>
+												</div>
+												<p class="time" style="display: {{vs.epglist&&vs.epglist.length<2?'block':'none'}};"><span class="lh16">&ensp;</span></p>
+											</a>
+										</div>
+									</ul>
+								</div>
+							</div>
+							<div class="panel dsn">
+								<ul class="ovh pl5 pr5" id="J_relist_zb"></ul>
+							</div>
+							<p class="alic ptb" id="J_loading" ng-bind="loadtext"></p>
+						</div>
+					</div>
+				</div>
+				<div class="" id="J_list" ng-show="!isresult">
+					<div class="shis p10">
+						<p class="histil c66 lh30 ovh">搜索历史
+							<a href="javascript:;" class="clear fr c" id="J_clearhis" ng-click="nohistory()">清空记录</a>
+						</p>
+						<ul class="hisul ovh" id="J_history">
+							<li class="hisli" ng-repeat="v in keyhistory">
+								<a href="javascript:;" class="keyw ellipsis" ng-click="keysearch(v)">{{v}}</a>
+							</li><span ng-if="nohis">暂无搜索记录</span></ul>
+					</div>
+					<div class="shot">
+						<p class="c66 plr pt10">热搜电影</p>
+						<div class="actlist">
+							<ul class="list ovh">
+								<li class="li" ng-repeat="v in typelist.film">
+									<a href="#/detial?kankeId={{v.kankeId}}&columnType={{v.videoType}}&isMatch={{v.isMatched}}&vodId={{v.vodId}}" class="J_a cff">
+										<p class="size-cover ptr ovh"><img class="J_img lazy loading pta" ng-src="{{v.image}}"></p>
+										<p class="J_til til sec-text ellipsis pt5">{{v.title}}</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="shot">
+						<p class="c66 plr pt10">热搜电视剧</p>
+						<div class="actlist">
+							<ul class="list ovh">
+								<li class="li" ng-repeat="v in typelist.tv">
+									<a href="#/detial?kankeId={{v.kankeId}}&columnType={{v.videoType}}&isMatch={{v.isMatched}}&vodId={{v.vodId}}" class="J_a cff">
+										<p class="size-cover ptr ovh"><img class="J_img lazy loading pta" ng-src="{{v.image}}"></p>
+										<p class="J_til til sec-text ellipsis pt5">{{v.title}}</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="shot">
+						<p class="c66 plr pt10">热搜动漫</p>
+						<div class="actlist">
+							<ul class="list ovh">
+								<li class="li" ng-repeat="v in typelist.anime">
+									<a href="#/detial?kankeId={{v.kankeId}}&columnType={{v.videoType}}&isMatch={{v.isMatched}}&vodId={{v.vodId}}" class="J_a cff">
+										<p class="size-cover ptr ovh"><img class="J_img lazy loading pta" ng-src="{{v.image}}"></p>
+										<p class="J_til til sec-text ellipsis pt5">{{v.title}}</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="shot">
+						<p class="c66 plr pt10">热搜综艺</p>
+						<div class="actlist">
+							<ul class="list ovh">
+								<li class="li" ng-repeat="v in typelist.arts">
+									<a href="#/detial?kankeId={{v.kankeId}}&columnType={{v.videoType}}&isMatch={{v.isMatched}}&vodId={{v.vodId}}" class="J_a cff">
+										<p class="size-cover ptr ovh"><img class="J_img lazy loading pta" ng-src="{{v.image}}"></p>
+										<p class="J_til til sec-text ellipsis pt5">{{v.title}}</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="shot">
+						<p class="c66 plr pt10">热搜纪录片</p>
+						<div class="actlist">
+							<ul class="list ovh">
+								<li class="li" ng-repeat="v in typelist.documentary">
+									<a href="#/detial?kankeId={{v.kankeId}}&columnType={{v.videoType}}&isMatch={{v.isMatched}}&vodId={{v.vodId}}" class="J_a cff">
+										<p class="size-cover ptr ovh"><img class="J_img lazy loading pta" ng-src="{{v.image}}"></p>
+										<p class="J_til til sec-text ellipsis pt5">{{v.title}}</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,198 @@
+<div class="index" style="margin-top: .88rem;" id="J_list">
+	<div class="banner swipe" id="J_swipe" style="">
+		<div class="swipe-box">
+			<div class="lis" ng-repeat="v in poster track by $index" ng-init="checklast($last)">
+				<a ng-href="#/activitydetail" ng-if="v.name=='square'">
+					<img original="img/banner_1.png" class="lazy"/>
+				</a>
+				<a ng-href="" ng-click="sub_order()" ng-if="v.name=='member'">
+					<img original="img/banner_2.png" class="lazy"/>
+				</a>
+				<a ng-if="(v.name!='square')&&(v.name!='member')" ng-href="#/detail?{{v.columnType==2?'zb=zb&channelID='+v.channelid+'&':''}}kankeId={{v.kankeId}}&vodId={{v.vodId}}">
+					<img original="{{v.bimage}}" class="lazy"/>
+				</a>
+			</div>
+		</div>
+		<div class="poter"></div>
+	</div>
+
+	<!--<div class="tyitem" style="margin-top: 0rem;" >-->
+	<!--<div class="topline sec-text ptr">-->
+	<!--我的直播-->
+	<!--<a href="#/recommend_zb" class="fr sec-text8989"><img src="img/ico_index00fr.png" /></a>-->
+	<!--</div>-->
+	<!--<ul class="list ovh" id="J_hot">-->
+	<!--<li class="li" ng-repeat="v in list.zb" on-finish-render-filters>-->
+	<!--<a ng-href="#/detail?zb=zb&serviceid={{v.epgs[0].channelID}}&tsid={{(v.epgs[0].channel_sid).split('_')[1]}}&frequence={{v.epgs[0].channel_tid}}&kankeId={{v.videoId}}&vodId={{v.vodId}}&columnType={{v.videoId.split('_')[0]}}&videoId={{v.videoId.split('_')[1]}}&englishName={{v.epgs[0].kankeChannel}}&channelID={{v.epgs[0].channelID}}&chaneseName={{v.epgs[0].chaneseName}}&recommend=1" class="J_a cff">-->
+	<!--<p class="size-cover ptr ovh" style="margin-bottom: 0;">-->
+	<!--<img class="J_img loading pta wp100 hp100 lazy" original="{{v.lpic}}" >-->
+	<!--<span class="zb_channel ellipsis"><img src="{{v.epgs[0].icon2}}" err-src="img/ico_df.png"/>{{v.epgs[0].chaneseName}}</span>-->
+	<!--<p class="pre ptr"><span class="J_pre pta hp100" style="width:{{v.epgs[0].percentage}}%;"></span></p>-->
+	<!--</p>-->
+	<!--<div class="tv_info">-->
+	<!--<p class="sec-text ellipsis">{{v.title}}</p>-->
+	<!--</div>-->
+	<!--</a>-->
+	<!--</li>-->
+	<!--</ul>-->
+	<!--</div>-->
+	<!--为你推荐-->
+	<div class="J_list tyitem" style="margin-top: 0.01rem;" ng-show="videopanduan">
+		<div class="topline sec-text ptr">
+		</div>
+		<ul class="list ovh">
+			<li class="li" ng-repeat="v in list.mix" on-finish-render-filters>
+				<a href="#/detail?columnType={{v.kankeId.split('_')[0]}}&videoId={{v.kankeId.split('_')[1]}}&kankeId={{v.kankeId}}&vodId={{v.vodId}}&recommend=1" class="J_a cff">
+					<p class="size-cover ptr ovh"><img class="J_img lazy loading pta" original="{{v.image}}">
+						<span class="{{(v.isMatched==-2||v.isMatched==1)?'J_icotv':''}} dsb"></span>
+					</p>
+					<p class="sec-text ellipsis pt5">{{v.title}}</p>
+					<!--<p class="J_play thi-text lh16">播放：{{v.playCount|to_wan}}</p>-->
+				</a>
+			</li>
+		</ul>
+		<!--换一批-->
+		<div class="tv_label_info mlr13" >
+			<p class="sec-text888 ellipsis alic" ng-click="change(video)">{{change_tip.video}}</p>
+		</div>
+	</div>
+	<!--混合推荐电影-->
+	<div class="J_list tyitem"  ng-show="classify_film.list.length>=6" style="margin-top: .01rem;">
+		<div class="topline sec-text ptr">
+			<div></div>
+			{{classify_film.title}}
+			<!--<a href="#/recommend_tags?tags={{classify_film.title}}" class="fr sec-text8989"><img src="img/ico_index00fr.png" /></a>-->
+			<a ui-sref="/slide_entry.index_db_film({t:'1', coltype:'film'})" class="fr sec-text8989"><img src="img/ico_index00fr.png" /></a>
+		</div>
+		<ul class="list ovh">
+			<li class="li" ng-repeat="list in classify_film.list" on-finish-render-filters >
+				<a href="#/detail?columnType={{list.videoType}}&videoId={{list.videoId}}&kankeId={{list.kankeId}}&vodId={{list.vodId}}&recommend=1" class="J_a cff">
+					<p class="size-cover ptr ovh"><img class="J_img lazy loading pta" original="{{list.image}}" >
+						<span class="{{(list.isMatched==-2||list.isMatched==1)?'J_icotv':''}} dsb"></span>
+					</p>
+					<p class="sec-text ellipsis pt5">{{list.title}}</p>
+					<p class="J_play thi-text lh16">播放：{{list.playCount|to_wan}}</p>
+				</a>
+			</li>
+		</ul>
+		<!--换一批-->
+		<div class="tv_label_info mlr13" >
+			<p class="sec-text888 ellipsis alic" ng-click="change(classify_film.type)">{{change_tip.film}}</p>
+		</div>
+	</div>
+	<!--混合推荐电视剧-->
+	<div class="J_list tyitem"  ng-show="classify_tv.list.length>=6" style="margin-top: .01rem;">
+		<div class="topline sec-text ptr">
+			<div></div>
+			{{classify_tv.title}}
+			<!--<a href="#/recommend_tags?tags={{classify_tv.title}}" class="fr sec-text8989"><img src="img/ico_index00fr.png" /></a>-->
+			<a ui-sref="/slide_entry.index_db_tv({t:'2',coltype:'tv'})" class="fr sec-text8989"><img src="img/ico_index00fr.png" /></a>
+		</div>
+		<ul class="list ovh">
+			<li class="li" ng-repeat="list in classify_tv.list" on-finish-render-filters >
+				<a href="#/detail?columnType={{list.videoType}}&videoId={{list.videoId}}&kankeId={{list.kankeId}}&vodId={{list.vodId}}&recommend=1" class="J_a cff">
+					<p class="size-cover ptr ovh"><img class="J_img lazy loading pta" original="{{list.image}}" >
+						<span class="{{(list.isMatched==-2||list.isMatched==1)?'J_icotv':''}} dsb"></span>
+					</p>
+					<p class="sec-text ellipsis pt5">{{list.title}}</p>
+					<p class="J_play thi-text lh16">播放：{{list.playCount|to_wan}}</p>
+				</a>
+			</li>
+		</ul>
+		<!--换一批-->
+		<div class="tv_label_info mlr13" >
+			<p class="sec-text888 ellipsis alic" ng-click="change(classify_tv.type)">{{change_tip.tv}}</p>
+		</div>
+	</div>
+	<!--混合推荐综艺-->
+	<div class="J_list tyitem"  ng-show="classify_arts.list.length>=6" style="margin-top: .01rem;">
+		<div class="topline sec-text ptr">
+			<div></div>
+			{{classify_arts.title}}
+			<!--<a href="#/recommend_tags?tags={{classify_arts.title}}" class="fr sec-text8989"><img src="img/ico_index00fr.png" /></a>-->
+			<a ui-sref="/slide_entry.index_db_arts({t:'3', coltype:'arts'})" class="fr sec-text8989"><img src="img/ico_index00fr.png" /></a>
+		</div>
+		<ul class="list ovh">
+			<li class="li" ng-repeat="list in classify_arts.list" on-finish-render-filters >
+				<a href="#/detail?columnType={{list.videoType}}&videoId={{list.videoId}}&kankeId={{list.kankeId}}&vodId={{list.vodId}}&recommend=1" class="J_a cff">
+					<p class="size-cover ptr ovh"><img class="J_img lazy loading pta" original="{{list.image}}" >
+						<span class="{{(list.isMatched==-2||list.isMatched==1)?'J_icotv':''}} dsb"></span>
+					</p>
+					<p class="sec-text ellipsis pt5">{{list.title}}</p>
+					<p class="J_play thi-text lh16">播放：{{list.playCount|to_wan}}</p>
+				</a>
+			</li>
+		</ul>
+		<!--换一批-->
+		<div class="tv_label_info mlr13" >
+			<p class="sec-text888 ellipsis alic" ng-click="change(classify_arts.type)">{{change_tip.arts}}</p>
+		</div>
+	</div>
+	<!--混合推荐动漫-->
+	<div class="J_list tyitem"  ng-show="classify_anime.list.length>=6" style="margin-top: .01rem;">
+		<div class="topline sec-text ptr">
+			<div></div>
+			{{classify_anime.title}}
+			<!--<a href="#/recommend_tags?tags={{classify_anime.title}}" class="fr sec-text8989"><img src="img/ico_index00fr.png" /></a>-->
+			<a ui-sref="/slide_entry.index_db_anime({t:'4', coltype:'anime'})" class="fr sec-text8989"><img src="img/ico_index00fr.png" /></a>
+		</div>
+		<ul class="list ovh">
+			<li class="li" ng-repeat="list in classify_anime.list" on-finish-render-filters >
+				<a href="#/detail?columnType={{list.videoType}}&videoId={{list.videoId}}&kankeId={{list.kankeId}}&vodId={{list.vodId}}&recommend=1" class="J_a cff">
+					<p class="size-cover ptr ovh"><img class="J_img lazy loading pta" original="{{list.image}}" >
+						<span class="{{(list.isMatched==-2||list.isMatched==1)?'J_icotv':''}} dsb"></span>
+					</p>
+					<p class="sec-text ellipsis pt5">{{list.title}}</p>
+					<p class="J_play thi-text lh16">播放：{{list.playCount|to_wan}}</p>
+				</a>
+			</li>
+		</ul>
+		<!--换一批-->
+		<div class="tv_label_info mlr13" >
+			<p class="sec-text888 ellipsis alic" ng-click="change(classify_anime.type)">{{change_tip.anime}}</p>
+		</div>
+	</div>
+	<!--混合推荐纪录片-->
+	<div class="J_list tyitem"  ng-show="classify_documentary.list.length>=6" style="margin-top: .01rem;">
+		<div class="topline sec-text ptr">
+			<div></div>
+			{{classify_documentary.title}}
+			<!--<a href="#/recommend_tags?tags={{classify_documentary.title}}" class="fr sec-text8989"><img src="img/ico_index00fr.png" /></a>-->
+			<a ui-sref="/slide_entry.index_db_documentary({t:'5', coltype:'documentary'})" class="fr sec-text8989"><img src="img/ico_index00fr.png" /></a>
+		</div>
+		<ul class="list ovh">
+			<li class="li" ng-repeat="list in classify_documentary.list" on-finish-render-filters >
+				<a href="#/detail?columnType={{list.videoType}}&videoId={{list.videoId}}&kankeId={{list.kankeId}}&vodId={{list.vodId}}&recommend=1" class="J_a cff">
+					<p class="size-cover ptr ovh"><img class="J_img lazy loading pta" original="{{list.image}}" >
+						<span class="{{(list.isMatched==-2||list.isMatched==1)?'J_icotv':''}} dsb"></span>
+					</p>
+					<p class="sec-text ellipsis pt5">{{list.title}}</p>
+					<p class="J_play thi-text lh16">播放：{{list.playCount|to_wan}}</p>
+				</a>
+			</li>
+		</ul>
+		<!--换一批-->
+		<div class="tv_label_info mlr13" >
+			<p class="sec-text888 ellipsis alic" ng-click="change(classify_documentary.type)">{{change_tip.documentary}}</p>
+		</div>
+	</div>
+	<!--5X5展示-->
+	<!--<div class="J_list tyitem" ng-repeat="v in res_fl" ng-show="v.list.length>=6"  style="margin-top: .01rem;">-->
+	<!--<div class="topline sec-text ptr">-->
+	<!--<div></div>-->
+	<!--{{v.title}}-->
+	<!--<a href="#/recommend_tags?tags={{v.title}}&tagType=tagType" class="fr"><img src="img/ico_index00fr.png" /></a>-->
+	<!--</div>-->
+	<!--<ul class="list ovh">-->
+	<!--<li class="li" ng-repeat="list in v.list" on-finish-render-filters >-->
+	<!--<a href="#/detail?columnType={{list.videoType}}&kankeId={{list.kankeId}}&vodId={{list.vodId}}&recommend=1" class="J_a cff">-->
+	<!--<p class="size-cover ptr ovh"><img class="J_img lazy loading pta" original="{{list.image}}" >-->
+	<!--<span class="{{(list.isMatched==-2||list.isMatched==1)?'J_icotv':''}} dsb"></span>-->
+	<!--</p>-->
+	<!--<p class="sec-text ellipsis pt5">{{list.title}}</p>-->
+	<!--<p class="J_play thi-text lh16">播放：{{list.playCount|to_wan}}</p>-->
+	<!--</a>-->
+	<!--</li>-->
+	<!--</ul>-->
+	<!--</div>-->
+</div>

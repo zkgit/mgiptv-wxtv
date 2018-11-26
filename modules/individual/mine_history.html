@@ -1,0 +1,59 @@
+<div class="headline headline-title headline-fixed">
+	<a class="pta l10 cff fs16" href="javascript:;" id="J_back" back>
+		<img style="height: .2rem;" src="img/left-arrow.png" />
+	</a>
+	<p class="i-text " id="J_til">我的历史</p>
+	<a href="javascript:;" class="pta r10 t0 lh0 dsb hp100 cff fs24" ng-click="deletefcn()">
+		<span class="tab-text">
+		{{deleteState?'取消':'删除'}}
+		</span>
+	</a>
+</div>
+<div id="historylist" class="timeline" style="margin-top: .57rem;margin-left: -.25rem;">
+	<ul style="{{deleteState?'margin-left: .75rem':'';}}">
+		<div ng-repeat="v in list">
+			<!--今天-->
+			<div style="background: #f0f0f0;position: absolute; margin-top: .05rem;margin-left:.4rem;" ng-show="v.today"><div class="clock-yellow"></div></div>
+			<span style="color: #FB8B0D;margin-left: .6rem;" ng-show="v.today">今天</span>
+			<!--昨天-->
+			<div style="background: #f0f0f0;position: absolute;margin-top: .05rem;margin-left:.4rem;" ng-show="v.yesterday"><div class="clock-yellow"></div></div>
+			<span style="color: #FB8B0D;margin-left: .6rem;" ng-show="v.yesterday">昨天</span>
+			<!--更早-->
+			<div style="background: #f0f0f0;position: absolute;margin-top: .05rem;margin-left:.4rem;" ng-show="v.earlier"><div class="clock-green"></div></div>
+			<span style="color:#39BD00 ;margin-left: .6rem;" ng-show="v.earlier">更早</span>
+			<div>
+				<input name="checkbox" type="checkbox" style="display:{{deleteState?'block':'none'}};" data-vodid= "{{v.vodID}}" data-kankeid = "{{v.kankeId}}">
+				<a href="#detail?kankeId={{v.kankeId}}&vodId={{v.vodID}}" class="lia">
+					<li class="his_bd_item ptr">
+						<p class="img pta">
+							<img class="loading lazy" src="{{v.lpic}}" error="img/ico_df.jpg" style="display: block;">
+						</p>
+						<div class="dt">
+							<p class="til fs16 pb5 ellipsis c33">{{v.title}}</p>
+							<div class="tv-little"></div>
+							<!--<p class="c66 lh16 ellipsis">类型:{{v.region}}</p>-->
+						</div>
+						<!--<div class="next" ng-hide="v.typeName=='film'"></div>-->
+					</li>
+				</a>
+			</div>
+		</div>
+	</ul>
+	<p class="alic ptb" id="J_loading">{{loadtext}}</p>
+</div>
+<div class="editline" id="J_editline" ng-show="deleteState" style="display: block;">
+	<a href="javascript:;" class="f" id="J_del_all" ng-click="checkAll()">全选</a>
+	<a href="javascript:;" id="J_del" ng-click="deleteButton()">删除</a>
+</div>
+<div class="chosetv" id="chosetv" ng-show="deleteCommit" style="display: block;" ng-click="resetstate()">
+	<div class="remotenew" ng-click="stopBubble($event)">
+		<div id="device_delete" ng-show="deleteCommit">
+			<p class="rn-til cff fs16 pt10">删除历史</p>
+			<p class="rn-sm fs14 cff pt10">删除后历史记录将无法恢复，是否要继续删除</p>
+			<p class="rn-bnts ovh pt30" style="height: 1.4rem">
+				<a href="javascript:;" class="rn-btn mr10" id="J_delete_qd" ng-click="deleteConfirm()">确定</a>
+				<a href="javascript:;" class="rn-btn rn-btn-a " id="J_delete_qx" ng-click="resetstate()">取消</a>
+			</p>
+		</div>
+	</div>
+</div>

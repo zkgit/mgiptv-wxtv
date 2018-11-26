@@ -1,0 +1,42 @@
+<div class="headline headline-title headline-fixed">
+	<a class="pta l10 cff fs16" href="javascript:;" id="J_back" back>
+		<img style="height: .2rem;" src="img/left-arrow.png" />
+	</a>
+	<p class="i-text" id="J_til">我的反馈</p>
+</div>
+<div class="mui-center" style="margin-top: .44rem;">
+	<div class="feedback1"></div>
+	<div class="mui-card mui-center" >
+		<div style="margin-bottom: .5rem;">
+			<div class="mui-center">-是否喜欢我们推荐的内容-</div>
+			<div class="ico-box">
+				<div class="feedback2 {{feedback1==1?'active':''}}" ng-click="recommend(1)"></div>
+			</div>
+			<div class="ico-box">
+				<div class="feedback3 {{feedback1==2?'active':''}}" ng-click="recommend(2)"></div>
+			</div>
+			<div class="ico-box">
+				<div class="feedback4 {{feedback1==3?'active':''}}" ng-click="recommend(3)"></div>
+			</div>
+		</div>
+		<div>
+			<div class="mui-center">-是否喜欢我们微信电视的设计-</div>
+			<div class="ico-box">
+				<div class="feedback2 {{feedback2==1?'active':''}}" ng-click="design(1)"></div>
+			</div>
+			<div class="ico-box">
+				<div class="feedback3 {{feedback2==2?'active':''}}" ng-click="design(2)"></div>
+			</div>
+			<div class="ico-box">
+				<div class="feedback4 {{feedback2==3?'active':''}}" ng-click="design(3)"></div>
+			</div>
+		</div>
+	</div>
+	<div class="mui-card mui-center" >
+		<textarea cols="20" style="width: 100%;border-width: 0px;text-align: center;" placeholder="请告诉我们您遇到的问题或想要反馈的意见" ng-model="opinion">{{opinion}}</textarea>
+	</div>
+	<div class="mui-card mui-center" >
+		<input type="text" style="width: 100%;border-width: 0px;text-align: center;margin-bottom: 0" placeholder="您的邮箱或电话" ng-model="contact" />
+	</div>
+	<button  class="mui-btn mui-btn-primary mui-btn-submit" style="padding: .08rem .7rem .08rem .7rem;" ng-click="feedbackfcn()">提交</button>
+</div>

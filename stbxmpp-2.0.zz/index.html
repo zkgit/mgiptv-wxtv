@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="1280*720 text/html; charset=utf-8" />
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/fun.js"></script>
+		<!--<script type="text/javascript" src="js/main.js"></script>-->		
+		<link rel="stylesheet" href="css/main.css" />
+		<title>中间件</title>
+		<style>
+			ul li {
+				display: block;
+				/*height:71.5%;
+				width: 25%;*/
+				height: 62.5%;
+				width: 22%;
+				margin-top: 62px;
+				margin-right: 3%;
+				float: left;
+				overflow: hidden;					
+			}
+			#mui-title-logo img{
+				width: 100%;
+				height: 100%;
+			}
+			.mui-table-view .mui-grid-view .mui-table-view-cell .mui-media-object {
+				width: 88%;
+				height: 486px;
+				
+			}
+			/*左侧二维码*/
+			.mui-table-view-qr{
+				    width: 45%;
+				    position: relative;
+				    left: -4%;
+				    top: -6.5%;
+				    height: 100%;
+			}
+			.mui-table-view-qr-img{
+				width: 32%;
+				height: 32%;
+				position: absolute;
+				left: 34.0%;
+				top: 34%;
+				padding: 0.5%;
+			}
+			.mui-table-view-qr-text{
+				width: 84px;height: 30px;position: absolute;
+				top: 89%;
+				left: 69%;
+				border: 2px solid #FFF;
+				border-radius: 4px;
+				color: #FFF;
+				font-size: 14px;
+				text-align: center;
+				line-height: 30px;
+			}
+			/*end*/
+			.mui-media-object-r{
+				position: absolute;
+				top:14%;
+				left:41%;
+				width: 51%;
+			}	
+			/*头像*/
+			#mui-title-head{
+				height: 34%;
+				width: 100%;
+				overflow: hidden;
+				display: inline-flex;
+			}
+			.mui-head-list{
+				width: 12%;
+				text-align: center;
+				float: left;
+				margin-right: 6.5%;
+				height: 79px;
+			}
+			.mui-head-list-img{
+				width: 100%;
+				height: 100%;
+			}
+			.mui-head-list-img img{
+				border-radius: 100px;
+				width: 100%;
+				height: 100%;
+			}
+			p{
+				margin-bottom: 26px;
+			}
+		</style>
+	</head>
+
+	<body  id="body">
+		<!--头部标签-->
+		<div id="mui-title">
+			<div id="mui-title-logo">
+				<img src="img/logo.png"/>
+			</div>
+			<span style="display: block;line-height:104px;width:225px;font-size: 36px;float: left;">微信助手</span>		
+		</div>
+		<!--中间内容-->	
+		<div class="mui-table-view mui-grid-view ad-thumb-list">	
+			<div class="mui-table-view-qr">
+				<img class="mui-img-full" src="img/bg2.png"/>
+				<div class="mui-table-view-qr-img" >
+					<img class="mui-img-full" id="left-img-qrcode" src="" />
+				</div>
+				<div class="mui-table-view-qr-text">
+					<div id="tpUid"></div>
+				</div>			
+			</div>
+			<!--主页右侧背景图-->
+		<div class="mui-media-object-r">	
+			<p style="font-size: 36px;">微信扫码关注公众号，手机搜片电视看！</p>
+			<p style="color: #97969C;">关注即可绑定，绑定后，你可以:</p>
+			<p style="height: 30px;line-height: 30px;"><img src="img/icon4.png" style="vertical-align: middle;margin-top: -2px;margin-right: 10px;"/>微信观看(直播/回看/点播)</p>
+			<p style="height: 30px;line-height: 30px;"><img src="img/icon5.png" style="vertical-align: middle;margin-top: -2px;margin-right: 10px;"/>多屏互动(手机遥控/图片推送/视频推送)</p>
+			<p style="border-bottom: 2px solid #7A658E;margin-right: 14%;"></p>
+			<!--<p style="font-size: 28px;">设备名称:江苏有线</p>-->
+			<p style="color: #97969C;" id="usertotle"></p>
+			<!--头像-->
+			<div id="mui-title-head">
+				<!--<div class="mui-head-list">-->
+					<!--<div class="mui-head-list-img"><img src="img/head3.jpg"/></div>-->
+				<!--</div>-->
+			</div>
+		</div>
+		<!--over-->
+		</div>
+		
+	</div>
+	</body>
+	<script type="text/javascript">
+	//茁壮盒子方法：
+	//获取CA卡号   CA.card.serialNumber
+	//获取机顶盒号 hardware.STB.serialNumber
+	//获取二维码实例： http://jswx.kanketv.com/b2b-jscn/wxtv/qrcode?uid=74n4pp;
+	//var domain = "172.14.174.82";//测试地址
+	//中间件: iPanel.ioctlRead('OPERATOR_CODE');
+	window.onload=function(){
+		var webserverbase='http://jscn.kanketv.com/b2b-jscn/tran?DEEPURL='//上线需更改zzb-jscn
+		var domain = "122.193.13.70",
+			UId = CA.card.serialNumber,
+			cityCode = iPanel.ioctlRead('OPERATOR_CODE'),
+			codeImgurl = "http://"+domain+"/b2b-jscn/wxtv/qrcode",
+			areaCode = cityCode.slice(0,4);
+		//UId=UId.slice(0,UId.length-1);
+		//保存cookie
+		setCookie('UId',UId);
+
+		//获取二维码
+		post();
+		function post(){
+			var req = createXMLHTTPRequest();
+			if(req){
+				req.open("POST", webserverbase+codeImgurl, true);
+				req.setRequestHeader("Content-Type","application/x-www-form-urlencoded ; charset=utf-8;");
+				req.setRequestHeader("Accept","*/*,text/*,text/html");
+				req.send("uid="+UId+'&areaCode='+areaCode);
+				req.onreadystatechange = function(){
+					if(req.readyState == 4){
+						if(req.status == 200){
+							var res =  eval('('+ req.responseText +')');
+							//获取二维码地址
+							document.getElementById("left-img-qrcode").src=res.url;
+							//设备码
+							document.getElementById("tpUid").innerHTML="<span style='color:orange'>bd</span>"+res.uid;
+							//获取用户列表
+							postUserList();
+						}else{
+						}
+					}
+				}
+			}
+		}
+
+		//获取用户列表
+		function postUserList(){
+			var req = createXMLHTTPRequest();
+			if(req){
+				req.open("GET", webserverbase+"http://172.16.177.58/version-api/api/v1/user/boxBindList.json?boxId="+UId+"&pageNo=1&pageSize=5", true);
+				req.setRequestHeader("Content-Type","application/x-www-form-urlencoded ; charset=utf-8;");
+				req.setRequestHeader("Accept","*/*,text/*,text/html");
+				req.onreadystatechange = function(e){
+					if(req.readyState == 4){
+						var res = eval('('+ req.responseText +')');
+						console.log(res);
+						var usertotle=res.response.responseBody.totalrecords;
+						var userInfo = res.response.responseBody.list;
+						document.getElementById('usertotle').innerHTML ="已经绑定"+usertotle+"位成员，按OK键管理成员";
+						for(var i=0 ;i<userInfo.length;i++){
+//							document.getElementById('mui-title-head').innerHTML ="<div class='mui-head-list'><div class='mui-head-list-img'><img src='img/head3.jpg'/></div></div>"
+							// 使用createElement创建元素
+							var muiheadlist = document.createElement('div');
+							var muiheadlistImg = document.createElement('div');
+							var img = document.createElement('img');
+							// 添加class
+							muiheadlist.className = 'mui-head-list';
+							muiheadlistImg.className ='mui-head-list-img';
+							// 属性
+							img.src = userInfo[i].headImageUrl;
+							document.getElementById('mui-title-head').appendChild(muiheadlist);
+							muiheadlist.appendChild(muiheadlistImg);
+							muiheadlistImg.appendChild(img);
+						}
+					}
+				};
+				req.send(null);
+			}
+		}
+
+
+		function createXMLHTTPRequest() {
+			//1.创建XMLHttpRequest对象
+			//这是XMLHttpReuquest对象无部使用中最复杂的一步
+			//需要针对IE和其他类型的浏览器建立这个对象的不同方式写不同的代码
+			var xmlHttpRequest;
+			if (window.XMLHttpRequest) {
+				//针对FireFox，Mozillar，Opera，Safari，IE7，IE8
+				xmlHttpRequest = new XMLHttpRequest();
+				//针对某些特定版本的mozillar浏览器的BUG进行修正
+				if (xmlHttpRequest.overrideMimeType) {
+					xmlHttpRequest.overrideMimeType("text/xml");
+				}
+			} else if (window.ActiveXObject) {
+				//针对IE6，IE5.5，IE5
+				//两个可以用于创建XMLHTTPRequest对象的控件名称，保存在一个js的数组中
+				//排在前面的版本较新
+				var activexName = [ "MSXML2.XMLHTTP", "Microsoft.XMLHTTP" ];
+				for ( var i = 0; i < activexName.length; i++) {
+					try {
+						//取出一个控件名进行创建，如果创建成功就终止循环
+						//如果创建失败，回抛出异常，然后可以继续循环，继续尝试创建
+						xmlHttpRequest = new ActiveXObject(activexName[i]);
+						if(xmlHttpRequest){
+							break;
+						}
+					} catch (e) {
+					}
+				}
+			}
+			return xmlHttpRequest;
+		}
+	};
+
+		function setSelectedEnterPiture() {	
+			window.location.href = "index1.1.html"
+		}
+		//键盘事件
+		document.onkeydown = function(event) {
+			var e = event || window.event || arguments.callee.caller.arguments[0];
+			if (e && e.keyCode == 27) {
+				// 按 Esc
+			}
+			if (e && e.keyCode == 8) {
+				// 按 BackSpace 
+			}
+			if (e && e.keyCode == 13) {
+				// enter 键
+				setSelectedEnterPiture()
+			}
+		};
+
+	</script>	
+
+</html>

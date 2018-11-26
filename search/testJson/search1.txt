@@ -1,0 +1,177 @@
+{
+  "responseStatus": {
+    "code": "0000",
+    "msg": null,
+    "object": {
+      "totalPage": 1,
+      "currentPage": 1,
+      "totalrecords": 5,
+      "pageSize": 15,
+      "systemTime": 1467972440025,
+      "type": "VOD",
+      "list": [
+        {
+          "channelId": "22215",
+          "zh_name": "旅游卫视",
+          "en_name": "lvyou",
+          "icon": "http://ikanpic.kanketv.com/image/live/icon/lvyou.png",
+          "epglist": [
+            {
+              "id": 59489262,
+              "playTitle": "天天高尔夫",
+              "date": "2016-07-09",
+              "time": "04:20",
+              "beginTime": "04:20",
+              "endTime": "05:25",
+              "programId": "",
+              "channelResourceCode": "",
+              "kankeId": "arts_25441"
+            },
+            {
+              "id": 59489296,
+              "playTitle": "天天高尔夫",
+              "date": "2016-07-09",
+              "time": "23:34",
+              "beginTime": "23:34",
+              "endTime": "23:59",
+              "programId": "",
+              "channelResourceCode": "",
+              "kankeId": "arts_25441"
+            }
+          ]
+        },
+        {
+          "channelId": "22154",
+          "zh_name": "CCTV-4(国际)",
+          "en_name": "CCTV4",
+          "icon": "http://ikanpic.kanketv.com/image/live/icon/CCTV4.png",
+          "epglist": [
+            {
+              "id": 59483946,
+              "playTitle": "天天饮食海外版",
+              "date": "2016-07-09",
+              "time": "03:50",
+              "beginTime": "03:50",
+              "endTime": "04:00",
+              "programId": "",
+              "channelResourceCode": "",
+              "kankeId": "arts_531"
+            },
+            {
+              "id": 59483962,
+              "playTitle": "天天饮食海外版",
+              "date": "2016-07-09",
+              "time": "13:45",
+              "beginTime": "13:45",
+              "endTime": "14:00",
+              "programId": "",
+              "channelResourceCode": "",
+              "kankeId": "arts_531"
+            },
+            {
+              "id": 59483964,
+              "playTitle": "天天饮食海外版",
+              "date": "2016-07-09",
+              "time": "14:09",
+              "beginTime": "14:09",
+              "endTime": "14:10",
+              "programId": "",
+              "channelResourceCode": "",
+              "kankeId": "arts_531"
+            },
+            {
+              "id": 59483971,
+              "playTitle": "天天饮食海外版",
+              "date": "2016-07-09",
+              "time": "17:50",
+              "beginTime": "17:50",
+              "endTime": "17:56",
+              "programId": "",
+              "channelResourceCode": "",
+              "kankeId": "arts_531"
+            }
+          ]
+        },
+        {
+          "channelId": "22214",
+          "zh_name": "东南卫视",
+          "en_name": "dongnan",
+          "icon": "http://ikanpic.kanketv.com/image/live/icon/dongnan.png",
+          "epglist": [
+            {
+              "id": 59578887,
+              "playTitle": "天天加油站",
+              "date": "2016-07-08",
+              "time": "18:25",
+              "beginTime": "18:25",
+              "endTime": "18:30",
+              "programId": "",
+              "channelResourceCode": "",
+              "kankeId": "arts_149"
+            },
+            {
+              "id": 59489244,
+              "playTitle": "天天加油站",
+              "date": "2016-07-09",
+              "time": "18:24",
+              "beginTime": "18:24",
+              "endTime": "18:30",
+              "programId": "",
+              "channelResourceCode": "",
+              "kankeId": "arts_149"
+            }
+          ]
+        },
+        {
+          "channelId": "22443",
+          "zh_name": "湖南卫视",
+          "en_name": "hunan",
+          "icon": "http://ikanpic.kanketv.com/image/live/icon/hunan.png",
+          "epglist": [
+            {
+              "id": 59583708,
+              "playTitle": "天天向上",
+              "date": "2016-07-08",
+              "time": "22:00",
+              "beginTime": "22:00",
+              "endTime": "23:59",
+              "programId": "",
+              "channelResourceCode": "",
+              "kankeId": "arts_3"
+            },
+            {
+              "id": 59517836,
+              "playTitle": "天天向上",
+              "date": "2016-07-09",
+              "time": "16:00",
+              "beginTime": "16:00",
+              "endTime": "17:56",
+              "programId": "",
+              "channelResourceCode": "",
+              "kankeId": "arts_3"
+            }
+          ]
+        },
+        {
+          "channelId": "22403",
+          "zh_name": "CCTV-3综艺",
+          "en_name": "CCTV3",
+          "icon": "http://ikanpic.kanketv.com/image/live/icon/CCTV3.png",
+          "epglist": [
+            {
+              "id": 59583292,
+              "playTitle": "天天把歌唱",
+              "date": "2016-07-08",
+              "time": "17:29",
+              "beginTime": "17:29",
+              "endTime": "18:01",
+              "programId": "",
+              "channelResourceCode": "",
+              "kankeId": "arts_15269"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

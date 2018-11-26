@@ -1,0 +1,75 @@
+﻿.banner{
+    width: 100%;
+}
+.content{
+    width: 100%;
+    overflow: hidden;
+}
+.banner img{
+    width: 100%;
+}
+.list{
+    overflow: hidden;
+    width: 100%;
+    height:auto;
+    filter:alpha(opacity=100 finishopacity=50 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#ed3743,endcolorstr=#ff7737,gradientType=0);
+    -ms-filter:alpha(opacity=100 finishopacity=50 style=1 startx=0,starty=0,finishx=0,finishy=150) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#ed3743,endcolorstr=#ff7737,gradientType=0);/*IE8*/
+    background:red; /* 一些不支持背景渐变的浏览器 */
+    background:-moz-linear-gradient(top, #ed3743, #ff7737);
+    background:-webkit-gradient(linear, 0 0, 0 bottom, from(#ed3743), to(#ff7737));
+}
+.list li{
+    overflow: hidden;
+}
+.title{
+    height: 0.76rem;
+    text-align: center;
+    background: #fff;
+    line-height: 0.76rem;
+}
+.title img{
+    height:0.46rem;
+}
+.title span{
+    font-size: 0.45rem;
+    color: #ee3e42;
+    padding:0 0.16rem;
+}
+.shangpin li{
+    margin:2.7%;
+    width: 45.8%;
+    background: #fff;
+    float: left;
+    padding-bottom:0.3rem;
+}
+.shangpin li:nth-of-type(2n){
+    margin-left:0;
+}
+.shangpin li img{
+    width: 100%;
+    border:0;
+    margin-bottom:0.06rem;
+}
+.shangpin li p{
+    padding:0 4.2%;
+    font-family: "微软雅黑";
+    font-size: 0.28rem;
+    color: #616161;
+    overflow: hidden;
+    line-height: 0.42rem;
+    height: 0.84rem;
+    margin-bottom: 5.5%;
+}
+.shangpin li .btn{
+    display: block;
+    width: 63.6%;
+    margin:0 auto;
+    line-height: 0.52rem;
+    text-align: center;
+    background: url("../img/btn.png") center no-repeat;
+    background-size: 100%;
+    color: #fff;
+    font-size: 0.24rem;
+    overflow: hidden;
+height: .52rem;
+}

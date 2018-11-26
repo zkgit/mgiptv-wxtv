@@ -1,0 +1,131 @@
+{
+  "responseStatus": {
+    "code": "0000",
+    "msg": null,
+    "object": {
+      "totalPage": 1,
+      "currentPage": 1,
+      "totalrecords": 2,
+      "pageSize": 15,
+      "systemTime": 1467958937460,
+      "type": "VOD",
+      "list": [
+        {
+          "channelId": "22154",
+          "zh_name": "中央-4",
+          "en_name": "CCTV4",
+          "icon": "http://ikanpic.kanketv.com/image/live/icon/CCTV4.png",
+          "epglist": [
+            {
+              "id": 103484817,
+              "playTitle": "天天饮食",
+              "date": "2016-07-06",
+              "time": "03:50:00",
+              "beginTime": "03:50:00",
+              "endTime": "04:00:00",
+              "programId": "",
+              "channelResourceCode": "102400024",
+              "kankeId": null
+            },
+            {
+              "id": 103484827,
+              "playTitle": "天天饮食",
+              "date": "2016-07-06",
+              "time": "09:50:00",
+              "beginTime": "09:50:00",
+              "endTime": "10:00:00",
+              "programId": "",
+              "channelResourceCode": "102400024",
+              "kankeId": null
+            },
+            {
+              "id": 103484837,
+              "playTitle": "天天饮食",
+              "date": "2016-07-06",
+              "time": "14:10:00",
+              "beginTime": "14:10:00",
+              "endTime": "14:27:00",
+              "programId": "",
+              "channelResourceCode": "102400024",
+              "kankeId": null
+            },
+            {
+              "id": 103484862,
+              "playTitle": "天天饮食",
+              "date": "2016-07-07",
+              "time": "03:50:00",
+              "beginTime": "03:50:00",
+              "endTime": "04:00:00",
+              "programId": "",
+              "channelResourceCode": "102400024",
+              "kankeId": null
+            },
+            {
+              "id": 103484872,
+              "playTitle": "天天饮食",
+              "date": "2016-07-07",
+              "time": "09:50:00",
+              "beginTime": "09:50:00",
+              "endTime": "10:00:00",
+              "programId": "",
+              "channelResourceCode": "102400024",
+              "kankeId": null
+            },
+            {
+              "id": 103484882,
+              "playTitle": "天天饮食",
+              "date": "2016-07-07",
+              "time": "14:10:00",
+              "beginTime": "14:10:00",
+              "endTime": "14:27:00",
+              "programId": "",
+              "channelResourceCode": "102400024",
+              "kankeId": null
+            },
+            {
+              "id": 103484907,
+              "playTitle": "天天饮食",
+              "date": "2016-07-08",
+              "time": "03:50:00",
+              "beginTime": "03:50:00",
+              "endTime": "04:00:00",
+              "programId": "",
+              "channelResourceCode": "102400024",
+              "kankeId": null
+            },
+            {
+              "id": 103484917,
+              "playTitle": "天天饮食",
+              "date": "2016-07-08",
+              "time": "09:50:00",
+              "beginTime": "09:50:00",
+              "endTime": "10:00:00",
+              "programId": "",
+              "channelResourceCode": "102400024",
+              "kankeId": null
+            }
+          ]
+        },
+        {
+          "channelId": "22403",
+          "zh_name": "CCTV-3高清",
+          "en_name": "CCTV3",
+          "icon": "http://ikanpic.kanketv.com/image/live/icon/CCTV3.png",
+          "epglist": [
+            {
+              "id": 103482891,
+              "playTitle": "天天把歌唱",
+              "date": "2016-07-07",
+              "time": "17:26:00",
+              "beginTime": "17:26:00",
+              "endTime": "18:02:00",
+              "programId": "",
+              "channelResourceCode": "102400066",
+              "kankeId": null
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

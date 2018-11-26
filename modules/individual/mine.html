@@ -1,0 +1,86 @@
+<div class="headline headline-title headline-fixed">
+	<a class="pta l10 cff fs16" href="#/index" >
+		<img style="height: .2rem;" src="img/left-arrow.png" />
+	</a>
+	<p class="i-text" id="J_til" ng-bind="'我的'"></p>
+	<!--<a href="#/search" class="pta r10 t0 lh0 dsb hp100 cff ">-->
+		<!--<span class="mui-icon">-->
+		<!--<img src="img/search.png" style="height: .22rem;"/>-->
+		<!--</span>-->
+	<!--</a>-->
+</div>
+<div class="index_my" >
+	<div class="">
+		<div class="ptr ovh">
+			<img src="img/mine_bg1.png">
+			<p class="headbox">
+				<a id="J_a" class="imgbox dsb bdrp50 ptr ovh">
+					<img id="J_img" width="100%" src="{{headimg}} " err-src="img/default.jpg" class="loading pta bdrp50">
+				</a>
+				<span class="i-text name" id="J_name" >{{nick=='null'||nick=='undefined'?'未登录':nick}}</span>
+			</p>
+		</div>
+		<ul class="mui-table-view" >
+			<li class="mui-table-view-cell tab-text">
+				<a href="#/mine_history">
+					<img class="ico_mine" src="img/mine_01.png" />我的历史
+					<img class="rightArrow" src="img/rec01fr.png" />
+				</a>
+			</li>
+		</ul>
+
+		<div class="bgcffffff" >
+			<div class="historylist scrolly alic">
+				<img class="wp20 pt10" src="img/lack_poster.png" alt="" ng-hide="newhistory.length>0">
+				<p class="pt10" ng-hide="newhistory.length>0">暂无播放记录</p>
+				<table>
+					<tr>
+						<td ng-repeat="v in newhistory">
+							<a class="history" href="#detail?&vodId={{v.vodID}}&kankeId={{v.kankeId}}" class="lia">
+								<div><img src="{{v.lpic}}" />
+									<p class="sec-text8989 alic ellipsis">{{v.title}}</p>
+								</div>
+							</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<ul class="mui-table-view" >
+			<li class="mui-table-view-part">&nbsp;</li>
+			<li class="mui-table-view-cell tab-text">
+				<a href="#/mine_channel">
+					<img class="ico_mine" src="img/mine_02.png" />我的频道
+					<img class="rightArrow" src="img/rec01fr.png" />
+				</a>
+			</li>
+			<li class="mui-table-view-cell tab-text">
+				<a href="#/mine_collect">
+					<img class="ico_mine" src="img/mine_03.png" />我的收藏
+					<img class="rightArrow" src="img/rec01fr.png" />
+				</a>
+			</li>
+			<li class="mui-table-view-cell tab-text">
+				<a href="#/mine_order">
+					<img class="ico_mine" src="img/mine_04.png" />我的预约
+					<img class="rightArrow" src="img/rec01fr.png" />
+				</a>
+			</li>
+			<li class="mui-table-view-part">&nbsp;</li>
+			<li class="mui-table-view-cell tab-text">
+				<a href="#/mine_device">
+					<img class="ico_mine" src="img/mine_05.png" />我的电视
+					<img class="rightArrow" src="img/rec01fr.png" />
+				</a>
+			</li>
+			<li class="mui-table-view-cell tab-text">
+				<a href="#/mine_feedback">
+					<img class="ico_mine" src="img/mine_06.png" />我的反馈
+					<img class="rightArrow" src="img/rec01fr.png" />
+				</a>
+			</li>
+		</ul>
+
+	</div>
+	<p class="sec-textc8c7 alic ptb " style="" >湖南IPTV微信电视3.0</p>
+</div>
